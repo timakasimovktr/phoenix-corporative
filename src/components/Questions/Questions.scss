@@ -1,0 +1,117 @@
+.questionsWrapper{
+    background: #000000b0;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .questionsCard{
+        width: 50%;
+        height: 400px;
+        max-width: 500px;
+        min-width: 380px;
+        background: #DCDCDC;
+        border-radius: 10px;
+        position: relative;
+        box-shadow: 0px 0px 30px 0px #ffffff4f;
+        animation: riseUp 0.5s ease-in-out 1;
+
+        .closePopup {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 15px;
+            border-radius: 50px;
+            border: 2px black solid;
+            transition: 0.5s;
+            cursor: pointer;
+
+            &::after {
+                content: "";
+                width: 15px;
+                height: 2px;
+                background: #000;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(45deg);
+                transition: 0.5s;
+            }
+
+            &::before {
+                content: "";
+                width: 15px;
+                height: 2px;
+                background: #000;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(-45deg);
+                transition: 0.5s;
+            }
+
+            &:hover {
+                background: #000;
+
+                &::after,
+                &::before {
+                    background: #fff;
+                }
+            }
+        }
+
+        .surveyStep{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+            padding: 50px 30px;
+
+            h3{
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+                font-family: "Gilroy-Medium", sans-serif;
+                color: black;
+                text-align: center;
+            }
+
+            select{
+                width: 100%;
+                padding: 10px;
+                border-radius: 5px;
+                border: none;
+                margin-bottom: 20px;
+                color: black;
+                font-size: 1.2rem;
+                font-family: "Gilroy-Medium", sans-serif;
+                padding: 10px;
+            }
+
+            button{
+                padding: 10px 20px;
+                border-radius: 5px;
+                border: none;
+                background: #000;
+                color: #fff;
+                border: 1px rgb(0, 0, 0) solid;
+                font-size: 1.2rem;
+                font-family: "Gilroy-Medium", sans-serif;
+                cursor: pointer;
+                transition: 0.5s;
+
+                &:hover{
+                    background: #ffffff00;
+                    border: 1px black solid;
+                    color: #000;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,455 @@
+main {
+    width: 100%;
+    background: #111111;
+}
+
+@keyframes pulsing1 {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.imgWithTxtContacts {
+    background: #00000000;
+    padding: 30px 0 0 0;
+
+    .container {
+        display: flex;
+    }
+
+    h3 {
+        background: #000;
+    }
+
+    .imgWithTxtImg {
+        background-size: cover;
+        background-position: center;
+        min-height: 400px;
+        border-radius: 10px;
+        position: relative;
+
+        .dot1,
+        .dot2,
+        .dot3 {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            animation: pulsing1 2s infinite;
+            transition: 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            .dotChild {
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                transition: 0.3s;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+
+                p {
+                    font-size: 16px;
+                    opacity: 0;
+                }
+            }
+
+            &:hover {
+                width: 100px;
+                height: 100px;
+                border-radius: 8px;
+                z-index: 2;
+                animation: none;
+
+                .dotChild {
+                    width: 90px;
+                    height: 90px;
+                    border-radius: 8px;
+
+                    p {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        .dot1 {
+            top: 39%;
+            left: 31%;
+            background: #0ba00035;
+
+            .dotChild {
+                background: #0ba000;
+            }
+        }
+
+        .dot2 {
+            top: 28%;
+            left: 36%;
+            background: #009dff35;
+
+            .dotChild {
+                background: #009dff;
+            }
+        }
+
+        .dot3 {
+            top: 40%;
+            left: 11%;
+            background: #c6000035;
+
+            .dotChild {
+                background: #c60000;
+            }
+        }
+    }
+
+    .imgWithTxtHeading {
+        padding: 30px 0px;
+        margin-right: 30px;
+
+        h2 {
+            color: white;
+        }
+    }
+}
+
+.contactUsForm {
+    width: 100%;
+    padding: 30px 0;
+    margin-bottom: 20px;
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .formWrapper {
+            width: 50%;
+            margin-right: 15px;
+            border-radius: 10px;
+            background: #D9D9D9;
+            min-height: 400px;
+            display: flex;
+            padding: 10px;
+
+            .contactsWrapper {
+                background: #111111;
+                width: 50%;
+                border-radius: 10px;
+                position: relative;
+                overflow: hidden;
+                padding: 15px;
+
+                .bigRound {
+                    position: absolute;
+                    bottom: -50px;
+                    right: -50px;
+                    width: 200px;
+                    height: 200px;
+                    background: rgba(217, 217, 217, 0.075);
+                    border-radius: 50%;
+                    z-index: 1;
+                }
+
+                .smallRound {
+                    position: absolute;
+                    bottom: 70px;
+                    right: 70px;
+                    width: 100px;
+                    height: 100px;
+                    background: rgba(217, 217, 217, 0.075);
+                    border-radius: 50%;
+                    z-index: 1;
+                }
+
+                h3 {
+                    color: #fff;
+                    margin-bottom: 10px;
+                    font-size: 22px;
+                    font-family: 'Gilroy-Light', sans-serif;
+                    color: #FFF500;
+                }
+
+                h4 {
+                    color: #fff;
+                    font-size: 16px;
+                    font-family: 'Gilroy-Light', sans-serif;
+                    margin-bottom: 30px;
+                }
+
+                .contactsItem {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 20px;
+                    position: relative;
+                    z-index: 2;
+
+                    img {
+                        width: 20px;
+                        margin-right: 10px;
+                        padding-top: 2px;
+                    }
+
+                    .contactsItemInfo,
+                    .contactsIcon {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    p {
+                        color: #fff;
+                        font-size: 16px;
+                        font-family: 'Gilroy-Light', sans-serif;
+                    }
+                }
+            }
+
+            .form {
+                width: 50%;
+                padding: 15px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+
+                .inputWrapper {
+                    display: flex;
+                    width: 100%;
+
+                    input {
+                        background: #00000000;
+                        border: none;
+                        outline: none;
+                        width: 50%;
+                        color: black;
+                        padding-bottom: 15px;
+                        border-bottom: 1px black solid;
+                        font-size: 16px;
+                        font-family: 'Gilroy-Regular', sans-serif;
+
+                        &::placeholder {
+                            color: black;
+                        }
+
+                        &:first-child {
+                            margin-right: 10px;
+                        }
+
+                        &:last-child {
+                            margin-left: 10px;
+                        }
+                    }
+                }
+
+                textarea {
+                    width: 100%;
+                    border-radius: 10px;
+                    background: rgba(0, 0, 0, 0);
+                    padding: 15px;
+                    border: 1px black solid;
+                    font-size: 16px;
+                    font-family: 'Gilroy-Regular', sans-serif;
+                    resize: none;
+
+                    &::placeholder {
+                        color: black;
+                    }
+                }
+
+                button {
+                    width: 100%;
+                    border-radius: 10px;
+                    border: 1px black solid;
+                    padding: 10px;
+                    background-color: #FFF500;
+                    cursor: pointer;
+                    transition: 0.3s;
+
+                    &:hover {
+                        background-color: #1a1a1a;
+                        color: #FFF500;
+                    }
+                }
+            }
+        }
+
+        .mapWrapper {
+            width: 50%;
+            margin-left: 15px;
+            border-radius: 10px;
+            background: #282828;
+
+            iframe {
+                border-radius: 10px;
+                min-height: 400px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1330px) {
+    .imgWithTxtContacts {
+        .container {}
+
+        .imgWithTxtHeading {
+            h2 {
+                font-size: 30px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+        }
+
+        .imgWithTxtImg {
+            min-height: 300px;
+            margin-left: 15px;
+        }
+    }
+
+    .contactUsForm {
+        padding-top: 0;
+
+        .container {
+            flex-direction: column;
+
+            .formWrapper {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 15px;
+
+                .contactsWrapper {
+                    width: 100%;
+
+                    h3 {
+                        font-size: 20px;
+                    }
+
+                    h4 {
+                        font-size: 14px;
+                    }
+
+                    .contactsItem {
+                        margin-bottom: 15px;
+
+                        p {
+                            font-size: 14px;
+                        }
+                    }
+                }
+
+                .form {
+                    width: 100%;
+
+                    .inputWrapper {
+                        input {
+                            font-size: 14px;
+                        }
+                    }
+
+                    textarea {
+                        font-size: 14px;
+                    }
+
+                    button {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            .mapWrapper {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .imgWithTxtContacts {
+        margin-bottom: 30px;
+
+        .container {
+            flex-direction: column;
+        }
+
+        .imgWithTxtImg {
+            min-height: 300px;
+            margin-left: 0;
+        }
+
+        .imgWithTxtHeading {
+            margin-right: 0;
+            padding: 15px 0;
+
+            h2 {
+                font-size: 25px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+
+    .contactUsForm {
+        .container {
+            .formWrapper {
+                .contactsWrapper {
+                    .bigRound {
+                        display: none;
+                    }
+
+                    .smallRound {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .contactUsForm {
+        .container {
+            .formWrapper {
+                flex-direction: column;
+
+                .form {
+                    padding: 15px 10px;
+
+                    .inputWrapper {
+                        flex-direction: column;
+
+                        input {
+                            width: 100%;
+                            margin-bottom: 15px;
+                            margin-left: 0 !important;
+                        }
+
+                    }
+
+                    textarea {
+                        width: 100%;
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
