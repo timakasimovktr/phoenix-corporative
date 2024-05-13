@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { APP_ROUTES } from "../../router/Route";
 import { Outlet, Link } from "react-router-dom";
 
@@ -42,13 +42,13 @@ const Footer = () => {
                   to={`${APP_ROUTES.WELCOME}#contactUsSection`}
                   onClick={() => scrollTo()}
                 >
-                  <b>Оставить заявку</b>
+                  <b>Аризангизни қолдиринг</b>
                 </Link>
                 <Link
                   to={`${APP_ROUTES.WELCOME}#commentsSection`}
                   onClick={() => scrollTo()}
                 >
-                  Отзывы
+                  Шарҳлар
                 </Link>
               </div>
               <div className="footer-col">
@@ -57,20 +57,20 @@ const Footer = () => {
                   to={`${APP_ROUTES.CATALOG}`}
                   onClick={() => scrollTo()}
                 >
-                  Продукция
+                  Маҳсулотлар
                 </Link>
                 <Link
                   reloadDocument
                   to={`${APP_ROUTES.CATALOG}`}
                   onClick={() => scrollTo()}
                 >
-                  Новинки{" "}
+                  Янги маҳсулотлар{" "}
                 </Link>
                 <Link
                   to={`${APP_ROUTES.WELCOME}#aboutUs`}
                   onClick={() => scrollTo()}
                 >
-                  О нас
+                  Биз ҳақимизда
                 </Link>
               </div>
               <div className="footer-col">
@@ -78,13 +78,13 @@ const Footer = () => {
                   to={`${APP_ROUTES.WELCOME}#commentsSection`}
                   onClick={() => scrollTo()}
                 >
-                  Партнеры
+                  Ҳамкорлар
                 </Link>
                 <Link
                   to={`${APP_ROUTES.WELCOME}#marketingSection`}
                   onClick={() => scrollTo()}
                 >
-                  Клиентам
+                  Мижозлар учун
                 </Link>
                 <Link
                   reloadDocument
@@ -100,7 +100,7 @@ const Footer = () => {
                   to={`${APP_ROUTES.CONTACTS}`}
                   onClick={() => scrollTo()}
                 >
-                  Контакты
+                  Алоқалар
                 </Link>
                 <Link
                   reloadDocument

@@ -84,18 +84,18 @@ function Catalog() {
       <main>
         <div className="shopTextWrapper">
           <div className="container">
-            <h3>SHOP</h3>
+            <h3>До`кон</h3>
             <div className="shopline"></div>
-            <p>Find the perfect plant for your space</p>
+            <p>Сизнинг маконингиз учун мукаммал ўсимликни топинг</p>
           </div>
         </div>
         <div className="container catalogContainer">
           <div className="desktopCategories">
             <div className="mainCategoryLink">
-              <Link reloadDocument to={APP_ROUTES.CATALOG}>Все Категории</Link>
+              <Link reloadDocument to={APP_ROUTES.CATALOG}>Маҳсулот Тоифалари</Link>
             </div>
             <div className="mainCategoryLink promo">
-              <Link reloadDocument to={APP_ROUTES.CATALOG}>Новинки</Link>
+              <Link reloadDocument to={APP_ROUTES.CATALOG}>Йангиликлар</Link>
             </div>
             {superCategories.map((superCategory, index) => (
               <div

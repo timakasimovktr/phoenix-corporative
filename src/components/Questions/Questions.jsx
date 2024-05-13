@@ -27,9 +27,9 @@ function Questions(props) {
         id: 1,
         name: "Гипертония",
         surveyQuestions: [
-          "Как часто вы измеряете артериальное давление?",
-          "Были ли у вас случаи высокого артериального давления в последнее время?",
-          "Какие факторы, на ваш взгляд, влияют на ваше кровяное давление?",
+          "Қон босимингизни қанчалик тез-тез ўлчайсиз?",
+          "Яқинда сизда юқори қон босими ҳолатлари бўлганми?",
+          "Сизнингча, қон босимингизга қандай омиллар таъсир қилади?",
           "Принимаете ли вы лекарства для контроля артериального давления?",
         ],
         product: "product/10",
@@ -40,10 +40,10 @@ function Questions(props) {
         id: 2,
         name: "Диабет",
         surveyQuestions: [
-          "Есть ли у вас родственники с диабетом?",
-          "Как часто вы проверяете уровень глюкозы в крови?",
-          "Следите ли вы за диетой, рекомендованной для диабетиков?",
-          "Принимаете ли вы инсулин или другие лекарства для контроля уровня глюкозы в крови?",
+          "Қандли диабет билан касалланган қариндошларингиз борми?",
+          "Қондаги глюкоза миқдорини қанчалик тез-тез текширасиз?",
+          "Қандли диабет учун тавсия етилган парҳезга риоя қиласизми?",
+          "Қондаги глюкоза миқдорини назорат қилиш учун insulin ёки бошқа дори-дармонларни қабул қиласизми?",
         ],
         product: "product/5",
       },
@@ -53,10 +53,10 @@ function Questions(props) {
         id: 3,
         name: "Диабет",
         surveyQuestions: [
-          "Есть ли у вас родственники с диабетом?",
-          "Как часто вы проверяете уровень глюкозы в крови?",
-          "Следите ли вы за диетой, рекомендованной для диабетиков?",
-          "Принимаете ли вы инсулин или другие лекарства для контроля уровня глюкозы в крови?",
+          "Қандли диабет билан касалланган қариндошларингиз борми?",
+          "Қондаги глюкоза миқдорини қанчалик тез-тез текширасиз?",
+          "Қандли диабет учун тавсия етилган парҳезга риоя қиласизми?",
+          "Қондаги глюкоза миқдорини назорат қилиш учун insulin ёки бошқа дори-дармонларни қабул қиласизми?",
         ],
         product: "product/5",
       },
@@ -76,15 +76,15 @@ function Questions(props) {
             className="surveyStep1 surveyStep"
             data-hiddenelem={surveyStep !== 1}
           >
-            <h3>Пройдите Опрос</h3>
+            <h3>Сўровдан ўтинг</h3>
             <select name="" id="">
               <option value="" hidden>
-                Возраст
+                Ёш
               </option>
-              <option value="">10-30 лет</option>
-              <option value="">30-50 лет</option>
-              <option value="">50-70 лет</option>
-              <option value="">70+ лет</option>
+              <option value="">10-30 йиллар</option>
+              <option value="">30-50 йиллар</option>
+              <option value="">50-70 йиллар</option>
+              <option value="">70+ йиллар</option>
             </select>
             <select
               name=""
@@ -93,7 +93,7 @@ function Questions(props) {
               onChange={(e) => setChoosenCategory(e.target.value)}
             >
               <option value="" hidden>
-                Категория болезни
+                Касаллик тоифаси
               </option>
               {surveyObj.map((item) => (
                 <option
@@ -108,7 +108,7 @@ function Questions(props) {
             <button
               onClick={() => {
                 if (choosenCategory === 0) {
-                  toast.error("Выберите категорию болезни!");
+                  toast.error("Касаллик тоифасини танланг!");
                 } else {
                   setSurveyStep(2);
                   setFilteredSurvey(
@@ -120,7 +120,7 @@ function Questions(props) {
                 }
               }}
             >
-              Далее
+              Кейинги
             </button>
           </div>
 
@@ -138,20 +138,25 @@ function Questions(props) {
                   onChange={(e) => setChoosenCategory(e.target.value)}
                 >
                   <option value="" hidden>
-                    Да/Нет/Иногда/Часто/Редко
+                    ҳа / йўқ / баъзан / доимий / камдан-кам
                   </option>
-                  <option value="">Да</option>
-                  <option value="">Нет</option>
-                  <option value="">Иногда</option>
-                  <option value="">Часто</option>
-                  <option value="">Редко</option>
+                  <option value="">ҳа</option>
+                  <option value="">йўқ</option>
+                  <option value="">баъзан</option>
+                  <option value="">доимий</option>
+                  <option value="">камдан-кам</option>
                 </select>
                 <button
                   onClick={() => {
                     if (choosenCategory === 0) {
-                      toast.error("Выберите один из вариантов ответа!");
+                      toast.error("Жавоб вариантларидан бирини танланг!");
                     } else {
-                      if (index !== filteredSurvey[0]?.surveyCategory?.surveyQuestions.length - 1) {
+                      if (
+                        index !==
+                        filteredSurvey[0]?.surveyCategory?.surveyQuestions
+                          .length -
+                          1
+                      ) {
                         setSurveyStep(surveyStep + 1);
                       }
                       if (
@@ -161,7 +166,7 @@ function Questions(props) {
                           1
                       ) {
                         toast.success(
-                          "Рекомендуемый товар откроется через 3 секунды!"
+                          "Тавсия етилган маҳсулот 3 сонияда очилади!"
                         );
                         setTimeout(() => {
                           window.location.href = `/${filteredSurvey[0]?.surveyCategory?.product}`;
@@ -173,8 +178,8 @@ function Questions(props) {
                 >
                   {index ===
                   filteredSurvey[0]?.surveyCategory?.surveyQuestions.length - 1
-                    ? "Завершить"
-                    : "Далее"}
+                    ? "Тўлиқ"
+                    : "Кейинги"}
                 </button>
               </div>
             )

@@ -31,12 +31,13 @@ function Contacts() {
             <div className="imgWithTxtHeading">
               <h2>EUPHORIA</h2>
               <p>
-                Далеко-далеко за, словесными горами в стране гласных и согласных
-                живут рыбные тексты. Рот, использовало. Рекламных семь маленькая
-                он сих агентство своего. Необходимыми диких алфавит встретил
-                строчка имеет они запятых дорогу, до то большой, сбить даль, не
-                текстами ее взобравшись сих решила наш правилами страна точках
-                подзаголовок скатился вопроса.
+                Baliq matnlari unli va undoshlar mamlakatida og'zaki tog'lardan
+                uzoqda yashaydi. Og'iz, ishlatilgan. Reklama etti kichkina u
+                hali ham o'z agentligi. Kerakli yovvoyi alfavit satr bilan
+                uchrashdi, ular vergul bilan ajratilgan yo'lga ega, keyin katta,
+                uzoq matnlarni yiqitishga qaror qildi, shu paytgacha bizning
+                qoidalarimiz bilan nuqta mamlakati subtitr savolning ostiga
+                tushdi.
               </p>
             </div>
             <div
@@ -44,13 +45,19 @@ function Contacts() {
               style={{ backgroundImage: `url(${asiaMap})` }}
             >
               <div className="dot1">
-                <div className="dotChild"><p>Узбекистан</p></div>
+                <div className="dotChild">
+                  <p>Узбекистан</p>
+                </div>
               </div>
               <div className="dot2">
-                <div className="dotChild"><p>Казахстан</p></div>
+                <div className="dotChild">
+                  <p>Казахстан</p>
+                </div>
               </div>
               <div className="dot3">
-                <div className="dotChild"><p>Турция</p></div>
+                <div className="dotChild">
+                  <p>Турция</p>
+                </div>
               </div>
             </div>
           </div>
@@ -59,10 +66,10 @@ function Contacts() {
           <div className="container">
             <div className="formWrapper">
               <div className="contactsWrapper">
-                <h3>Форма обратной связи</h3>
+                <h3>Алоқа шакли</h3>
                 <h4>
-                  Если у вас есть какие то вопросы или предложения по
-                  сотрудничеству, заполните форму
+                  Ҳамкорлик бўйича саволларингиз ёки таклифларингиз бўлса,
+                  шаклни тўлдиринг
                 </h4>
                 <div className="contactsItem">
                   <div className="contactsIcon">
@@ -85,7 +92,10 @@ function Contacts() {
                     <img src={locationIcon} alt={locationIcon} />
                   </div>
                   <div className="contactsItemInfo">
-                    <p>132 Dartmouth Street Boston, Massachusetts 02156 United States</p>
+                    <p>
+                      132 Dartmouth Street Boston, Massachusetts 02156 United
+                      States
+                    </p>
                   </div>
                 </div>
                 <div className="bigRound"></div>
@@ -93,15 +103,23 @@ function Contacts() {
               </div>
               <div className="form">
                 <div className="inputWrapper">
-                  <input type="text" placeholder="Имя"/>
-                  <input type="text" placeholder="Фамилия"/>
+                  <input type="text" placeholder="Исм" />
+                  <input type="text" placeholder="Фамилия" />
                 </div>
                 <div className="inputWrapper">
                   <input type="email" placeholder="E-mail" />
-                  <input type="tel" placeholder="Телефон" maxLength={13} />
+                  <input
+                    type="tel"
+                    placeholder="Телефон раками"
+                    maxLength={13}
+                  />
                 </div>
-                <textarea placeholder="Описание (обязательно)" cols="30" rows="6"></textarea>
-                <button>Отправить</button>
+                <textarea
+                  placeholder="Тавсиф (талаб қилинади)"
+                  cols="30"
+                  rows="6"
+                ></textarea>
+                <button>Юбориш</button>
               </div>
             </div>
             <div className="mapWrapper">

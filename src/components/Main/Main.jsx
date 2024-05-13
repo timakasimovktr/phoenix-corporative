@@ -65,14 +65,15 @@ function Main() {
                 data-aos-duration="700"
                 data-aos-delay="500"
               >
-                СОЗДАВАЙТЕ СВОЮ ЭЙФОРИЮ С НАМИ КАЖДЫЙ ДЕНЬ.
+                ҲАР КУНИ БИЗ БИЛАН ЭЙФОРИЯНГИЗНИ ЯРАТИНГ.
               </h1>
               <p
                 data-aos="fade-right"
                 data-aos-duration="700"
                 data-aos-delay="800"
               >
-                Тут будет текст которй добавится позже
+                Батафсил маълумот учун қайта қўнғироқ қилиш учун сўров қолдиринг
+                - Сарлавҳа
               </p>
               <div className="mainBannerPartners">
                 <Link
@@ -132,7 +133,7 @@ function Main() {
                       alt={productItemAfter}
                     />
                     <div className="sideTitle">
-                      <div className="offer">Скидка 30</div>
+                      <div className="offer">chegirma 30%</div>
                       <div>Anfa Ocu Vital</div>
                     </div>
                   </div>
@@ -150,7 +151,7 @@ function Main() {
                       alt={productItemAfter}
                     />
                     <div className="sideTitle">
-                      <div className="offer">Скидка 30</div>
+                      <div className="offer">chegirma 30%</div>
                       <div>Anfa Ocu Vital</div>
                     </div>
                   </div>
@@ -195,14 +196,18 @@ function Main() {
                 },
               }}
             >
-              <SwiperSlide className="slideWrapper">LOGO NAME</SwiperSlide>
-              <SwiperSlide className="slideWrapper">LOGO NAME</SwiperSlide>
-              <SwiperSlide className="slideWrapper">LOGO NAME</SwiperSlide>
-              <SwiperSlide className="slideWrapper">LOGO NAME</SwiperSlide>
-              <SwiperSlide className="slideWrapper">LOGO NAME</SwiperSlide>
-              <SwiperSlide className="slideWrapper">LOGO NAME</SwiperSlide>
-              <SwiperSlide className="slideWrapper">LOGO NAME</SwiperSlide>
-              <SwiperSlide className="slideWrapper">LOGO NAME</SwiperSlide>
+              <SwiperSlide className="slideWrapper">Euphoria</SwiperSlide>
+              <SwiperSlide className="slideWrapper">Arbitcom</SwiperSlide>
+              <SwiperSlide className="slideWrapper">RCD Logistics</SwiperSlide>
+              <SwiperSlide className="slideWrapper">
+                Phoenix Solutions
+              </SwiperSlide>
+              <SwiperSlide className="slideWrapper">Euphoria</SwiperSlide>
+              <SwiperSlide className="slideWrapper">Arbitcom</SwiperSlide>
+              <SwiperSlide className="slideWrapper">RCD Logistics</SwiperSlide>
+              <SwiperSlide className="slideWrapper">
+                Phoenix Solutions
+              </SwiperSlide>
             </Swiper>
           </div>
         </section>
@@ -210,21 +215,20 @@ function Main() {
         <section className="imgWithTxt" id="aboutUs">
           <div className="imgWithTxtHeading">
             <h2 data-aos="fade-right" data-aos-duration="700">
-              Комплексная поддержка организма
+              Танани комплекс қўллаб-қувватлаш
             </h2>
             <p
               data-aos="fade-right"
               data-aos-duration="700"
               data-aos-offset="20"
             >
-              Далеко-далеко за, словесными горами в стране гласных и согласных
-              живут рыбные тексты. Рот, использовало. Рекламных семь маленькая
-              он сих агентство своего. Необходимыми диких алфавит встретил
-              строчка имеет они запятых дорогу, до то большой, сбить даль, не
-              текстами ее взобравшись сих решила наш правилами страна точках
-              подзаголовок скатился вопроса. Это послушавшись своих щеке
-              пустился предложения они коварный запятых подзаголовок вопроса,
-              единственное жизни грустный.
+              "Euphoria group"нинг дунёсига хуш келибсиз! Биз битта умумий
+              миссия: одамларга соғлом турмуш тарзини олиб боришга ёрдам бериш
+              учун бирлаштирилган учта динамик компаниялармиз. Битта бренд
+              остида тўпланган колл-марказлар жамоалари, маркетинг ва логистика
+              мутахассислари саккиз йилдан ортиқ вақт давомида сизнинг
+              фаровонлигингизга ҳисса қўшадиган юқори сифатли маҳсулотлар ва
+              хизматларни тақдим этиш учун биргаликда ишламоқда.
             </p>
             <Link
               reloadDocument
@@ -256,10 +260,13 @@ function Main() {
               data-aos-duration="700"
               data-aos-offset="20"
             >
-              Далеко-далеко за, словесными горами в стране гласных и согласных
-              живут рыбные тексты. Рот, использовало. Рекламных семь маленькая
-              он сих агентство своего. Необходимыми диких алфавит встретил
-              строчка имеет они запятых дорогу, до то большой, сбить даль.
+              Baliq matnlari unli va undoshlar mamlakatida og'zaki tog'lardan
+              uzoqda yashaydi. Og'iz, ishlatilgan. Reklama etti kichkina u hali
+              ham o'z agentligi. Kerakli yovvoyi alfavit satr bilan uchrashdi,
+              ular vergul bilan ajratilgan yo'lga ega, keyin katta, uzoq
+              matnlarni yiqitishga qaror qildi, shu paytgacha bizning
+              qoidalarimiz bilan nuqta mamlakati subtitr savolning ostiga
+              tushdi.
             </p>
             <img
               src={marketingLine}
@@ -273,10 +280,13 @@ function Main() {
               data-aos-duration="700"
               data-aos-offset="20"
             >
-              Далеко-далеко за, словесными горами в стране гласных и согласных
-              живут рыбные тексты. Рот, использовало. Рекламных семь маленькая
-              он сих агентство своего. Необходимыми диких алфавит встретил
-              строчка имеет они запятых дорогу, до то большой, сбить даль.
+              Baliq matnlari unli va undoshlar mamlakatida og'zaki tog'lardan
+              uzoqda yashaydi. Og'iz, ishlatilgan. Reklama etti kichkina u hali
+              ham o'z agentligi. Kerakli yovvoyi alfavit satr bilan uchrashdi,
+              ular vergul bilan ajratilgan yo'lga ega, keyin katta, uzoq
+              matnlarni yiqitishga qaror qildi, shu paytgacha bizning
+              qoidalarimiz bilan nuqta mamlakati subtitr savolning ostiga
+              tushdi.
             </p>
             <Link
               reloadDocument
@@ -286,7 +296,7 @@ function Main() {
               data-aos-duration="700"
               data-aos-offset="20"
             >
-              Подробнее
+              Батафсил
               <img src={sliderArrow} alt={sliderArrow} />
             </Link>
           </div>
@@ -325,32 +335,32 @@ function Main() {
                         <img src={quotationMark} alt={quotationMark} />
                       </div>
                       <p>
-                        ТЕКСТ О ТОМ ПОЧЕМУ ЭТО НУЖНО ЛЮДЯМ ТЕКСТ О ТОМ ПОЧЕМУ
-                        ЭТО НУЖНО ЛЮДЯМ ТЕКСТ О ТОМ ПОЧЕМУ ЭТО НУЖНО ЛЮДЯМ ТЕКСТ
-                        О ТОМ ПОЧЕМУ ЭТО НУЖНО ЛЮДЯМ ТЕКСТ О ТОМ ПОЧЕМУ ЭТО
-                        НУЖНО ЛЮДЯМ
+                        ODAMLARGA NIMA UCHUN KERAKLIGI HAQIDA MATN NIMA UCHUN
+                        MATN BU ODAMLARGA KERAK MATN NIMA UCHUN ODAMLARGA KERAK
+                        MATN ODAMLARGA NIMA UCHUN KERAKLIGI HAQIDA NIMA UCHUN BU
+                        HAQIDA MATN ODAMLARGA
                       </p>
                       <div className="iconPerson">
                         <img src={person} alt={person} />
                       </div>
                       <h3>Доктор jivan lika</h3>
-                      <h4>Кандидат наук в отрасли бадов</h4>
+                      <h4>БФҚ саноати соҳасида фанлар номзоди</h4>
                     </SwiperSlide>
                     <SwiperSlide className="slideWrapper">
                       <div className="quote">
                         <img src={quotationMark} alt={quotationMark} />
                       </div>
                       <p>
-                        ТЕКСТ О ТОМ ПОЧЕМУ ЭТО НУЖНО ЛЮДЯМ ТЕКСТ О ТОМ ПОЧЕМУ
-                        ЭТО НУЖНО ЛЮДЯМ ТЕКСТ О ТОМ ПОЧЕМУ ЭТО НУЖНО ЛЮДЯМ ТЕКСТ
-                        О ТОМ ПОЧЕМУ ЭТО НУЖНО ЛЮДЯМ ТЕКСТ О ТОМ ПОЧЕМУ ЭТО
-                        НУЖНО ЛЮДЯМ
+                        ODAMLARGA NIMA UCHUN KERAKLIGI HAQIDA MATN NIMA UCHUN
+                        MATN BU ODAMLARGA KERAK MATN NIMA UCHUN ODAMLARGA KERAK
+                        MATN ODAMLARGA NIMA UCHUN KERAKLIGI HAQIDA NIMA UCHUN BU
+                        HAQIDA MATN ODAMLARGA
                       </p>
                       <div className="iconPerson">
                         <img src={person} alt={person} />
                       </div>
                       <h3>Доктор jivan lika</h3>
-                      <h4>Кандидат наук в отрасли бадов</h4>
+                      <h4>БФҚ саноати соҳасида фанлар номзоди</h4>
                     </SwiperSlide>
                   </Swiper>
                 </div>
@@ -388,32 +398,32 @@ function Main() {
                         <img src={quotationMark} alt={quotationMark} />
                       </div>
                       <p>
-                        ТЕКСТ О ТОМ ПОЧЕМУ ЭТО НУЖНО ЛЮДЯМ ТЕКСТ О ТОМ ПОЧЕМУ
-                        ЭТО НУЖНО ЛЮДЯМ ТЕКСТ О ТОМ ПОЧЕМУ ЭТО НУЖНО ЛЮДЯМ ТЕКСТ
-                        О ТОМ ПОЧЕМУ ЭТО НУЖНО ЛЮДЯМ ТЕКСТ О ТОМ ПОЧЕМУ ЭТО
-                        НУЖНО ЛЮДЯМ
+                        ODAMLARGA NIMA UCHUN KERAKLIGI HAQIDA MATN NIMA UCHUN
+                        MATN BU ODAMLARGA KERAK MATN NIMA UCHUN ODAMLARGA KERAK
+                        MATN ODAMLARGA NIMA UCHUN KERAKLIGI HAQIDA NIMA UCHUN BU
+                        HAQIDA MATN ODAMLARGA
                       </p>
                       <div className="iconPerson">
                         <img src={person} alt={person} />
                       </div>
                       <h3>Доктор jivan lika</h3>
-                      <h4>Кандидат наук в отрасли бадов</h4>
+                      <h4>БФҚ саноати соҳасида фанлар номзоди</h4>
                     </SwiperSlide>
                     <SwiperSlide className="slideWrapper">
                       <div className="quote">
                         <img src={quotationMark} alt={quotationMark} />
                       </div>
                       <p>
-                        ТЕКСТ О ТОМ ПОЧЕМУ ЭТО НУЖНО ЛЮДЯМ ТЕКСТ О ТОМ ПОЧЕМУ
-                        ЭТО НУЖНО ЛЮДЯМ ТЕКСТ О ТОМ ПОЧЕМУ ЭТО НУЖНО ЛЮДЯМ ТЕКСТ
-                        О ТОМ ПОЧЕМУ ЭТО НУЖНО ЛЮДЯМ ТЕКСТ О ТОМ ПОЧЕМУ ЭТО
-                        НУЖНО ЛЮДЯМ
+                        ODAMLARGA NIMA UCHUN KERAKLIGI HAQIDA MATN NIMA UCHUN
+                        MATN BU ODAMLARGA KERAK MATN NIMA UCHUN ODAMLARGA KERAK
+                        MATN ODAMLARGA NIMA UCHUN KERAKLIGI HAQIDA NIMA UCHUN BU
+                        HAQIDA MATN ODAMLARGA
                       </p>
                       <div className="iconPerson">
                         <img src={person} alt={person} />
                       </div>
                       <h3>Доктор jivan lika</h3>
-                      <h4>Кандидат наук в отрасли бадов</h4>
+                      <h4>БФҚ саноати соҳасида фанлар номзоди</h4>
                     </SwiperSlide>
                   </Swiper>
                 </div>
@@ -430,15 +440,15 @@ function Main() {
                 data-aos-duration="700"
                 data-aos-offset="20"
               >
-                Получите все привелегии Эйфории
+                Эйфориянинг барча имтиёзларини олинг
               </h2>
               <h3
                 data-aos="fade-right"
                 data-aos-duration="700"
                 data-aos-offset="20"
               >
-                Реферальная платформа создана для того что бы каждый мог
-                зарабатывать на том на чем он будет зарабатывать
+                Йўналтирувчи платформа ҳар ким ўзи топадиган нарсадан пул топиши
+                учун яратилган
               </h3>
               <Link
                 reloadDocument
@@ -448,7 +458,7 @@ function Main() {
                 data-aos-duration="700"
                 data-aos-offset="20"
               >
-                Подробнее
+                Батафсил…
               </Link>
             </div>
             <div className="referralImg">
@@ -471,7 +481,7 @@ function Main() {
                 data-aos-duration="700"
                 data-aos-offset="20"
               >
-                Текст Слоган
+                Сўровдан ўтиш
               </h2>
               <div
                 className="surveyLine"
@@ -484,9 +494,8 @@ function Main() {
                 data-aos-duration="700"
                 data-aos-offset="20"
               >
-                Далеко-далеко за словесными горами в стране гласных и согласных
-                живут рыбные тексты. Все от всех за буквенных грустный свой
-                сбить пор снова рекламных.
+                Қаердан бошлашни билмаяпсизми? Тўғри маҳсулотлар тўпламини
+                танлаш учун онлайн сўровдан ўтинг
               </p>
             </div>
             <div className="surveyCards">
@@ -496,11 +505,10 @@ function Main() {
                 data-aos-offset="20"
               >
                 <div className="cardItem yellowCard">
-                  Как часто вы измеряете артериальное давление?
+                  Қон босимингизни қанчалик тез-тез ўлчайсиз?
                 </div>
                 <div className="cardItem yellowCard">
-                  Какие факторы, на ваш взгляд, влияют на ваше кровяное
-                  давление?
+                  Сизнингча, қон босимингизга қандай омиллар таъсир қилади?
                 </div>
               </div>
               <div
@@ -509,11 +517,11 @@ function Main() {
                 data-aos-offset="20"
               >
                 <div className="cardItem">
-                  Принимаете ли вы лекарства для контроля артериального
-                  давления?
+                  Қон босимини назорат қилиш учун дори-дармонларни қабул
+                  қиласизми?
                 </div>
                 <div className="cardItem">
-                  Курите ли вы или употребляете алкоголь?
+                  Сиз чекасизми ёки спиртли ичимлик ичасизми?
                 </div>
               </div>
             </div>
@@ -524,7 +532,7 @@ function Main() {
               data-aos-duration="700"
               data-aos-offset="20"
             >
-              Пройти опрос
+              Sinab ko'ring
             </Link>
           </div>
         </section>
@@ -537,17 +545,16 @@ function Main() {
                 data-aos-duration="700"
                 data-aos-offset="20"
               >
-                Далеко-далеко за словесными горами.
+                Биз билан боғланинг
               </h2>
               <p
                 data-aos="fade-right"
                 data-aos-duration="700"
                 data-aos-offset="20"
               >
-                Далеко-далеко за словесными горами в стране, гласных и согласных
-                живут рыбные тексты. Свой вершину своих буквоград не, живет
-                запятых, вдали страну агентство текста подзаголовок предложения
-                ручеек о.
+                Биз ҳар куни мижозларимизнинг ҳаётини яхши томонга ўзгартириб,
+                уларни фаол ҳаёт тарзи ва соғлиғининг энг яхши ҳолатига
+                келтириш учун ишлаб чиқамиз.
               </p>
             </div>
             <div className="contactUsForm">
@@ -556,7 +563,7 @@ function Main() {
                 data-aos-duration="700"
                 data-aos-offset="20"
               >
-                Свяжитесь с нами
+                Biz bilan bog`laning
               </h2>
               <form action="POST">
                 <input
@@ -565,12 +572,12 @@ function Main() {
                   data-aos-offset="20"
                   type="text"
                   name="name"
-                  placeholder="Имя"
+                  placeholder="Исм"
                 />
                 <input
                   type="tel"
                   name="phone"
-                  placeholder="Номер телефона (+998)"
+                  placeholder="Телефон раками (+998)"
                   pattern="[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
                   required
                   maxLength={13}
@@ -584,7 +591,7 @@ function Main() {
                   data-aos-duration="1300"
                   data-aos-offset="20"
                 >
-                  Оставить заявку
+                  Murojat qilish
                 </button>
               </form>
             </div>

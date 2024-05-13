@@ -30,7 +30,7 @@ function CategorySection({ category, getProducts }) {
             reloadDocument
             to={`${APP_ROUTES.WELCOME}collection/${category.id}`}
           >
-            посмотреть все
+            ҳаммасини кўриш
             <img src={rightArrow} alt={rightArrow} />
           </Link>
         </div>
@@ -59,7 +59,7 @@ function CategorySection({ category, getProducts }) {
               />
             )}
             <div className="price">
-              Цена: {product.price?.toLocaleString()} сум
+              Нарх: {product.price?.toLocaleString()} сум
             </div>
             <h3>{product.title}</h3>
             <p>
@@ -67,7 +67,7 @@ function CategorySection({ category, getProducts }) {
               {product.description.length > 60 && "..."}
             </p>
             <Link reloadDocument to={`/product/${product.id}`}>
-              Подробнее
+              Батафсил
             </Link>
           </div>
         ))}

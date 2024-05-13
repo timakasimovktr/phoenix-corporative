@@ -122,7 +122,8 @@ function Product() {
   return (
     <>
       <Header hiddenLoader={isLoader}></Header>
-      <main className={productObj.color === 2 && "urion"}>
+      {/* <main className={productObj.color === 2 && "urion"}> */}
+      <main>
         <ToastContainer />
         <div
           className={`orderPopup ${isOpenOrder ? "" : "hidden"}`}
@@ -137,7 +138,7 @@ function Product() {
                 onChange={(e) =>
                   setOrderInfo({ ...orderInfo, name: e.target.value })
                 }
-                placeholder="Имя"
+                placeholder="Исм"
                 maxLength="30"
               />
               <input
@@ -153,7 +154,7 @@ function Product() {
                   setOrderInfo({ ...orderInfo, phone: e.target.value })
                 }
                 type="tel"
-                placeholder="Номер телефона"
+                placeholder="Телефон раками"
                 maxLength="13"
               />
               <select
@@ -164,7 +165,7 @@ function Product() {
                 }
               >
                 <option value="" hidden>
-                  Город
+                  Shahar
                 </option>
                 <option value="Ташкент">Ташкент</option>
                 <option value="Самарканд">Самарканд</option>
@@ -179,19 +180,18 @@ function Product() {
                 <option value="Кашкадарья">Кашкадарья</option>
               </select>
               <h2>
-                Общая стоимость: {(productObj?.price * qty).toLocaleString()}{" "}
-                сум
+                Умумий қиймати: {(productObj?.price * qty).toLocaleString()} сум
               </h2>
               <button className="sendOrder" onClick={() => sendOrder()}>
-                Заказать
+                Буюртма бериш
               </button>
             </div>
             <div className={`orderStep2 ${orederStep2 ? "" : "hidden"}`}>
               <img src={successOrder} alt={successOrder} />
-              <h3>Заявка принята</h3>
+              <h3>Ариза қабул қилинди</h3>
               <p>
-                Ваш заказ: {productObj.title} <br /> Количество: {qty} <br />{" "}
-                Наш сотрудник свяжется с вами <br /> в ближайшее время!
+                Сизнинг буюртмангиз: {productObj.title} <br /> Миқдори: {qty}{" "}
+                <br /> Бизнинг ходимимиз тез орада <br /> сиз билан боғланади!
               </p>
             </div>
           </div>
@@ -263,10 +263,12 @@ function Product() {
                   className="minus"
                   onClick={() =>
                     setQty(
-                      qty > 0 ? [
-                        qty - 1,
-                        setOrderInfo({ ...orderInfo, count: qty - 1 }),
-                      ] : 0
+                      qty > 0
+                        ? [
+                            qty - 1,
+                            setOrderInfo({ ...orderInfo, count: qty - 1 }),
+                          ]
+                        : 0
                     )
                   }
                 >
@@ -294,7 +296,7 @@ function Product() {
                 data-aos="fade-right"
                 data-aos-duration="700"
               >
-                <h3>Состав:</h3>
+                <h3>Таркиби:</h3>
                 <p>{productObj.compound}</p>
               </div>
               <div
@@ -302,7 +304,7 @@ function Product() {
                 data-aos="fade-right"
                 data-aos-duration="700"
               >
-                <h3>Действие препарата: </h3>
+                <h3>Препаратнинг таъсири: </h3>
                 <p>{productObj.action}</p>
               </div>
             </div>
@@ -312,7 +314,7 @@ function Product() {
                 data-aos="fade-left"
                 data-aos-duration="700"
               >
-                <h3>Показания:</h3>
+                <h3>Кўрсаткичлар:</h3>
                 <p>{productObj.testimony}</p>
               </div>
               <div
@@ -320,7 +322,7 @@ function Product() {
                 data-aos="fade-left"
                 data-aos-duration="700"
               >
-                <h3>Противопоказания: </h3>
+                <h3>Контрендикациялар: </h3>
                 <p>{productObj.contraction}</p>
               </div>
             </div>
@@ -361,7 +363,7 @@ function Product() {
 
         <section className="centeredProduct">
           <h3 data-aos="fade-up" data-aos-duration="1000">
-            Доп Информация
+            Қўшимча Маълумот
           </h3>
           <div className="container">
             <div className="centeredProductContainer">

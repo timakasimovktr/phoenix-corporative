@@ -15,7 +15,12 @@ const Header = (props) => {
 
   return (
     <>
-      <div className={`loaderWrapper ${props.hiddenLoader ? '' : 'hiddenLoader'}`}><div className="loaderHeading">Загрузка!</div><div className="loader"></div></div>
+      <div
+        className={`loaderWrapper ${props.hiddenLoader ? "" : "hiddenLoader"}`}
+      >
+        <div className="loaderHeading">Загрузка!</div>
+        <div className="loader"></div>
+      </div>
       <header>
         <div className="header-wrapper container ">
           <div
@@ -33,16 +38,24 @@ const Header = (props) => {
                 </label>
                 <ul className="menu__box">
                   <li>
-                    <Link reloadDocument to={APP_ROUTES.WELCOME}>Главная</Link>
+                    <Link reloadDocument to={APP_ROUTES.WELCOME}>
+                      Asosiy
+                    </Link>
                   </li>
                   <li>
-                    <Link reloadDocument to={APP_ROUTES.CATALOG}>Продукция</Link>
+                    <Link reloadDocument to={APP_ROUTES.CATALOG}>
+                      Маҳсулотлар
+                    </Link>
                   </li>
                   <li>
-                    <Link reloadDocument to={APP_ROUTES.LOGISTICS}>Логистика</Link>
+                    <Link reloadDocument to={APP_ROUTES.LOGISTICS}>
+                      Логистика
+                    </Link>
                   </li>
                   <li>
-                    <Link reloadDocument to={APP_ROUTES.CONTACTS}>Контакты</Link>
+                    <Link reloadDocument to={APP_ROUTES.CONTACTS}>
+                      Алоқалар
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -62,7 +75,7 @@ const Header = (props) => {
                       <img src={rusFlag} alt="rus" />
                     </a>
                     <a>
-                      <p>Узбекский</p>
+                      <p>Узбекча</p>
                       <img src={uzbFlag} alt="uzb" />
                     </a>
                   </div>
