@@ -22,7 +22,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 function Product() {
-  const [qty, setQty] = useState(0);
+  const [qty, setQty] = useState(1);
   const [orderInfo, setOrderInfo] = useState({
     name: "",
     surname: "",
@@ -88,12 +88,7 @@ function Product() {
   }, []);
 
   const sendOrder = () => {
-    if (
-      orderInfo.name &&
-      orderInfo.surname &&
-      orderInfo.phone &&
-      orderInfo.city
-    ) {
+    if (orderInfo.name && orderInfo.surname && orderInfo.phone && orderInfo.city) {
       axios
         .post(`${APP_ROUTES.URL}/orders`, orderInfo)
         .then((response) => {
@@ -129,82 +124,87 @@ function Product() {
           className={`orderPopup ${isOpenOrder ? "" : "hidden"}`}
           onClick={() => closePopup()}
         >
-          <div className="orderWrapper" onClick={(e) => e.stopPropagation()}>
-            <div className="closePopup" onClick={() => closePopup()}></div>
+          <div
+            className='orderWrapper'
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div
+              className='closePopup'
+              onClick={() => closePopup()}
+            ></div>
             <div className={`orderStep1 ${orederStep1 ? "" : "hidden"}`}>
               <h3>Оформить заказ "{productObj.title}"</h3>
               <input
-                type="text"
-                onChange={(e) =>
-                  setOrderInfo({ ...orderInfo, name: e.target.value })
-                }
-                placeholder="Исм"
-                maxLength="30"
+                type='text'
+                onChange={(e) => setOrderInfo({ ...orderInfo, name: e.target.value })}
+                placeholder='Имя'
+                maxLength='30'
               />
               <input
-                type="text"
-                onChange={(e) =>
-                  setOrderInfo({ ...orderInfo, surname: e.target.value })
-                }
-                placeholder="Фамилия"
-                maxLength="30"
+                type='text'
+                onChange={(e) => setOrderInfo({ ...orderInfo, surname: e.target.value })}
+                placeholder='Фамилия'
+                maxLength='30'
               />
               <input
-                onChange={(e) =>
-                  setOrderInfo({ ...orderInfo, phone: e.target.value })
-                }
-                type="tel"
-                placeholder="Телефон раками"
-                maxLength="13"
+                onChange={(e) => setOrderInfo({ ...orderInfo, phone: e.target.value })}
+                type='tel'
+                placeholder='Номер телефона'
+                maxLength='13'
               />
               <select
-                name=""
-                id=""
-                onChange={(e) =>
-                  setOrderInfo({ ...orderInfo, city: e.target.value })
-                }
+                name=''
+                id=''
+                onChange={(e) => setOrderInfo({ ...orderInfo, city: e.target.value })}
               >
-                <option value="" hidden>
-                  Shahar
+                <option
+                  value=''
+                  hidden
+                >
+                  Город
                 </option>
-                <option value="Ташкент">Ташкент</option>
-                <option value="Самарканд">Самарканд</option>
-                <option value="Карши">Карши</option>
-                <option value="Бухара">Бухара</option>
-                <option value="Джизах">Джизах</option>
-                <option value="Андижан">Андижан</option>
-                <option value="Наманган">Наманган</option>
-                <option value="Фергана">Фергана</option>
-                <option value="Хорезм">Хорезм</option>
-                <option value="Навои">Навои</option>
-                <option value="Кашкадарья">Кашкадарья</option>
+                <option value='Ташкент'>Ташкент</option>
+                <option value='Самарканд'>Самарканд</option>
+                <option value='Карши'>Карши</option>
+                <option value='Бухара'>Бухара</option>
+                <option value='Джизах'>Джизах</option>
+                <option value='Андижан'>Андижан</option>
+                <option value='Наманган'>Наманган</option>
+                <option value='Фергана'>Фергана</option>
+                <option value='Хорезм'>Хорезм</option>
+                <option value='Навои'>Навои</option>
+                <option value='Кашкадарья'>Кашкадарья</option>
               </select>
-              <h2>
-                Умумий қиймати: {(productObj?.price * qty).toLocaleString()} сум
-              </h2>
-              <button className="sendOrder" onClick={() => sendOrder()}>
-                Буюртма бериш
+              <h2>Общая стоимость: {(productObj?.price * qty).toLocaleString()} сум</h2>
+              <button
+                className='sendOrder'
+                onClick={() => sendOrder()}
+              >
+                Заказать
               </button>
             </div>
             <div className={`orderStep2 ${orederStep2 ? "" : "hidden"}`}>
-              <img src={successOrder} alt={successOrder} />
-              <h3>Ариза қабул қилинди</h3>
+              <img
+                src={successOrder}
+                alt={successOrder}
+              />
+              <h3>Заявка принята</h3>
               <p>
-                Сизнинг буюртмангиз: {productObj.title} <br /> Миқдори: {qty}{" "}
-                <br /> Бизнинг ходимимиз тез орада <br /> сиз билан боғланади!
+                Ваш заказ: {productObj.title} <br /> Количество: {qty} <br /> Наш сотрудник свяжется с вами <br /> в
+                ближайшее время!
               </p>
             </div>
           </div>
         </div>
-        <section className="shopTextWrapper">
-          <div className="container">
-            <h3>SHOP</h3>
-            <div className="shopline"></div>
-            <p>Find the perfect plant for your space</p>
+        <section className='shopTextWrapper'>
+          <div className='container'>
+            <h3>Магазин</h3>
+            <div className='shopline'></div>
+            {/* <p>Find the perfect plant for your space</p> */}
           </div>
         </section>
-        <section className="productWrapper">
-          <div className="productImages">
+        <section className='productWrapper'>
+          <div className='productImages'>
             <Swiper
               modules={[Autoplay, Navigation]}
               loop={true}
@@ -216,197 +216,221 @@ function Product() {
               }}
               grabCursor={true}
               slidesPerView={1}
-              className="productSwiper"
-              data-aos="zoom-in"
-              data-aos-duration="1200"
-              data-aos-offset="0"
+              className='productSwiper'
+              data-aos='zoom-in'
+              data-aos-duration='1200'
+              data-aos-offset='0'
             >
               {productObj?.image?.images.map((item, index) => (
-                <SwiperSlide key={index} className="slideWrapper">
-                  <img src={item} alt={item} />
+                <SwiperSlide
+                  key={index}
+                  className='slideWrapper'
+                >
+                  <img
+                    src={item}
+                    alt={item}
+                  />
                 </SwiperSlide>
               ))}
             </Swiper>
           </div>
-          <div className="productDescription">
-            <h1 data-aos="zoom-in" data-aos-duration="700" data-aos-offset="0">
+          <div className='productDescription'>
+            <h1
+              data-aos='zoom-in'
+              data-aos-duration='700'
+              data-aos-offset='0'
+            >
               {productObj.title}
             </h1>
-            <p data-aos="zoom-in" data-aos-duration="700" data-aos-offset="0">
+            <p
+              data-aos='zoom-in'
+              data-aos-duration='700'
+              data-aos-offset='0'
+            >
               {productObj.description}
             </p>
             <div
-              className="categoryWrapper"
-              data-aos="zoom-in"
-              data-aos-duration="700"
-              data-aos-offset="0"
+              className='categoryWrapper'
+              data-aos='zoom-in'
+              data-aos-duration='700'
+              data-aos-offset='0'
             >
-              <div className="categoryItem">
-                <Link reloadDocument to={`/collection/${productCategory.id}`}>
+              <div className='categoryItem'>
+                <Link
+                  reloadDocument
+                  to={`/collection/${productCategory.id}`}
+                >
                   {productCategory.title}
                 </Link>
               </div>
             </div>
-            <h3 data-aos="zoom-in" data-aos-duration="700" data-aos-offset="0">
+            <h3
+              data-aos='zoom-in'
+              data-aos-duration='700'
+              data-aos-offset='0'
+            >
               {productObj.price?.toLocaleString()} сум
             </h3>
             <div
-              className="orderWrapper"
-              data-aos="zoom-in"
-              data-aos-duration="700"
-              data-aos-offset="0"
+              className='orderWrapper'
+              data-aos='zoom-in'
+              data-aos-duration='700'
+              data-aos-offset='0'
             >
-              <button onClick={() => clickOnOrderBtn()}>Заказать</button>
-              <div className="qtyInput">
+              <div className='qtyInput'>
                 <p>Количество:</p>
                 <div
-                  className="minus"
-                  onClick={() =>
-                    setQty(
-                      qty > 0
-                        ? [
-                            qty - 1,
-                            setOrderInfo({ ...orderInfo, count: qty - 1 }),
-                          ]
-                        : 0
-                    )
-                  }
+                  className='minus'
+                  onClick={() => setQty(qty > 0 ? [qty - 1, setOrderInfo({ ...orderInfo, count: qty - 1 })] : 0)}
                 >
                   -
                 </div>
-                <div className="number">{qty}</div>
+                <div className='number'>{qty}</div>
                 <div
-                  className="plus"
-                  onClick={() => [
-                    setQty(qty + 1),
-                    setOrderInfo({ ...orderInfo, count: qty + 1 }),
-                  ]}
+                  className='plus'
+                  onClick={() => [setQty(qty + 1), setOrderInfo({ ...orderInfo, count: qty + 1 })]}
                 >
                   +
                 </div>
               </div>
+              <button onClick={() => clickOnOrderBtn()}>Заказать</button>
             </div>
           </div>
         </section>
-        <section className="productRules">
-          <div className="container">
-            <div className="productRulesWrapper">
+        <section className='productRules'>
+          <div className='container'>
+            <div className='productRulesWrapper'>
               <div
-                className="rule"
-                data-aos="fade-right"
-                data-aos-duration="700"
+                className='rule'
+                data-aos='fade-right'
+                data-aos-duration='700'
               >
-                <h3>Таркиби:</h3>
+                <h3>Состав:</h3>
                 <p>{productObj.compound}</p>
               </div>
               <div
-                className="rule"
-                data-aos="fade-right"
-                data-aos-duration="700"
+                className='rule'
+                data-aos='fade-right'
+                data-aos-duration='700'
               >
-                <h3>Препаратнинг таъсири: </h3>
+                <h3>Действие препарата: </h3>
                 <p>{productObj.action}</p>
               </div>
             </div>
-            <div className="productRulesWrapper">
+            <div className='productRulesWrapper'>
               <div
-                className="rule"
-                data-aos="fade-left"
-                data-aos-duration="700"
+                className='rule'
+                data-aos='fade-left'
+                data-aos-duration='700'
               >
-                <h3>Кўрсаткичлар:</h3>
+                <h3>Показания:</h3>
                 <p>{productObj.testimony}</p>
               </div>
               <div
-                className="rule"
-                data-aos="fade-left"
-                data-aos-duration="700"
+                className='rule'
+                data-aos='fade-left'
+                data-aos-duration='700'
               >
-                <h3>Контрендикациялар: </h3>
+                <h3>Противопоказания: </h3>
                 <p>{productObj.contraction}</p>
               </div>
             </div>
           </div>
         </section>
         {productObj?.extra?.info1[0] && (
-          <section className="imgWithTxt rightTxt">
-            <div className="imgWithTxtHeading">
-              <h2 data-aos="fade-left" data-aos-duration="700">
+          <section className='imgWithTxt rightTxt'>
+            <div className='imgWithTxtHeading'>
+              <h2
+                data-aos='fade-left'
+                data-aos-duration='700'
+              >
                 {productObj?.extra?.info1[0]}
               </h2>
-              <p data-aos="fade-left" data-aos-duration="700">
+              <p
+                data-aos='fade-left'
+                data-aos-duration='700'
+              >
                 {productObj?.extra?.info1[1]}
               </p>
             </div>
             <div
-              className="imgWithTxtImg"
+              className='imgWithTxtImg'
               style={{ backgroundImage: `url(${productDesc1})` }}
             ></div>
           </section>
         )}
         {productObj?.extra?.info2[0] && (
-          <section className="imgWithTxt leftTxt">
-            <div className="imgWithTxtHeading">
-              <h2 data-aos="fade-right" data-aos-duration="700">
+          <section className='imgWithTxt leftTxt'>
+            <div className='imgWithTxtHeading'>
+              <h2
+                data-aos='fade-right'
+                data-aos-duration='700'
+              >
                 {productObj?.extra?.info2[0]}
               </h2>
-              <p data-aos="fade-right" data-aos-duration="700">
+              <p
+                data-aos='fade-right'
+                data-aos-duration='700'
+              >
                 {productObj?.extra?.info2[1]}
               </p>
             </div>
             <div
-              className="imgWithTxtImg"
+              className='imgWithTxtImg'
               style={{ backgroundImage: `url(${productDesc2})` }}
             ></div>
           </section>
         )}
 
-        <section className="centeredProduct">
-          <h3 data-aos="fade-up" data-aos-duration="1000">
-            Қўшимча Маълумот
+        <section className='centeredProduct'>
+          <h3
+            data-aos='fade-up'
+            data-aos-duration='1000'
+          >
+            Дополнительные сведения
           </h3>
-          <div className="container">
-            <div className="centeredProductContainer">
-              <div className="centeredProductWrapper">
+          <div className='container'>
+            <div className='centeredProductContainer'>
+              <div className='centeredProductWrapper'>
                 <div
-                  className="centeredTextWrapper"
-                  data-aos="zoom-in"
-                  data-aos-duration="1000"
-                  data-aos-offset="200"
+                  className='centeredTextWrapper'
+                  data-aos='zoom-in'
+                  data-aos-duration='1000'
+                  data-aos-offset='200'
                 >
                   <p>{productObj.compound}</p>
                 </div>
                 <div
-                  className="centeredTextWrapper"
-                  data-aos="zoom-in"
-                  data-aos-duration="1000"
-                  data-aos-offset="200"
+                  className='centeredTextWrapper'
+                  data-aos='zoom-in'
+                  data-aos-duration='1000'
+                  data-aos-offset='200'
                 >
                   <p>{productObj.action}</p>
                 </div>
               </div>
-              <div className="centeredProductImage">
+              <div className='centeredProductImage'>
                 <img
                   src={productObj?.image?.images[0]}
-                  alt="centered product"
-                  data-aos="zoom-in"
-                  data-aos-duration="1000"
+                  alt='centered product'
+                  data-aos='zoom-in'
+                  data-aos-duration='1000'
                 />
               </div>
-              <div className="centeredProductWrapper rotateRightContainer">
+              <div className='centeredProductWrapper rotateRightContainer'>
                 <div
-                  className="centeredTextWrapper"
-                  data-aos="zoom-in"
-                  data-aos-duration="1000"
-                  data-aos-offset="200"
+                  className='centeredTextWrapper'
+                  data-aos='zoom-in'
+                  data-aos-duration='1000'
+                  data-aos-offset='200'
                 >
                   <p>{productObj.testimony}</p>
                 </div>
                 <div
-                  className="centeredTextWrapper"
-                  data-aos="zoom-in"
-                  data-aos-duration="1000"
-                  data-aos-offset="200"
+                  className='centeredTextWrapper'
+                  data-aos='zoom-in'
+                  data-aos-duration='1000'
+                  data-aos-offset='200'
                 >
                   <p>{productObj.contraction}</p>
                 </div>
@@ -416,17 +440,23 @@ function Product() {
         </section>
 
         {productObj?.extra?.info3[0] && (
-          <section className="imgWithTxt rightTxt">
-            <div className="imgWithTxtHeading">
-              <h2 data-aos="fade-left" data-aos-duration="700">
+          <section className='imgWithTxt rightTxt'>
+            <div className='imgWithTxtHeading'>
+              <h2
+                data-aos='fade-left'
+                data-aos-duration='700'
+              >
                 {productObj?.extra?.info3[0]}
               </h2>
-              <p data-aos="fade-left" data-aos-duration="700">
+              <p
+                data-aos='fade-left'
+                data-aos-duration='700'
+              >
                 {productObj?.extra?.info3[1]}
               </p>
             </div>
             <div
-              className="imgWithTxtImg"
+              className='imgWithTxtImg'
               style={{ backgroundImage: `url(${productDesc3})` }}
             ></div>
           </section>

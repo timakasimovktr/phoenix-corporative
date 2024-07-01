@@ -1,0 +1,50 @@
+.tabsBlock{
+    .blockTabs{
+        display: flex;
+        column-gap: 50px;
+        .tabs{
+            padding: 5px;
+            border-radius: 6px;
+            border: 1px solid #fff500;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            &.active{
+                background: #fff500;
+                color: black;
+                &::before{
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: -5px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: calc(100% + 2px);
+                    height: 5px;
+                }
+            }
+            &:hover{
+                background: #fff500;
+                color: black;
+            }
+        }
+        
+    }
+    .contentTabs{
+        .content{
+            padding-top: 20px;
+            width: 100%;
+            height: 150px;
+            display: none;
+            &.activeContent{
+                display: block;
+            }
+            h2{
+                text-align: center;
+            }
+            p{
+                text-align: center;
+            }
+        }
+        
+    }
+}
