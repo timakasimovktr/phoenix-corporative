@@ -8,7 +8,7 @@ const Tabs = () => {
   };
   return (
     <div className='tabsBlock'>
-      <div className='container'>
+      <div className='container tabsContainer'>
         <div className='blockTabs'>
           <div
             className={toggleState === 1 ? "tabs active" : "tabs"}

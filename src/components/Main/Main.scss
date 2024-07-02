@@ -855,6 +855,19 @@ main {
   background: #000000;
   .swiper-wrapper{
     justify-content: center;
+    align-items: center;
+    @media screen and (max-width: 780px){
+      flex-direction: column;
+    }
+    img{
+      width: 100%;
+      @media screen and (max-width: 991px){
+        width: 200px;
+      }
+      @media screen and (max-width: 780px){
+        width: 150px;
+      }
+    }
   }
   .slideWrapper {
     display: flex;

@@ -331,7 +331,7 @@ function Main() {
                 },
                 768: {
                   slidesPerView: 3,
-                  spaceBetween: 30,
+                  spaceBetween: 10,
                 },
                 992: {
                   slidesPerView: 5,
@@ -344,7 +344,7 @@ function Main() {
                 style={{ height: "150px" }}
               >
                 <img
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  style={{ height: "100%", objectFit: "cover" }}
                   src={euphoria}
                   alt=''
                 />
@@ -355,7 +355,7 @@ function Main() {
               >
                 {" "}
                 <img
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  style={{ height: "100%", objectFit: "cover" }}
                   src={arbit}
                   alt='arbit'
                 />
@@ -365,7 +365,7 @@ function Main() {
                 style={{ height: "150px" }}
               >
                 <img
-                  style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                  style={{ height: "100%", objectFit: "contain" }}
                   src={phoenix}
                   alt='phoenix'
                 />

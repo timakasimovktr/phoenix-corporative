@@ -6,7 +6,6 @@ import image from '../../images/second.glb'
 
 export default function Model({mouse}) {
   const [activeShape, setActiveShape] = useState(1);
-
   useEffect( () => {
     setTimeout( () => {
       if(activeShape == 11){
