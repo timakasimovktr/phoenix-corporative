@@ -1,5 +1,5 @@
 export const APP_ROUTES = {
-  URL: 'http://localhost:3002',
+  URL: 'https://euphoria-group.uz/api',
   WELCOME: `/`,
   CATALOG: '/catalog',
   PRODUCT: '/product/:id',
