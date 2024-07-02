@@ -305,6 +305,32 @@ main {
   }
 }
 
+.imgWithTxt.logisticBlock{
+  display: flex;
+  flex-direction: row;
+  @media screen and (max-width: 850px){
+    padding: 50px 30px;
+  }
+  .imgWithTxtImg{
+    margin: 30px;
+    @media screen and (max-width: 850px){
+      margin: 0;
+    }
+  }
+  .imgWithTxtHeading{
+    padding: 30px;
+    @media screen and (max-width: 850px){
+      padding: 0;
+    }
+  }
+  .imgWithTxtHeading h2{
+    text-align: start;
+  }
+  @media screen and (max-width: 850px){
+    flex-direction: column;
+  }
+}
+
 .imgWithTxt {
   width: 100%;
   display: flex;

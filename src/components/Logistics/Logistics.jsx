@@ -10,7 +10,7 @@ const Logistics = () => {
   return (
     <>
       <Header />
-      <section className="imgWithTxt">
+      <section className="imgWithTxt logisticBlock">
         <div className="imgWithTxtHeading">
           <h2>Логистика</h2>
           <p>
