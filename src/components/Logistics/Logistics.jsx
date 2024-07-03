@@ -10,24 +10,25 @@ const Logistics = () => {
   return (
     <>
       <Header />
-      <section className="imgWithTxt logisticBlock">
-        <div className="imgWithTxtHeading">
+      <section className='imgWithTxt logisticBlock'>
+        <div className='imgWithTxtHeading'>
           <h2>Логистика</h2>
           <p>
-            "Euphoria group"нинг дунёсига хуш келибсиз! Биз битта умумий миссия:
-            одамларга соғлом турмуш тарзини олиб боришга ёрдам бериш учун
-            бирлаштирилган учта динамик компаниялармиз. Битта бренд остида
-            тўпланган колл-марказлар жамоалари, маркетинг ва логистика
-            мутахассислари саккиз йилдан ортиқ вақт давомида сизнинг
-            фаровонлигингизга ҳисса қўшадиган юқори сифатли маҳсулотлар ва
-            хизматларни тақдим этиш учун биргаликда ишламоқда. 
+            Мы гордимся нашими филиалами в трех странах, что позволяет обеспечить быструю и надежную доставку наших
+            БАДов по всей стране. Наша логистическая сеть гарантирует, что ваш заказ прибудет в кратчайшие сроки.
+            Независимо от вашего местоположения, вы можете быть уверены в качестве и своевременности доставки наших
+            продуктов.
           </p>
-          <Link reloadDocument to={APP_ROUTES.WELCOME} className="br10">
+          <Link
+            reloadDocument
+            to={APP_ROUTES.WELCOME}
+            className='br10'
+          >
             Asosiy
           </Link>
         </div>
         <div
-          className="imgWithTxtImg"
+          className='imgWithTxtImg'
           style={{ backgroundImage: `url(${logistics})` }}
         ></div>
       </section>
