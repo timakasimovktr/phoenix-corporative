@@ -8,10 +8,18 @@ import "./Header.scss";
 import rusFlag from "../../images/Rus-Flag.svg";
 import uzbFlag from "../../images/Uzb-Flag.svg";
 import { Outlet, Link } from "react-router-dom";
-
+import { useTranslation } from "react-i18next";
+const flagMap = {
+  ru: { flag: rusFlag, label: "Русский" },
+  uz: { flag: uzbFlag, label: "Узбекча" },
+};
 const Header = (props) => {
   const navigation = useNavigate();
   const [changeLanguage, setChangeLanguage] = useState(false);
+  const { t, i18n } = useTranslation();
+  const handleLanguageChange = (language) => {
+    i18n.changeLanguage(language);
+  };
 
   return (
     <>
@@ -49,7 +57,7 @@ const Header = (props) => {
                       reloadDocument
                       to={APP_ROUTES.WELCOME}
                     >
-                      Главная
+                      {t("blocks.header.main")}
                     </Link>
                   </li>
                   <li>
@@ -57,7 +65,7 @@ const Header = (props) => {
                       reloadDocument
                       to={APP_ROUTES.CATALOG}
                     >
-                      Продукция
+                      {t("blocks.header.products")}
                     </Link>
                   </li>
                   <li>
@@ -65,7 +73,7 @@ const Header = (props) => {
                       reloadDocument
                       to={APP_ROUTES.LOGISTICS}
                     >
-                      Логистика
+                      {t("blocks.header.logistic")}
                     </Link>
                   </li>
                   <li>
@@ -73,7 +81,7 @@ const Header = (props) => {
                       reloadDocument
                       to={APP_ROUTES.CONTACTS}
                     >
-                      Контакты
+                      {t("blocks.header.contacts")}
                     </Link>
                   </li>
                 </ul>
@@ -89,20 +97,18 @@ const Header = (props) => {
               {changeLanguage && (
                 <>
                   <div className='change-language-block br10'>
-                    <a>
-                      <p>Русский</p>
-                      <img
-                        src={rusFlag}
-                        alt='rus'
-                      />
-                    </a>
-                    <a>
-                      <p>Узбекча</p>
-                      <img
-                        src={uzbFlag}
-                        alt='uzb'
-                      />
-                    </a>
+                    {Object.keys(flagMap).map((language) => (
+                      <a
+                        key={language}
+                        onClick={() => handleLanguageChange(language)}
+                      >
+                        <p>{flagMap[language].label}</p>
+                        <img
+                          src={flagMap[language].flag}
+                          alt={language}
+                        />
+                      </a>
+                    ))}
                   </div>
                 </>
               )}

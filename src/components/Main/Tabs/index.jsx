@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "./styles.scss";
+import { useTranslation } from "react-i18next";
 
 const Tabs = () => {
+  const { t } = useTranslation();
   const [toggleState, setToggleState] = useState(1);
   const toggleTab = (index) => {
     setToggleState(index);
@@ -14,55 +16,43 @@ const Tabs = () => {
             className={toggleState === 1 ? "tabs active" : "tabs"}
             onClick={() => toggleTab(1)}
           >
-            Надежность
+            {t("blocks.tabsBlock.title1")}
           </div>
           <div
             className={toggleState === 2 ? "tabs active" : "tabs"}
             onClick={() => toggleTab(2)}
           >
-            Состав
+            {t("blocks.tabsBlock.title2")}
           </div>
           <div
             className={toggleState === 3 ? "tabs active" : "tabs"}
             onClick={() => toggleTab(3)}
           >
-            Эстетика
+            {t("blocks.tabsBlock.title3")}
           </div>
           <div
             className={toggleState === 4 ? "tabs active" : "tabs"}
             onClick={() => toggleTab(4)}
           >
-            Помощь
+            {t("blocks.tabsBlock.title4")}
           </div>
         </div>
         <div className='contentTabs'>
           <div className={toggleState === 1 ? "content activeContent" : "content"}>
-            <h2>Мы это - надежность</h2>
-            <p>
-              Euphoria на рынке с 2017 года и за это время помогла уже более чем +100.000 человек. Нам доверяют самое
-              дорогое.
-            </p>
+            <h2>{t("blocks.tabsBlock.subtitle1")}</h2>
+            <p>{t("blocks.tabsBlock.text1")}</p>
           </div>
           <div className={toggleState === 2 ? "content activeContent" : "content"}>
-            <h2>Наше преимущество - состав</h2>
-            <p>
-              Опираемся на знание природы. Наши технологии основаны на принципах создания биодоступных форм нутриентов,
-              необходимых для обеспечения устойчивого сохранения организма человека.
-            </p>
+            <h2>{t("blocks.tabsBlock.subtitle2")}</h2>
+            <p>{t("blocks.tabsBlock.text2")}</p>
           </div>
           <div className={toggleState === 3 ? "content activeContent" : "content"}>
-            <h2>Эстетика - это про нас</h2>
-            <p>
-              Создаем красоту. Мы подошли к тому, чтобы наши продукты не только приносили пользу здоровью, но и
-              доставляли эстетическое удовольствие при использовании.
-            </p>
+            <h2>{t("blocks.tabsBlock.subtitle3")}</h2>
+            <p>{t("blocks.tabsBlock.text3")}</p>
           </div>
           <div className={toggleState === 4 ? "content activeContent" : "content"}>
-            <h2>Наша команда - специалисты своего дела</h2>
-            <p>
-              Наши специалисты всегда готовы помочь вам в подборе нужного продукта. Мы не придерживаемся принципа «лишь
-              бы продать». Наш ориентир — ваши цели и потребности.
-            </p>
+            <h2>{t("blocks.tabsBlock.subtitle4")}</h2>
+            <p>{t("blocks.tabsBlock.text4")}</p>
           </div>
         </div>
       </div>

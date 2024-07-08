@@ -11,7 +11,7 @@ import "./Product.scss";
 import { Outlet, Link } from "react-router-dom";
 import { APP_ROUTES } from "../../router/Route";
 import successOrder from "../../images/successOrder.svg";
-import productDesc1 from "../../images/productDesc1.jpg";
+import productDesc12 from "../../images/productDesc12.jpg";
 import productDesc2 from "../../images/productDesc2.jpg";
 import productDesc3 from "../../images/productDesc3.jpg";
 
@@ -355,12 +355,12 @@ function Product() {
             </div>
             <div
               className='imgWithTxtImg'
-              style={{ backgroundImage: `url(${productDesc1})` }}
+              style={{ backgroundImage: `url(${productDesc12})` }}
             ></div>
           </section>
         )}
         {productObj?.extra?.info2[0] && (
-          <section className='imgWithTxt leftTxt'>
+          <section className='imgWithTxt leftTxt logisticBlock'>
             <div className='imgWithTxtHeading'>
               <h2
                 data-aos='fade-right'

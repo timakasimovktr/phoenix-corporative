@@ -20,8 +20,10 @@ import asiaMap from "../../images/asiamap.png";
 //sections
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import { useTranslation } from "react-i18next";
 
 function Contacts() {
+  const { t, i18n } = useTranslation();
   return (
     <>
       <Header />
@@ -29,7 +31,7 @@ function Contacts() {
         <section className='imgWithTxt imgWithTxtContacts'>
           <div className='container'>
             <div className='imgWithTxtHeading'>
-              <h2>Бизнес-экосистема</h2>
+              <h2>{t("headings.contacts")}</h2>
               <p>
                 Мы предлагаем широкий ассортимент товаров и имеем офисы в трех странах. Для вашего удобства мы также
                 открыли интернет-магазин, который обеспечивает доставку по всей стране. Это позволит вам полностью

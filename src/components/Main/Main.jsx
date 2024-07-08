@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { IMaskInput } from "react-imask";
 import { Autoplay, Navigation, EffectCards, FreeMode } from "swiper/modules";
 import "swiper/css/bundle";
 
@@ -12,12 +13,17 @@ import { Outlet, Link } from "react-router-dom";
 //images
 import complexSupport from "../../images/Complex-Sup-Woman.png";
 import marketingLine from "../../images/Marketing-Line.svg";
-import marketingLineBG from "../../images/Marketing-Half-line.svg";
+import marketingImgBlock from "../../images/marketingImgBlock1.Png";
 import productItem from "../../images/productItem.png";
 import productItemAfter from "../../images/productItemAfter.png";
 import euphoriaRefferal from "../../images/Euphoria-refferal.png";
 import sliderArrow from "../../images/sliderArrow.png";
 import quotationMark from "../../images/“.svg";
+import girl1 from "../../images/girl1.jpg";
+import girl2 from "../../images/girl2.jpg";
+import boy1 from "../../images/boy1.jpg";
+import boy2 from "../../images/boy2.jpg";
+import boy3 from "../../images/boy3.jpg";
 import commentsRight from "../../images/commentsRight.png";
 import commentsLeft from "../../images/commnetsLeft.png";
 import person from "../../images/person.png";
@@ -62,6 +68,8 @@ import ParallaxText from "./FramerText";
 import Index from "../floatingShape";
 import IndexSecond from "../floatingShape/secondFloating";
 
+import { useTranslation } from "react-i18next";
+
 export const Title = styled(motion.h1)`
   font-family: var(--font-primary);
   color: white;
@@ -74,9 +82,16 @@ export const Title = styled(motion.h1)`
 `;
 
 function Main() {
+  const { t } = useTranslation();
   const [isLoader, setIsLoader] = useState(true);
   const [isQuestions, setIsQuestions] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
+  const phoneMask = "+998 (00) 000-00-00";
+  const Mask = [
+    {
+      mask: phoneMask,
+    },
+  ];
 
   const handleClick = (index) => {
     setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
@@ -104,47 +119,42 @@ function Main() {
     {
       id: 1,
       title: "Anfa Oku Vital",
-      description:
-        "Восполняет баланс Омега-3 жирных кислот в организме. Оказывает комплексное антиоксидантное действие на сетчатку глаза, предотвращает синдром «сухого глаза»",
+      description: `${t("blocks.productsBlock.description1")}`,
       cardImage: Anfa,
       imageAlt: "Anfa",
     },
     {
       id: 2,
       title: "Visu Caps",
-      description:
-        "Защищает глаза от усталости, раздражения и нарушений зрения. Поддерживает органы зрения важными питательными веществами, витаминами и микроэлементами",
+      description: `${t("blocks.productsBlock.description2")}`,
       cardImage: Visu,
       imageAlt: "Visu",
     },
     {
       id: 3,
       title: "Гипертофорт",
-      description:
-        "Помогает расширить и очистить кровеносные сосуды. Стабилизирует деятельность системы кровообращения и работу сердечной мышцы ",
+      description: `${t("blocks.productsBlock.description3")}`,
       cardImage: hypert,
       imageAlt: "hypert",
     },
     {
       id: 4,
       title: "Диабетик Форте",
-      description: "Способствует нормализации уровеня сахара в крови. Снимает симптомы сахарного диабета и снижает вес",
+      description: `${t("blocks.productsBlock.description4")}`,
       cardImage: diabetic,
       imageAlt: "diabetic",
     },
     {
       id: 5,
       title: "Men's Power",
-      description:
-        "Помогает в решении проблемы с перенесенным простатитом. Для профилактики или лечения острого простатита и аденомы предстательной железы",
+      description: `${t("blocks.productsBlock.description5")}`,
       cardImage: mens,
       imageAlt: "mens",
     },
     {
       id: 6,
       title: "ParazitOFF",
-      description:
-        "Активно борется с стафилококком, стрептококком, гонококком и гельминтами. Благодаря высокому содержанию цинеола, обладает бактерицидными свойствами.",
+      description: `${t("blocks.productsBlock.description6")}`,
       cardImage: ParazitOFF,
       imageAlt: "ParazitOFF",
     },
@@ -152,48 +162,76 @@ function Main() {
     {
       id: 7,
       title: "SLIMFIT",
-      description:
-        "Снижает аппетит и помогает контролировать чувство голода. Капсулы включают витамины и макроэлементы, и организм получает необходимые ему вещества",
+      description: `${t("blocks.productsBlock.description7")}`,
       cardImage: slimft,
       imageAlt: "slimft",
     },
     {
       id: 8,
       title: "Power KETO",
-      description:
-        "Способствует снижению веса. Содержащейся в комплексе компоненты способствуют в ускорении обмена веществ.",
+      description: `${t("blocks.productsBlock.description8")}`,
       cardImage: Power,
       imageAlt: "Power",
     },
   ];
 
   const mainBannerCardsItems = [
-    { id: 1, imgBefore: AnfaWihoutBg, imgAfter: AnfaWihoutBg, sideTitle: "Anfa Oku Vital", sideSubtitle: "скидка 30" },
-    { id: 2, imgBefore: VisuWithoutBg, imgAfter: VisuWithoutBg, sideTitle: "Visu Caps", sideSubtitle: "скидка 30" },
+    {
+      id: 1,
+      imgBefore: AnfaWihoutBg,
+      imgAfter: AnfaWihoutBg,
+      sideTitle: "Anfa Oku Vital",
+      sideSubtitle: `${t("blocks.mainBlock.sale")}`,
+    },
+    {
+      id: 2,
+      imgBefore: VisuWithoutBg,
+      imgAfter: VisuWithoutBg,
+      sideTitle: "Visu Caps",
+      sideSubtitle: `${t("blocks.mainBlock.sale")}`,
+    },
     {
       id: 3,
       imgBefore: hypertWithoutBg,
       imgAfter: hypertWithoutBg,
       sideTitle: "Гипертофорт",
-      sideSubtitle: "скидка 30",
+      sideSubtitle: `${t("blocks.mainBlock.sale")}`,
     },
     {
       id: 4,
       imgBefore: diabeticWithoutBg,
       imgAfter: diabeticWithoutBg,
       sideTitle: "Диабетик Форте",
-      sideSubtitle: "скидка 30",
+      sideSubtitle: `${t("blocks.mainBlock.sale")}`,
     },
-    { id: 5, imgBefore: mensWithoutBg, imgAfter: mensWithoutBg, sideTitle: "Men's Power", sideSubtitle: "скидка 30" },
+    {
+      id: 5,
+      imgBefore: mensWithoutBg,
+      imgAfter: mensWithoutBg,
+      sideTitle: "Men's Power",
+      sideSubtitle: `${t("blocks.mainBlock.sale")}`,
+    },
     {
       id: 6,
       imgBefore: ParazitOFFWithoutBg,
       imgAfter: ParazitOFFWithoutBg,
       sideTitle: "ParazitOFF",
-      sideSubtitle: "скидка 30",
+      sideSubtitle: `${t("blocks.mainBlock.sale")}`,
     },
-    { id: 7, imgBefore: slimftWithoutBg, imgAfter: slimftWithoutBg, sideTitle: "SLIMFIT", sideSubtitle: "скидка 30" },
-    { id: 8, imgBefore: PowerWihoutBg, imgAfter: PowerWihoutBg, sideTitle: "Power KETO", sideSubtitle: "скидка 30" },
+    {
+      id: 7,
+      imgBefore: slimftWithoutBg,
+      imgAfter: slimftWithoutBg,
+      sideTitle: "SLIMFIT",
+      sideSubtitle: `${t("blocks.mainBlock.sale")}`,
+    },
+    {
+      id: 8,
+      imgBefore: PowerWihoutBg,
+      imgAfter: PowerWihoutBg,
+      sideTitle: "Power KETO",
+      sideSubtitle: `${t("blocks.mainBlock.sale")}`,
+    },
   ];
 
   return (
@@ -212,14 +250,14 @@ function Main() {
                 data-aos-duration='700'
                 data-aos-delay='500'
               >
-                Для здоровой и активной жизни выбирай Эйфорию.
+                {t("headings.main")}
               </h1>
               <p
                 data-aos='fade-right'
                 data-aos-duration='700'
                 data-aos-delay='800'
               >
-                Только природные компоненты. Все средства безопасны для здоровья
+                {t("blocks.mainBlock.subtitle")}
               </p>
               <div className='mainBannerPartners'>
                 <Link
@@ -388,7 +426,7 @@ function Main() {
               data-aos='fade-right'
               data-aos-duration='700'
             >
-              Комплексная поддержка организма
+              {t("headings.bodySupport")}
             </h2>
             {/* <p
               data-aos='fade-right'
@@ -472,16 +510,14 @@ function Main() {
               data-aos-duration='700'
               data-aos-offset='20'
             >
-              Маркетинговая линейка
+              {t("headings.bioAdds")}
             </h2>
             <p
               data-aos='fade-right'
               data-aos-duration='700'
               data-aos-offset='20'
             >
-              Далеко-далеко за, словесными горами в стране гласных и согласных живут рыбные тексты. Рот, использовало.
-              Рекламных семь маленькая он сих агентство своего. Необходимыми диких алфавит встретил строчка имеет они
-              запятых дорогу, до то большой, сбить даль.
+              {t("blocks.bioAdds.subtitle")}
             </p>
             <img
               src={marketingLine}
@@ -490,7 +526,7 @@ function Main() {
               data-aos-duration='700'
               data-aos-offset='20'
             />
-            <p
+            {/* <p
               data-aos='fade-right'
               data-aos-duration='700'
               data-aos-offset='20'
@@ -498,8 +534,8 @@ function Main() {
               Далеко-далеко за, словесными горами в стране гласных и согласных живут рыбные тексты. Рот, использовало.
               Рекламных семь маленькая он сих агентство своего. Необходимыми диких алфавит встретил строчка имеет они
               запятых дорогу, до то большой, сбить даль.
-            </p>
-            <Link
+            </p> */}
+            {/* <Link
               reloadDocument
               to={APP_ROUTES.PRODUCTS}
               className='br10'
@@ -512,13 +548,19 @@ function Main() {
                 src={sliderArrow}
                 alt={sliderArrow}
               />
+            </Link> */}
+            <Link
+              onClick={() => setIsQuestions(true)}
+              className='br10'
+            >
+              {t("blocks.bioAdds.buttonText")}
             </Link>
           </div>
           <div className='marketingImg'>
-            {/* <img
-              src={marketingLineBG}
-              alt={marketingLineBG}
-            /> */}
+            <img
+              src={marketingImgBlock}
+              alt={marketingImgBlock}
+            />
           </div>
         </section>
 
@@ -553,17 +595,14 @@ function Main() {
                           alt={quotationMark}
                         />
                       </div>
-                      <p>
-                        Благодарен Euphoria за их слаженную и быструю работу, логистика на высшем уровне, все очень
-                        оперативно доставили!
-                      </p>
+                      <p>{t("blocks.reviewsSlider.text1")}</p>
                       <div className='iconPerson'>
                         <img
-                          src={person}
+                          src={boy1}
                           alt={person}
                         />
                       </div>
-                      <h3>Артур Гиясов </h3>
+                      <h3>{t("blocks.reviewsSlider.name1")} </h3>
                       {/* <h4>Кандидат наук в отрасли бадов</h4> */}
                     </SwiperSlide>
                     <SwiperSlide className='slideWrapper'>
@@ -573,17 +612,14 @@ function Main() {
                           alt={quotationMark}
                         />
                       </div>
-                      <p>
-                        Пропила курс SlimFit результаты не заставили себя ждать, уже через месяц ушли объемы в талии и
-                        бедрах. Хорошие показатели и на весах.
-                      </p>
+                      <p>{t("blocks.reviewsSlider.text2")}</p>
                       <div className='iconPerson'>
                         <img
-                          src={person}
+                          src={girl1}
                           alt={person}
                         />
                       </div>
-                      <h3>Одина Исломова</h3>
+                      <h3>{t("blocks.reviewsSlider.name2")}</h3>
                       {/* <h4>Кандидат наук в отрасли бадов</h4> */}
                     </SwiperSlide>
 
@@ -594,17 +630,14 @@ function Main() {
                           alt={quotationMark}
                         />
                       </div>
-                      <p>
-                        Хочу сказать спасибо команде специалистов, которые грамотно и доходчиво проконсультировали.
-                        Очень вежливые и внимательные операторы в call-center.
-                      </p>
+                      <p>{t("blocks.reviewsSlider.text3")}</p>
                       <div className='iconPerson'>
                         <img
-                          src={person}
+                          src={boy2}
                           alt={person}
                         />
                       </div>
-                      <h3>Шерзод Махмудов</h3>
+                      <h3>{t("blocks.reviewsSlider.name3")}</h3>
                       {/* <h4>Кандидат наук в отрасли бадов</h4> */}
                     </SwiperSlide>
 
@@ -615,17 +648,14 @@ function Main() {
                           alt={quotationMark}
                         />
                       </div>
-                      <p>
-                        Редко пишу отзывы, но после 3 месяцев использования Anfa Oku Vital, глаза после длительного
-                        рабочего дня совсем не устают, нет красноты и сухости. Рекомендую!
-                      </p>
+                      <p>{t("blocks.reviewsSlider.text4")}</p>
                       <div className='iconPerson'>
                         <img
-                          src={person}
+                          src={boy3}
                           alt={person}
                         />
                       </div>
-                      <h3>Алишер Абдуллаев </h3>
+                      <h3>{t("blocks.reviewsSlider.name4")} </h3>
                       {/* <h4>Кандидат наук в отрасли бадов</h4> */}
                     </SwiperSlide>
                     <SwiperSlide className='slideWrapper'>
@@ -635,17 +665,14 @@ function Main() {
                           alt={quotationMark}
                         />
                       </div>
-                      <p>
-                        Начала пить «Сустафлекс» ещё в начале мая, через неделю применения чувствуется, что колени уже
-                        не ноют на погоду, и вечерние прогулки даются легче.
-                      </p>
+                      <p>{t("blocks.reviewsSlider.text5")}</p>
                       <div className='iconPerson'>
                         <img
-                          src={person}
+                          src={girl2}
                           alt={person}
                         />
                       </div>
-                      <h3>Людмила Прохорова</h3>
+                      <h3>{t("blocks.reviewsSlider.name5")}</h3>
                       {/* <h4>Кандидат наук в отрасли бадов</h4> */}
                     </SwiperSlide>
                   </Swiper>
@@ -682,17 +709,14 @@ function Main() {
                           alt={quotationMark}
                         />
                       </div>
-                      <p>
-                        Благодарен Euphoria за их слаженную и быструю работу, логистика на высшем уровне, все очень
-                        оперативно доставили!
-                      </p>
+                      <p>{t("blocks.reviewsSlider.text1")}</p>
                       <div className='iconPerson'>
                         <img
-                          src={person}
+                          src={boy1}
                           alt={person}
                         />
                       </div>
-                      <h3>Артур Гиясов </h3>
+                      <h3>{t("blocks.reviewsSlider.name1")}</h3>
                       {/* <h4>Кандидат наук в отрасли бадов</h4> */}
                     </SwiperSlide>
                     <SwiperSlide className='slideWrapper'>
@@ -702,17 +726,14 @@ function Main() {
                           alt={quotationMark}
                         />
                       </div>
-                      <p>
-                        Пропила курс SlimFit результаты не заставили себя ждать, уже через месяц ушли объемы в талии и
-                        бедрах. Хорошие показатели и на весах.
-                      </p>
+                      <p>{t("blocks.reviewsSlider.text2")}</p>
                       <div className='iconPerson'>
                         <img
-                          src={person}
+                          src={girl1}
                           alt={person}
                         />
                       </div>
-                      <h3>Одина Исломова</h3>
+                      <h3>{t("blocks.reviewsSlider.name2")}</h3>
                       {/* <h4>Кандидат наук в отрасли бадов</h4> */}
                     </SwiperSlide>
 
@@ -723,17 +744,14 @@ function Main() {
                           alt={quotationMark}
                         />
                       </div>
-                      <p>
-                        Хочу сказать спасибо команде специалистов, которые грамотно и доходчиво проконсультировали.
-                        Очень вежливые и внимательные операторы в call-center.
-                      </p>
+                      <p>{t("blocks.reviewsSlider.text3")}</p>
                       <div className='iconPerson'>
                         <img
-                          src={person}
+                          src={boy2}
                           alt={person}
                         />
                       </div>
-                      <h3>Шерзод Махмудов</h3>
+                      <h3>{t("blocks.reviewsSlider.name3")}</h3>
                       {/* <h4>Кандидат наук в отрасли бадов</h4> */}
                     </SwiperSlide>
 
@@ -744,17 +762,14 @@ function Main() {
                           alt={quotationMark}
                         />
                       </div>
-                      <p>
-                        Редко пишу отзывы, но после 3 месяцев использования Anfa Oku Vital, глаза после длительного
-                        рабочего дня совсем не устают, нет красноты и сухости. Рекомендую!
-                      </p>
+                      <p>{t("blocks.reviewsSlider.text4")}</p>
                       <div className='iconPerson'>
                         <img
-                          src={person}
+                          src={boy3}
                           alt={person}
                         />
                       </div>
-                      <h3>Алишер Абдуллаев </h3>
+                      <h3>{t("blocks.reviewsSlider.name4")}</h3>
                       {/* <h4>Кандидат наук в отрасли бадов</h4> */}
                     </SwiperSlide>
                     <SwiperSlide className='slideWrapper'>
@@ -764,17 +779,14 @@ function Main() {
                           alt={quotationMark}
                         />
                       </div>
-                      <p>
-                        Начала пить «Сустафлекс» ещё в начале мая, через неделю применения чувствуется, что колени уже
-                        не ноют на погоду, и вечерние прогулки даются легче.
-                      </p>
+                      <p>{t("blocks.reviewsSlider.text5")}</p>
                       <div className='iconPerson'>
                         <img
-                          src={person}
+                          src={girl2}
                           alt={person}
                         />
                       </div>
-                      <h3>Людмила Прохорова</h3>
+                      <h3>{t("blocks.reviewsSlider.name5")}</h3>
                       {/* <h4>Кандидат наук в отрасли бадов</h4> */}
                     </SwiperSlide>
                   </Swiper>
@@ -792,15 +804,14 @@ function Main() {
                 data-aos-duration='700'
                 data-aos-offset='20'
               >
-                Получите все привелегии Эйфории
+                {t("headings.referal")}
               </h2>
               <h3
                 data-aos='fade-right'
                 data-aos-duration='700'
                 data-aos-offset='20'
               >
-                Реферальная платформа создана для того что бы каждый мог зарабатывать на том на чем он будет
-                зарабатывать
+                {t("blocks.referalBlock.subtitle")}
               </h3>
               <Link
                 reloadDocument
@@ -810,7 +821,7 @@ function Main() {
                 data-aos-duration='700'
                 data-aos-offset='20'
               >
-                Подробнее
+                {t("blocks.referalBlock.buttonText")}
               </Link>
             </div>
             <div className='referralImg'>
@@ -828,7 +839,7 @@ function Main() {
         <section className='survey'>
           <div className='container'>
             <div className='surveyHeading'>
-              <h2>Почему мы?</h2>
+              <h2>{t("headings.whyWe")}</h2>
               <div className='surveyLine'></div>
             </div>
             {/* <div className='surveyCards'>
@@ -844,12 +855,12 @@ function Main() {
               </div>
             </div> */}
             <Tabs />
-            <Link
+            {/* <Link
               onClick={() => setIsQuestions(true)}
               className='br10'
             >
               Пройти опрос
-            </Link>
+            </Link> */}
             <div className='surveyText'>
               <ParallaxText baseVelocity={-5}>Euphoria</ParallaxText>
               <ParallaxText baseVelocity={5}>AirohpuE</ParallaxText>
@@ -868,15 +879,14 @@ function Main() {
                 data-aos-duration='700'
                 data-aos-offset='20'
               >
-                Нужна помощь?
+                {t("headings.doYouNeedHelp")}
               </h2>
               <p
                 data-aos='fade-right'
                 data-aos-duration='700'
                 data-aos-offset='20'
               >
-                Если у вас остались дополнительные вопросы или нужна помощь в подборе товара, заполните форму справа и
-                наши специалисты свяжутся с вами в ближайшее время.
+                {t("blocks.contactsBlock.subtitle")}
               </p>
             </div>
             <div className='contactForm'>
@@ -885,7 +895,7 @@ function Main() {
                 action='POST'
               >
                 <div className='formTitle'>
-                  <h2 className='title'>Оставьте свою заявку</h2>
+                  <h2 className='title'>{t("blocks.contactsBlock.form.title")}</h2>
                 </div>
                 {/* <div className='formSubtitle'>
                   <p className='subTitle'>
@@ -899,7 +909,7 @@ function Main() {
                     name='name'
                     required
                   />
-                  <span>Имя</span>
+                  <span>{t("blocks.contactsBlock.form.name")}</span>
                 </div>
                 <div className='inputBox'>
                   <input
@@ -907,27 +917,35 @@ function Main() {
                     name='surname'
                     required
                   />
-                  <span>Фамилия</span>
+                  <span>{t("blocks.contactsBlock.form.lastName")}</span>
                 </div>
                 <div className='inputBox'>
-                  <input
+                  {/* <input
                     type='tel'
                     name='phone'
                     pattern='[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}'
                     required
                     maxLength={13}
+                  /> */}
+                  <IMaskInput
+                    type='tel'
+                    name='phone'
+                    mask={Mask}
+                    pattern='[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}'
+                    maxLength={19}
+                    required
                   />
-                  <span>Номер телефона</span>
+                  <span>{t("blocks.contactsBlock.form.phone")}</span>
                 </div>
                 <div className='inputBox'>
                   <textarea
                     name='sms'
                     required
                   ></textarea>
-                  <span>Ваше сообщение</span>
+                  <span>{t("blocks.contactsBlock.form.message")}</span>
                 </div>
                 <div className='formBtn'>
-                  <button type='submit'>Отправить</button>
+                  <button type='submit'>{t("blocks.contactsBlock.form.buttonText")}</button>
                 </div>
               </form>
             </div>

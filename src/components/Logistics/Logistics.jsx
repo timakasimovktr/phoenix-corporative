@@ -5,26 +5,23 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
 import logistics from "../../images/logistics.jpg";
+import { useTranslation } from "react-i18next";
 
 const Logistics = () => {
+  const { t, i18n } = useTranslation();
   return (
     <>
       <Header />
       <section className='imgWithTxt logisticBlock'>
         <div className='imgWithTxtHeading'>
-          <h2>Логистика</h2>
-          <p>
-            Мы гордимся нашими филиалами в трех странах, что позволяет обеспечить быструю и надежную доставку наших
-            БАДов по всей стране. Наша логистическая сеть гарантирует, что ваш заказ прибудет в кратчайшие сроки.
-            Независимо от вашего местоположения, вы можете быть уверены в качестве и своевременности доставки наших
-            продуктов.
-          </p>
+          <h2>{t("headings.logistic")}</h2>
+          <p>{t("blocks.logisticsBlock.subtitle")}</p>
           <Link
             reloadDocument
             to={APP_ROUTES.WELCOME}
             className='br10'
           >
-            Asosiy
+            {t("blocks.logisticsBlock.btnText")}
           </Link>
         </div>
         <div
