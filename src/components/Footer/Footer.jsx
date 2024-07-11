@@ -63,14 +63,14 @@ const Footer = () => {
               </div>
               <div className='footer-col'>
                 <Link
-                  reloadDocument
+                  // reloadDocument
                   to={`${APP_ROUTES.CATALOG}`}
                   onClick={() => scrollTo()}
                 >
                   {t("blocks.footer.text3")}
                 </Link>
                 <Link
-                  reloadDocument
+                  // reloadDocument
                   to={`${APP_ROUTES.CATALOG}`}
                   onClick={() => scrollTo()}
                 >
@@ -97,7 +97,7 @@ const Footer = () => {
                   {t("blocks.footer.text7")}
                 </Link>
                 <Link
-                  reloadDocument
+                  // reloadDocument
                   to={`${APP_ROUTES.CONTACTS}`}
                   onClick={() => scrollTo()}
                 >
@@ -106,14 +106,14 @@ const Footer = () => {
               </div>
               <div className='footer-col'>
                 <Link
-                  reloadDocument
+                  // reloadDocument
                   to={`${APP_ROUTES.CONTACTS}`}
                   onClick={() => scrollTo()}
                 >
                   {t("blocks.footer.text8")}
                 </Link>
                 <Link
-                  reloadDocument
+                  // reloadDocument
                   to={`${APP_ROUTES.CONTACTS}`}
                   onClick={() => scrollTo()}
                 >
@@ -146,6 +146,7 @@ const Footer = () => {
           </div>
 
           <div className='phoenix-prod'>
+            <div></div>
             <div>
               <p>powered by: Phoenix</p>
               <img

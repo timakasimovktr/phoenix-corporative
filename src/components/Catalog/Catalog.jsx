@@ -14,8 +14,10 @@ import bottleOfWater from "../../images/bottle_of_water.jpg";
 //sections
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import { useTranslation } from "react-i18next";
 
 function Catalog() {
+  const { t } = useTranslation();
   const [categories, setCategories] = useState([]);
   const [superCategories, setSuperCategories] = useState([]);
   const [isLoader, setIsLoader] = useState(true);
@@ -84,27 +86,27 @@ function Catalog() {
       <main>
         <div className='shopTextWrapper'>
           <div className='container'>
-            <h3>Каталог</h3>
+            <h3>{t("blocks.catalogBlock.title")}</h3>
             <div className='shopline'></div>
-            <p>Ваше здоровье - наша миссия</p>
+            <p>{t("blocks.catalogBlock.subtitle")}</p>
           </div>
         </div>
         <div className='container catalogContainer'>
           <div className='desktopCategories'>
             <div className='mainCategoryLink'>
               <Link
-                reloadDocument
+                // reloadDocument
                 to={APP_ROUTES.CATALOG}
               >
-                Категории
+                {t("blocks.catalogBlock.categoryBtn")}
               </Link>
             </div>
             <div className='mainCategoryLink promo'>
               <Link
-                reloadDocument
+                // reloadDocument
                 to={APP_ROUTES.CATALOG}
               >
-                Новинки
+                {t("blocks.catalogBlock.newsBtn")}
               </Link>
             </div>
             {superCategories.map((superCategory, index) => (
@@ -120,7 +122,7 @@ function Catalog() {
                     {superCategory.categories.map((category) => (
                       <Link
                         to={`${APP_ROUTES.WELCOME}collection/${category.id}`}
-                        reloadDocument
+                        // reloadDocument
                         key={category.id}
                       >
                         {category.title} <div>{category.products.length}</div>

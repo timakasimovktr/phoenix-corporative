@@ -1,11 +1,15 @@
 import React from "react";
 import "./styles.scss";
+import { Link } from "react-router-dom";
 
-const ProductsCard = ({ cardImage, imageAlt, title, description }) => {
+const ProductsCard = ({ cardImage, imageAlt, title, description, link }) => {
   return (
     <div className='benefitsCardMobile'>
       <div className='productsCardInner'>
-        <div className='flipCardFront'>
+        <Link
+          to={link}
+          className='flipCardFront'
+        >
           <div className='boxImage'>
             <img
               src={cardImage}
@@ -18,7 +22,15 @@ const ProductsCard = ({ cardImage, imageAlt, title, description }) => {
           <div className='cardText'>
             <p className='text'>{description}</p>
           </div>
-        </div>
+          <div className='cardText'>
+            <Link
+              className='cardLink'
+              to={link}
+            >
+              Подробнее
+            </Link>
+          </div>
+        </Link>
       </div>
     </div>
   );

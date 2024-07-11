@@ -4,7 +4,7 @@ import { Outlet, Link } from "react-router-dom";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
-import callcenter from "../../images/callcenter.jpg";
+import callcenter from "../../images/callCenter2.jpg";
 import { useTranslation } from "react-i18next";
 
 const Callcenter = () => {
@@ -17,7 +17,7 @@ const Callcenter = () => {
           <h2>{t("headings.callCenter")}</h2>
           <p>{t("blocks.callCenterBlock.subtitle")}</p>
           <Link
-            reloadDocument
+            // reloadDocument
             to={APP_ROUTES.WELCOME}
             className='br10'
           >

@@ -32,11 +32,7 @@ function Contacts() {
           <div className='container'>
             <div className='imgWithTxtHeading'>
               <h2>{t("headings.contacts")}</h2>
-              <p>
-                Мы предлагаем широкий ассортимент товаров и имеем офисы в трех странах. Для вашего удобства мы также
-                открыли интернет-магазин, который обеспечивает доставку по всей стране. Это позволит вам полностью
-                сосредоточиться на заботе о себе, не отвлекаясь на поиск необходимых вещей и их приобретение.
-              </p>
+              <p>{t("blocks.contacts.subtitle")}</p>
             </div>
             <div
               className='imgWithTxtImg withoutAnimation'
@@ -64,7 +60,7 @@ function Contacts() {
           <div className='container'>
             <div className='formWrapper'>
               <div className='contactsWrapper'>
-                <h3>Свяжитесь с нами!</h3>
+                <h3>{t("blocks.contacts.form.title")}</h3>
                 {/* <h4>Ҳамкорлик бўйича саволларингиз ёки таклифларингиз бўлса, шаклни тўлдиринг</h4> */}
                 <div className='contactsItem'>
                   <div className='contactsIcon'>
@@ -96,7 +92,7 @@ function Contacts() {
                     />
                   </div>
                   <div className='contactsItemInfo'>
-                    <p>Узбекистан; Ташкент; Юнусабадский район; улица Ахмада Дониша 78А</p>
+                    <p>{t("blocks.contacts.form.location")}</p>
                   </div>
                 </div>
                 <div className='bigRound'></div>
@@ -106,11 +102,11 @@ function Contacts() {
                 <div className='inputWrapper'>
                   <input
                     type='text'
-                    placeholder='Имя'
+                    placeholder={`${t("blocks.contacts.form.name")}`}
                   />
                   <input
                     type='text'
-                    placeholder='Фамилия'
+                    placeholder={`${t("blocks.contacts.form.lastName")}`}
                   />
                 </div>
                 <div className='inputWrapper'>
@@ -120,16 +116,16 @@ function Contacts() {
                   />
                   <input
                     type='tel'
-                    placeholder='Номер телефона'
+                    placeholder={`${t("blocks.contacts.form.phone")}`}
                     maxLength={13}
                   />
                 </div>
                 <textarea
-                  placeholder='Ваше сообщение'
+                  placeholder={`${t("blocks.contacts.form.massage")}`}
                   cols='30'
                   rows='6'
                 ></textarea>
-                <button>Отправить</button>
+                <button>{t("blocks.contacts.form.buttonText")}</button>
               </div>
             </div>
             <div className='mapWrapper'>

@@ -4,7 +4,7 @@ import { Outlet, Link } from "react-router-dom";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
-import logistics from "../../images/logistics.jpg";
+import logistics from "../../images/logistic2.jpeg";
 import { useTranslation } from "react-i18next";
 
 const Logistics = () => {
@@ -17,7 +17,7 @@ const Logistics = () => {
           <h2>{t("headings.logistic")}</h2>
           <p>{t("blocks.logisticsBlock.subtitle")}</p>
           <Link
-            reloadDocument
+            // reloadDocument
             to={APP_ROUTES.WELCOME}
             className='br10'
           >

@@ -49,9 +49,10 @@ import slimftWithoutBg from "../../images/slimftWithoutBg.png";
 import PowerWihoutBg from "../../images/PowerWihoutBg.png";
 import AnfaWihoutBg from "../../images/AnfaWihoutBg.png";
 
-import euphoria from "../../images/5.png";
-import arbit from "../../images/3.png";
+import euphoria from "../../images/euphoria 1.png";
+import arbit from "../../images/arbit 1.png";
 import phoenix from "../../images/PhoenixLogo.svg";
+import rcd from "../../images/rcd 1 1.png";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -69,6 +70,7 @@ import Index from "../floatingShape";
 import IndexSecond from "../floatingShape/secondFloating";
 
 import { useTranslation } from "react-i18next";
+import TimelineComponent from "./timeline";
 
 export const Title = styled(motion.h1)`
   font-family: var(--font-primary);
@@ -261,20 +263,21 @@ function Main() {
               </p>
               <div className='mainBannerPartners'>
                 <Link
-                  reloadDocument
-                  to={APP_ROUTES.LOGISTICS}
+                  // reloadDocument
+                  to={APP_ROUTES.MARKETING}
                   className='partner'
-                  data-aos='fade-right'
+                  data-aos='fade-left'
                   data-aos-duration='700'
                   data-aos-delay='600'
                 >
                   <img
-                    src={logistics}
-                    alt={logistics}
+                    src={marketing}
+                    alt={marketing}
                   />
                 </Link>
+
                 <Link
-                  reloadDocument
+                  // reloadDocument
                   to={APP_ROUTES.CALLCENTER}
                   className='partner bigPartner'
                   data-aos='fade-up'
@@ -287,16 +290,16 @@ function Main() {
                   />
                 </Link>
                 <Link
-                  reloadDocument
-                  to={APP_ROUTES.MARKETING}
+                  // reloadDocument
+                  to={APP_ROUTES.LOGISTICS}
                   className='partner'
-                  data-aos='fade-left'
+                  data-aos='fade-right'
                   data-aos-duration='700'
                   data-aos-delay='600'
                 >
                   <img
-                    src={marketing}
-                    alt={marketing}
+                    src={logistics}
+                    alt={logistics}
                   />
                 </Link>
               </div>
@@ -348,72 +351,33 @@ function Main() {
             data-aos-duration='700'
             data-aos-delay='700'
           >
-            <Swiper
-              modules={[Autoplay, Navigation, FreeMode]}
-              // speed={2000}
-              // loop={true}
-              // autoplay={{
-              //   delay: 3000,
-              // }}
-              // centeredSlides
-              // slidesPerView={5}
-              spaceBetween={30}
-              breakpoints={{
-                0: {
-                  slidesPerView: 1,
-                  spaceBetween: 20,
-                },
-                320: {
-                  slidesPerView: 2,
-                  spaceBetween: 20,
-                },
-                768: {
-                  slidesPerView: 3,
-                  spaceBetween: 10,
-                },
-                992: {
-                  slidesPerView: 5,
-                  spaceBetween: 30,
-                },
-              }}
-            >
-              <SwiperSlide
-                className='slideWrapper'
-                style={{ height: "150px" }}
-              >
+            <div className='partnersContainer'>
+              <div className='imgContainer'>
                 <img
-                  style={{ height: "100%", objectFit: "cover" }}
+                  src={arbit}
+                  alt=''
+                />
+              </div>
+              <div className='imgContainer'>
+                <img
                   src={euphoria}
                   alt=''
                 />
-              </SwiperSlide>
-              <SwiperSlide
-                className='slideWrapper'
-                style={{ height: "150px" }}
-              >
-                {" "}
+              </div>
+
+              <div className='imgContainer'>
                 <img
-                  style={{ height: "100%", objectFit: "cover" }}
-                  src={arbit}
-                  alt='arbit'
+                  src={rcd}
+                  alt=''
                 />
-              </SwiperSlide>
-              <SwiperSlide
-                className='slideWrapper'
-                style={{ height: "150px" }}
-              >
+              </div>
+              <div className='imgContainer'>
                 <img
-                  style={{ height: "100%", objectFit: "contain" }}
                   src={phoenix}
-                  alt='phoenix'
+                  alt=''
                 />
-              </SwiperSlide>
-              {/* <SwiperSlide className='slideWrapper'>LOGO NAME</SwiperSlide>
-              <SwiperSlide className='slideWrapper'>LOGO NAME</SwiperSlide>
-              <SwiperSlide className='slideWrapper'>LOGO NAME</SwiperSlide>
-              <SwiperSlide className='slideWrapper'>LOGO NAME</SwiperSlide>
-              <SwiperSlide className='slideWrapper'>LOGO NAME</SwiperSlide> */}
-            </Swiper>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -493,6 +457,7 @@ function Main() {
                     imageAlt={item.imageAlt}
                     title={item.title}
                     description={item.description}
+                    link='/catalog'
                   />
                 </SwiperSlide>
               ))}
@@ -569,7 +534,7 @@ function Main() {
           id='commentsSection'
         >
           <div className='commentsLeft commentsSlides comentsBgPosition'>
-            <Index background='#181c23' />
+            {/* <Index background='#181c23' /> */}
             <div
               className='commentsBgWrapper comentsPositionUnder'
               // style={{ backgroundImage: `url(${commentsLeft})` }}
@@ -681,7 +646,7 @@ function Main() {
             </div>
           </div>
           <div className='commentsRight commentsSlides commetRightPosition'>
-            <IndexSecond background='#fff' />
+            {/* <IndexSecond background='#fff' /> */}
             <div
               className='commentsBgWrapper commetRightPositionWrapper'
               // style={{ backgroundImage: `url(${commentsRight})` }}
@@ -709,23 +674,6 @@ function Main() {
                           alt={quotationMark}
                         />
                       </div>
-                      <p>{t("blocks.reviewsSlider.text1")}</p>
-                      <div className='iconPerson'>
-                        <img
-                          src={boy1}
-                          alt={person}
-                        />
-                      </div>
-                      <h3>{t("blocks.reviewsSlider.name1")}</h3>
-                      {/* <h4>Кандидат наук в отрасли бадов</h4> */}
-                    </SwiperSlide>
-                    <SwiperSlide className='slideWrapper'>
-                      <div className='quote'>
-                        <img
-                          src={quotationMark}
-                          alt={quotationMark}
-                        />
-                      </div>
                       <p>{t("blocks.reviewsSlider.text2")}</p>
                       <div className='iconPerson'>
                         <img
@@ -734,9 +682,7 @@ function Main() {
                         />
                       </div>
                       <h3>{t("blocks.reviewsSlider.name2")}</h3>
-                      {/* <h4>Кандидат наук в отрасли бадов</h4> */}
                     </SwiperSlide>
-
                     <SwiperSlide className='slideWrapper'>
                       <div className='quote'>
                         <img
@@ -752,9 +698,7 @@ function Main() {
                         />
                       </div>
                       <h3>{t("blocks.reviewsSlider.name3")}</h3>
-                      {/* <h4>Кандидат наук в отрасли бадов</h4> */}
                     </SwiperSlide>
-
                     <SwiperSlide className='slideWrapper'>
                       <div className='quote'>
                         <img
@@ -770,7 +714,6 @@ function Main() {
                         />
                       </div>
                       <h3>{t("blocks.reviewsSlider.name4")}</h3>
-                      {/* <h4>Кандидат наук в отрасли бадов</h4> */}
                     </SwiperSlide>
                     <SwiperSlide className='slideWrapper'>
                       <div className='quote'>
@@ -787,6 +730,23 @@ function Main() {
                         />
                       </div>
                       <h3>{t("blocks.reviewsSlider.name5")}</h3>
+                      {/* <h4>Кандидат наук в отрасли бадов</h4> */}
+                    </SwiperSlide>
+                    <SwiperSlide className='slideWrapper'>
+                      <div className='quote'>
+                        <img
+                          src={quotationMark}
+                          alt={quotationMark}
+                        />
+                      </div>
+                      <p>{t("blocks.reviewsSlider.text1")}</p>
+                      <div className='iconPerson'>
+                        <img
+                          src={boy1}
+                          alt={person}
+                        />
+                      </div>
+                      <h3>{t("blocks.reviewsSlider.name1")}</h3>
                       {/* <h4>Кандидат наук в отрасли бадов</h4> */}
                     </SwiperSlide>
                   </Swiper>
@@ -814,7 +774,7 @@ function Main() {
                 {t("blocks.referalBlock.subtitle")}
               </h3>
               <Link
-                reloadDocument
+                // reloadDocument
                 to={APP_ROUTES.REFERRAL}
                 className='br10'
                 data-aos='fade-right'
@@ -834,6 +794,9 @@ function Main() {
               />
             </div>
           </div>
+        </section>
+        <section className='sectionTimeLine'>
+          <TimelineComponent />
         </section>
 
         <section className='survey'>

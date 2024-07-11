@@ -20,6 +20,7 @@ import Footer from "../Footer/Footer";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { IMaskInput } from "react-imask";
 
 function Product() {
   const [qty, setQty] = useState(1);
@@ -37,6 +38,12 @@ function Product() {
   const [productObj, setProductObj] = useState({});
   const [productCategory, setProductCategory] = useState({});
   const [isLoader, setIsLoader] = useState(true);
+  const phoneMask = "+998 (00) 000-00-00";
+  const Mask = [
+    {
+      mask: phoneMask,
+    },
+  ];
 
   useEffect(() => {
     AOS.init();
@@ -146,11 +153,21 @@ function Product() {
                 placeholder='Фамилия'
                 maxLength='30'
               />
-              <input
+              {/* <input
                 onChange={(e) => setOrderInfo({ ...orderInfo, phone: e.target.value })}
                 type='tel'
                 placeholder='Номер телефона'
                 maxLength='13'
+              /> */}
+              <IMaskInput
+                onChange={(e) => setOrderInfo({ ...orderInfo, phone: e.target.value })}
+                type='tel'
+                placeholder='Номер телефона'
+                name='phone'
+                mask={Mask}
+                pattern='[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}'
+                maxLength={19}
+                required
               />
               <select
                 name=''
@@ -257,7 +274,7 @@ function Product() {
             >
               <div className='categoryItem'>
                 <Link
-                  reloadDocument
+                  // reloadDocument
                   to={`/collection/${productCategory.id}`}
                 >
                   {productCategory.title}
@@ -454,6 +471,14 @@ function Product() {
               >
                 {productObj?.extra?.info3[1]}
               </p>
+              <div className='btnLink'>
+                <button
+                  className='sendOrder'
+                  onClick={() => sendOrder()}
+                >
+                  Заказать
+                </button>
+              </div>
             </div>
             <div
               className='imgWithTxtImg'

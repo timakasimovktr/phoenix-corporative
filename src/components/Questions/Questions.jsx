@@ -203,7 +203,7 @@ function Questions(props) {
                 }
               }}
             >
-              Следущий
+              {t("tests.btnText.next")}
             </button>
           </div>
 
@@ -250,7 +250,9 @@ function Questions(props) {
                   }
                 }}
               >
-                {index === filteredSurvey[0]?.surveyCategory?.surveyQuestions.length - 1 ? "Тўлиқ" : "Кейинги"}
+                {index === filteredSurvey[0]?.surveyCategory?.surveyQuestions.length - 1
+                  ? ` ${t("tests.btnText.theEnd")}`
+                  : ` ${t("tests.btnText.next")}`}
               </button>
             </div>
           ))}

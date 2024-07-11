@@ -89,30 +89,33 @@ main {
         .dot1 {
             top: 39%;
             left: 31%;
-            background: #0ba00035;
+            background: #fff700b9;
 
             .dotChild {
-                background: #0ba000;
+                background: #FFF500;
+                color: #2e2e2e;
             }
         }
 
         .dot2 {
             top: 28%;
             left: 36%;
-            background: #009dff35;
+            background: #2e2e2ea8;
 
             .dotChild {
-                background: #009dff;
+                background: #2e2e2e;
+                color:  #FFF500;
             }
         }
 
         .dot3 {
             top: 40%;
             left: 11%;
-            background: #c6000035;
+            background: #2e2e2ea8;
 
             .dotChild {
-                background: #c60000;
+                background: #2e2e2e;
+                color:  #FFF500;
             }
         }
     }
@@ -279,7 +282,7 @@ main {
                     background-color: #FFF500;
                     cursor: pointer;
                     transition: 0.3s;
-
+                    font-family: "Montserrat", Arial;
                     &:hover {
                         background-color: #1a1a1a;
                         color: #FFF500;

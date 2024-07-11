@@ -149,6 +149,7 @@ main {
             p {
                 color: $colorBlack;
             }
+            
         }
     }
 
@@ -592,6 +593,7 @@ main {
             flex-direction: column;
             animation: riseUp 0.5s ease-in-out 1;
             background: none !important;
+            transform: translateY(50%);
 
             img {
                 filter: brightness(0.85);
@@ -619,8 +621,38 @@ main {
     }
 }
 
+
+
 .imgWithTxt.rightTxt {
     flex-direction: row-reverse;
+    .btnLink{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .sendOrder {
+        background: #fff500;
+        font-family: "Gilroy-Regular", sans-serif;
+        padding: 12px 42px;
+        width: 40%;
+        font-size: 22px;
+        color: rgb(0, 0, 0);
+        border: 1px solid #fff500;
+        border-radius: 10px;
+        transition: 0.5s;
+        cursor: pointer;
+        max-height: 51px;
+        margin-top: 20px;
+
+        &:hover {
+            background: rgb(255, 255, 255);
+            color: #000000;
+            filter: brightness(1);
+            border: 1px solid #000000;
+            box-shadow: 0px 0px 10px 0px #0000004f;
+        }
+    }
+    
 }
 
 .shopTextWrapper {

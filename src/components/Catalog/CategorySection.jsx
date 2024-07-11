@@ -32,7 +32,7 @@ function CategorySection({ category, getProducts }) {
         <div className='collectionLine'></div>
         <div className='collectionLink'>
           <Link
-            reloadDocument
+            // reloadDocument
             to={`${APP_ROUTES.WELCOME}collection/${category.id}`}
           >
             {t("blocks.catalogBlock.viewAll")}
@@ -45,7 +45,8 @@ function CategorySection({ category, getProducts }) {
       </div>
       <div className='catalogBody'>
         {categoryProducts.map((product) => (
-          <div
+          <Link
+            to={`/product/${product.id}`}
             className='productCard'
             key={product.id}
           >
@@ -79,12 +80,12 @@ function CategorySection({ category, getProducts }) {
               {product.description.length > 60 && "..."}
             </p>
             <Link
-              reloadDocument
+              // reloadDocument
               to={`/product/${product.id}`}
             >
               {t("blocks.catalogBlock.btnBuy")}
             </Link>
-          </div>
+          </Link>
         ))}
       </div>
     </section>

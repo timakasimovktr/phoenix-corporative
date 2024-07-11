@@ -108,7 +108,8 @@ header {
 
 @media (max-width: 768px) {
   .change-language {
-    display: none;
+    display: block;
+    margin-right: 50px;
   }
   /* Header.scss */
   .navbar-container {

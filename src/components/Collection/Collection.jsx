@@ -95,7 +95,7 @@ function Collection() {
           <div className='desktopCategories'>
             <div className='mainCategoryLink'>
               <Link
-                reloadDocument
+                // reloadDocument
                 to={APP_ROUTES.CATALOG}
               >
                 {t("blocks.catalogBlock.categoryBtn")}
@@ -103,7 +103,7 @@ function Collection() {
             </div>
             <div className='mainCategoryLink promo'>
               <Link
-                reloadDocument
+                // reloadDocument
                 to={APP_ROUTES.CATALOG}
               >
                 {t("blocks.catalogBlock.newsBtn")}

@@ -24,7 +24,7 @@ const Header = (props) => {
   return (
     <>
       <div className={`loaderWrapper ${props.hiddenLoader ? "" : "hiddenLoader"}`}>
-        <div className='loaderHeading'>Загрузка!</div>
+        <div className='loaderHeading'> {t("main.reload")}!</div>
         <div className='loader'></div>
       </div>
       <header>
@@ -54,7 +54,7 @@ const Header = (props) => {
                 <ul className='menu__box'>
                   <li>
                     <Link
-                      reloadDocument
+                      // reloadDocument
                       to={APP_ROUTES.WELCOME}
                     >
                       {t("blocks.header.main")}
@@ -62,7 +62,7 @@ const Header = (props) => {
                   </li>
                   <li>
                     <Link
-                      reloadDocument
+                      // reloadDocument
                       to={APP_ROUTES.CATALOG}
                     >
                       {t("blocks.header.products")}
@@ -70,7 +70,23 @@ const Header = (props) => {
                   </li>
                   <li>
                     <Link
-                      reloadDocument
+                      // reloadDocument
+                      to={APP_ROUTES.CALLCENTER}
+                    >
+                      {t("headings.callCenter")}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      // reloadDocument
+                      to={APP_ROUTES.MARKETING}
+                    >
+                      {t("headings.marketing")}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      // reloadDocument
                       to={APP_ROUTES.LOGISTICS}
                     >
                       {t("blocks.header.logistic")}
@@ -78,7 +94,7 @@ const Header = (props) => {
                   </li>
                   <li>
                     <Link
-                      reloadDocument
+                      // reloadDocument
                       to={APP_ROUTES.CONTACTS}
                     >
                       {t("blocks.header.contacts")}
