@@ -534,7 +534,7 @@ function Main() {
           id='commentsSection'
         >
           <div className='commentsLeft commentsSlides comentsBgPosition'>
-            {/* <Index background='#181c23' /> */}
+            <Index background='#181c23' />
             <div
               className='commentsBgWrapper comentsPositionUnder'
               // style={{ backgroundImage: `url(${commentsLeft})` }}
@@ -646,7 +646,7 @@ function Main() {
             </div>
           </div>
           <div className='commentsRight commentsSlides commetRightPosition'>
-            {/* <IndexSecond background='#fff' /> */}
+            <IndexSecond background='#fff' />
             <div
               className='commentsBgWrapper commetRightPositionWrapper'
               // style={{ backgroundImage: `url(${commentsRight})` }}
