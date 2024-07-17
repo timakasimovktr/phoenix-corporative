@@ -30,6 +30,7 @@ import person from "../../images/person.png";
 import logistics from "../../images/logistics.jpg";
 import callcenter from "../../images/callcenter.jpg";
 import marketing from "../../images/marketing.png";
+import urion from "../../images/Frame 22.png";
 
 import Anfa from "../../images/Anfa.png";
 import Visu from "../../images/Visu.png";
@@ -53,6 +54,9 @@ import euphoria from "../../images/euphoria 1.png";
 import arbit from "../../images/arbit 1.png";
 import phoenix from "../../images/PhoenixLogo.svg";
 import rcd from "../../images/rcd 1 1.png";
+import ofb from "../../images/OFB-01.png";
+import anor from "../../images/Anorbank-01.png";
+import nbu from "../../images/NBU-01_bdybU3Y.png";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -180,55 +184,62 @@ function Main() {
   const mainBannerCardsItems = [
     {
       id: 1,
+      imgBefore: urion,
+      imgAfter: urion,
+      sideTitle: "urion",
+      sideSubtitle: `${t("blocks.mainBlock.sale")}`,
+    },
+    {
+      id: 2,
       imgBefore: AnfaWihoutBg,
       imgAfter: AnfaWihoutBg,
       sideTitle: "Anfa Oku Vital",
       sideSubtitle: `${t("blocks.mainBlock.sale")}`,
     },
     {
-      id: 2,
+      id: 3,
       imgBefore: VisuWithoutBg,
       imgAfter: VisuWithoutBg,
       sideTitle: "Visu Caps",
       sideSubtitle: `${t("blocks.mainBlock.sale")}`,
     },
     {
-      id: 3,
+      id: 4,
       imgBefore: hypertWithoutBg,
       imgAfter: hypertWithoutBg,
       sideTitle: "Гипертофорт",
       sideSubtitle: `${t("blocks.mainBlock.sale")}`,
     },
     {
-      id: 4,
+      id: 5,
       imgBefore: diabeticWithoutBg,
       imgAfter: diabeticWithoutBg,
       sideTitle: "Диабетик Форте",
       sideSubtitle: `${t("blocks.mainBlock.sale")}`,
     },
     {
-      id: 5,
+      id: 6,
       imgBefore: mensWithoutBg,
       imgAfter: mensWithoutBg,
       sideTitle: "Men's Power",
       sideSubtitle: `${t("blocks.mainBlock.sale")}`,
     },
     {
-      id: 6,
+      id: 7,
       imgBefore: ParazitOFFWithoutBg,
       imgAfter: ParazitOFFWithoutBg,
       sideTitle: "ParazitOFF",
       sideSubtitle: `${t("blocks.mainBlock.sale")}`,
     },
     {
-      id: 7,
+      id: 8,
       imgBefore: slimftWithoutBg,
       imgAfter: slimftWithoutBg,
       sideTitle: "SLIMFIT",
       sideSubtitle: `${t("blocks.mainBlock.sale")}`,
     },
     {
-      id: 8,
+      id: 9,
       imgBefore: PowerWihoutBg,
       imgAfter: PowerWihoutBg,
       sideTitle: "Power KETO",
@@ -236,14 +247,28 @@ function Main() {
     },
   ];
 
+  const partnersLogos = [
+    { id: 1, logo: euphoria },
+    { id: 2, logo: arbit },
+    { id: 3, logo: phoenix },
+    { id: 4, logo: rcd },
+    { id: 5, logo: ofb },
+    { id: 6, logo: anor },
+    { id: 7, logo: nbu },
+  ];
+  const [changeLanguage, setChangeLanguage] = useState(false);
   return (
     <>
-      <Header hiddenLoader={isLoader}></Header>
+      <Header
+        hiddenLoader={isLoader}
+        changeLanguage={changeLanguage}
+        setChangeLanguage={setChangeLanguage}
+      ></Header>
       <Questions
         visible={isQuestions}
         setIsQuestions={setIsQuestions}
       />
-      <main>
+      <main onClick={() => setChangeLanguage(false)}>
         <section className='mainBanner'>
           <div className='container'>
             <div className='mainBannerHeading'>
@@ -274,6 +299,7 @@ function Main() {
                     src={marketing}
                     alt={marketing}
                   />
+                  {/* <p>marketing</p> */}
                 </Link>
 
                 <Link
@@ -333,7 +359,7 @@ function Main() {
                         alt={item.imgAfter}
                       />
                       <div className='sideTitle'>
-                        <div className='offer'>{item.sideSubtitle}</div>
+                        {/* <div className='offer'>{item.sideSubtitle}</div> */}
                         <div>{item.sideTitle}</div>
                       </div>
                     </div>
@@ -344,41 +370,60 @@ function Main() {
           </div>
         </section>
 
-        <section className='partnersSwiper'>
-          <div
-            className='container'
-            data-aos='fade-right'
-            data-aos-duration='700'
-            data-aos-delay='700'
+        <section
+          className='partnersSwiper'
+          id='partners'
+        >
+          <Swiper
+            modules={[Autoplay, Navigation, FreeMode]}
+            speed={2000}
+            loop={true}
+            autoplay={{
+              delay: 3000,
+            }}
+            slidesPerView={5}
+            spaceBetween={30}
+            centeredSlides
+            breakpoints={{
+              0: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              420: {
+                slidesPerView: 3,
+              },
+              620: {
+                slidesPerView: 4,
+                spaceBetween: 20,
+              },
+              911: {
+                slidesPerView: 4,
+                spaceBetween: 30,
+              },
+              992: {
+                slidesPerView: 5,
+                spaceBetween: 30,
+              },
+              1440: {
+                slidesPerView: 5,
+                spaceBetween: 30,
+              },
+            }}
           >
-            <div className='partnersContainer'>
-              <div className='imgContainer'>
-                <img
-                  src={arbit}
-                  alt=''
-                />
-              </div>
-              <div className='imgContainer'>
-                <img
-                  src={euphoria}
-                  alt=''
-                />
-              </div>
-
-              <div className='imgContainer'>
-                <img
-                  src={rcd}
-                  alt=''
-                />
-              </div>
-              <div className='imgContainer'>
-                <img
-                  src={phoenix}
-                  alt=''
-                />
-              </div>
-            </div>
-          </div>
+            {partnersLogos.map((item, index) => (
+              <SwiperSlide
+                className='slideWrapper'
+                key={index}
+              >
+                <div className='imgContainer'>
+                  <img
+                    src={item.logo}
+                    alt={item.logo}
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </section>
 
         <section
@@ -534,10 +579,10 @@ function Main() {
           id='commentsSection'
         >
           <div className='commentsLeft commentsSlides comentsBgPosition'>
-            <Index background='#181c23' />
+            {/* <Index background='#181c23' /> */}
             <div
               className='commentsBgWrapper comentsPositionUnder'
-              // style={{ backgroundImage: `url(${commentsLeft})` }}
+              style={{ backgroundImage: `url(${commentsLeft})` }}
             >
               <div className='commentsSideBgWrapper'>
                 <div className='commentsSideBgSecondWrapper'>
@@ -646,10 +691,10 @@ function Main() {
             </div>
           </div>
           <div className='commentsRight commentsSlides commetRightPosition'>
-            <IndexSecond background='#fff' />
+            {/* <IndexSecond background='#fff' /> */}
             <div
               className='commentsBgWrapper commetRightPositionWrapper'
-              // style={{ backgroundImage: `url(${commentsRight})` }}
+              style={{ backgroundImage: `url(${commentsRight})` }}
             >
               <div className='commentsSideBgWrapper'>
                 <div className='commentsSideBgSecondWrapper rightSwiperComments'>
@@ -755,8 +800,30 @@ function Main() {
             </div>
           </div>
         </section>
-
-        <section className='referral'>
+        <section className='sectioReferal'>
+          <div className='container'>
+            <div className='referalContainer'>
+              <div className='referalInfo'>
+                <div className='referalSubtitle'>
+                  <p className='subtitle'>{t("blocks.referalBlock.subtitle")}</p>
+                </div>
+                <div className='referalTitle'>
+                  <h3 className='title'>{t("headings.referal")}</h3>
+                </div>
+                <div className='referalLink'>
+                  <Link to={APP_ROUTES.REFERRAL}>{t("blocks.referalBlock.buttonText")}</Link>
+                </div>
+              </div>
+              <div className='referalImage'>
+                <img
+                  src={euphoriaRefferal}
+                  alt={euphoriaRefferal}
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* <section className='referral'>
           <div className='container'>
             <div className='referralTxt'>
               <h2
@@ -794,9 +861,30 @@ function Main() {
               />
             </div>
           </div>
-        </section>
-        <section className='sectionTimeLine'>
-          <TimelineComponent />
+        </section> */}
+
+        <section className='sectionTimeline'>
+          <div className='container'>
+            <div className='sectionTimelineInfo'>
+              <div className='timelineInfo'>
+                {/* <div className='tag'>
+                  <p>Коротко</p>
+                </div> */}
+                <div className='sectionTitle'>
+                  <h3 className='title'>{t("blocks.header.contacts")}</h3>
+                </div>
+              </div>
+              <TimelineComponent />
+              <div className='btnContainer'>
+                <Link
+                  to='/contacts'
+                  className='btn'
+                >
+                  {t("blocks.referalBlock.buttonText")}
+                </Link>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section className='survey'>
@@ -805,29 +893,30 @@ function Main() {
               <h2>{t("headings.whyWe")}</h2>
               <div className='surveyLine'></div>
             </div>
-            {/* <div className='surveyCards'>
-              <div>
-                <div className='cardItem yellowCard'>Как часто вы измеряете артериальное давление?</div>
-                <div className='cardItem yellowCard'>
-                  Какие факторы, на ваш взгляд, влияют на ваше кровяное давление?
-                </div>
-              </div>
-              <div>
-                <div className='cardItem'>Принимаете ли вы лекарства для контроля артериального давления?</div>
-                <div className='cardItem'>Курите ли вы или употребляете алкоголь?</div>
-              </div>
-            </div> */}
-            <Tabs />
+            <Tabs
+              tab1={t("blocks.tabsBlock.title1")}
+              tab2={t("blocks.tabsBlock.title2")}
+              tab3={t("blocks.tabsBlock.title3")}
+              tab4={t("blocks.tabsBlock.title4")}
+              title1={t("blocks.tabsBlock.subtitle1")}
+              subtitle1={t("blocks.tabsBlock.text1")}
+              title2={t("blocks.tabsBlock.subtitle2")}
+              subtitle2={t("blocks.tabsBlock.text2")}
+              title3={t("blocks.tabsBlock.subtitle3")}
+              subtitle3={t("blocks.tabsBlock.text3")}
+              title4={t("blocks.tabsBlock.subtitle4")}
+              subtitle4={t("blocks.tabsBlock.text4")}
+            />
+
             {/* <Link
               onClick={() => setIsQuestions(true)}
               className='br10'
             >
               Пройти опрос
             </Link> */}
-            <div className='surveyText'>
-              <ParallaxText baseVelocity={-5}>Euphoria</ParallaxText>
-              <ParallaxText baseVelocity={5}>AirohpuE</ParallaxText>
-            </div>
+          </div>
+          <div className='surveyText'>
+            <ParallaxText baseVelocity={-5}>Euphoria</ParallaxText>
           </div>
         </section>
 

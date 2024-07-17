@@ -79,11 +79,15 @@ function Collection() {
       setIsLoader(false);
     }
   }, [categories, superCategories]);
-
+  const [changeLanguage, setChangeLanguage] = useState(false);
   return (
     <>
-      <Header hiddenLoader={isLoader}></Header>
-      <main>
+      <Header
+        hiddenLoader={isLoader}
+        changeLanguage={changeLanguage}
+        setChangeLanguage={setChangeLanguage}
+      ></Header>
+      <main onClick={() => setChangeLanguage(false)}>
         <div className='shopTextWrapper'>
           <div className='container'>
             <h3>{t("blocks.catalogBlock.title")}</h3>

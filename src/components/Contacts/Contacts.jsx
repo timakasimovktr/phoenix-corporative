@@ -24,10 +24,14 @@ import { useTranslation } from "react-i18next";
 
 function Contacts() {
   const { t, i18n } = useTranslation();
+  const [changeLanguage, setChangeLanguage] = useState(false);
   return (
     <>
-      <Header />
-      <main>
+      <Header
+        changeLanguage={changeLanguage}
+        setChangeLanguage={setChangeLanguage}
+      />
+      <main onClick={() => setChangeLanguage(false)}>
         <section className='imgWithTxt imgWithTxtContacts'>
           <div className='container'>
             <div className='imgWithTxtHeading'>

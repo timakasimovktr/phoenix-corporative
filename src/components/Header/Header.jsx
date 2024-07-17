@@ -1,6 +1,6 @@
 // Header.jsx
 import React, { useState } from "react";
-import euphoriaLogo from "../../images/Euphoria-Logo.svg";
+import euphoriaLogo from "../../images/euphoria 1.png";
 import globalIcon from "../../images/Global-Icon.svg";
 import { APP_ROUTES } from "../../router/Route";
 import { useNavigate } from "react-router-dom";
@@ -15,7 +15,7 @@ const flagMap = {
 };
 const Header = (props) => {
   const navigation = useNavigate();
-  const [changeLanguage, setChangeLanguage] = useState(false);
+
   const { t, i18n } = useTranslation();
   const handleLanguageChange = (language) => {
     i18n.changeLanguage(language);
@@ -105,12 +105,12 @@ const Header = (props) => {
             </nav>
             <div className='change-language'>
               <img
-                onClick={() => setChangeLanguage(!changeLanguage)}
+                onClick={() => props.setChangeLanguage(!props.changeLanguage)}
                 src={globalIcon}
                 alt=''
               />
 
-              {changeLanguage && (
+              {props.changeLanguage && (
                 <>
                   <div className='change-language-block br10'>
                     {Object.keys(flagMap).map((language) => (

@@ -14,6 +14,7 @@
         @media screen and (max-width: 550px){
             flex-direction: column;
             row-gap: 30px;
+            // align-items: center;
         }
         .tabs{
             padding: 5px;
@@ -45,8 +46,10 @@
     .contentTabs{
         @media screen and (max-width: 550px){
             display: flex;
+            align-items: center;
             height: 100%;
         }
+        
         .content{
             padding-top: 20px;
             width: 100%;
@@ -54,6 +57,12 @@
             display: none;
             &.activeContent{
                 display: block;
+            }
+            @media screen and (max-width: 420px){
+                height: 200px;
+            }
+            @media screen and (max-width: 390px){
+                height: 100%;
             }
             h2{
                 text-align: center;

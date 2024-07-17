@@ -21,9 +21,12 @@ import Footer from "../Footer/Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { IMaskInput } from "react-imask";
+import { useTranslation } from "react-i18next";
+import Tabs from "../Main/Tabs";
 
 function Product() {
-  const [qty, setQty] = useState(1);
+  const { t } = useTranslation();
+  const [qty, setQty] = useState(0);
   const [orderInfo, setOrderInfo] = useState({
     name: "",
     surname: "",
@@ -106,7 +109,7 @@ function Product() {
           console.log(error);
         });
     } else {
-      toast.error("Заполните все поля!");
+      toast.error(`${t("blocks.contacts.form.fillInputs")}`);
     }
   };
 
@@ -117,15 +120,20 @@ function Product() {
   });
 
   const clickOnOrderBtn = () => {
-    if (qty === 0) return toast.error("Выберите количество товара!");
+    if (qty === 0) return toast.error(`${t("blocks.contacts.form.quantityAlert")}`);
     setIsOpenOrder(true);
   };
 
+  const [changeLanguage, setChangeLanguage] = useState(false);
   return (
     <>
-      <Header hiddenLoader={isLoader}></Header>
+      <Header
+        hiddenLoader={isLoader}
+        changeLanguage={changeLanguage}
+        setChangeLanguage={setChangeLanguage}
+      ></Header>
       {/* <main className={productObj.color === 2 && "urion"}> */}
-      <main>
+      <main onClick={() => setChangeLanguage(false)}>
         <ToastContainer />
         <div
           className={`orderPopup ${isOpenOrder ? "" : "hidden"}`}
@@ -140,17 +148,19 @@ function Product() {
               onClick={() => closePopup()}
             ></div>
             <div className={`orderStep1 ${orederStep1 ? "" : "hidden"}`}>
-              <h3>Оформить заказ "{productObj.title}"</h3>
+              <h3>
+                {t("blocks.catalogBlock.order")} "{productObj.title}"
+              </h3>
               <input
                 type='text'
                 onChange={(e) => setOrderInfo({ ...orderInfo, name: e.target.value })}
-                placeholder='Имя'
+                placeholder={t("blocks.contacts.form.name")}
                 maxLength='30'
               />
               <input
                 type='text'
                 onChange={(e) => setOrderInfo({ ...orderInfo, surname: e.target.value })}
-                placeholder='Фамилия'
+                placeholder={t("blocks.contacts.form.lastName")}
                 maxLength='30'
               />
               {/* <input
@@ -162,7 +172,7 @@ function Product() {
               <IMaskInput
                 onChange={(e) => setOrderInfo({ ...orderInfo, phone: e.target.value })}
                 type='tel'
-                placeholder='Номер телефона'
+                placeholder={t("blocks.contacts.form.phone")}
                 name='phone'
                 mask={Mask}
                 pattern='[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}'
@@ -178,7 +188,7 @@ function Product() {
                   value=''
                   hidden
                 >
-                  Город
+                  {t("blocks.contacts.form.city")}
                 </option>
                 <option value='Ташкент'>Ташкент</option>
                 <option value='Самарканд'>Самарканд</option>
@@ -192,12 +202,15 @@ function Product() {
                 <option value='Навои'>Навои</option>
                 <option value='Кашкадарья'>Кашкадарья</option>
               </select>
-              <h2>Общая стоимость: {(productObj?.price * qty).toLocaleString()} сум</h2>
+              <h2>
+                {" "}
+                {t("blocks.contacts.form.price")}: {(productObj?.price * qty).toLocaleString()} сум
+              </h2>
               <button
                 className='sendOrder'
                 onClick={() => sendOrder()}
               >
-                Заказать
+                {t("blocks.catalogBlock.buy")}
               </button>
             </div>
             <div className={`orderStep2 ${orederStep2 ? "" : "hidden"}`}>
@@ -205,17 +218,19 @@ function Product() {
                 src={successOrder}
                 alt={successOrder}
               />
-              <h3>Заявка принята</h3>
+              <h3> {t("blocks.contacts.form.accepted")}</h3>
               <p>
-                Ваш заказ: {productObj.title} <br /> Количество: {qty} <br /> Наш сотрудник свяжется с вами <br /> в
-                ближайшее время!
+                {t("blocks.contacts.form.orderText")}: {productObj.title} <br /> {t("blocks.catalogBlock.quantity")}:{" "}
+                {qty} <br />
+                {t("blocks.contacts.form.contactYou")}
+                <br /> {t("blocks.contacts.form.soon")}
               </p>
             </div>
           </div>
         </div>
         <section className='shopTextWrapper'>
           <div className='container'>
-            <h3>Магазин</h3>
+            <h3>{t("blocks.catalogBlock.shop")}</h3>
             <div className='shopline'></div>
             {/* <p>Find the perfect plant for your space</p> */}
           </div>
@@ -295,10 +310,17 @@ function Product() {
               data-aos-offset='0'
             >
               <div className='qtyInput'>
-                <p>Количество:</p>
+                <p>{t("blocks.catalogBlock.quantity")}:</p>
                 <div
                   className='minus'
-                  onClick={() => setQty(qty > 0 ? [qty - 1, setOrderInfo({ ...orderInfo, count: qty - 1 })] : 0)}
+                  // onClick={() => setQty(qty > 0 ? [qty - 1, setOrderInfo({ ...orderInfo, count: qty - 1 })] : 0)}
+                  onClick={() => {
+                    if (qty > 0) {
+                      const newQty = qty - 1;
+                      setQty(newQty);
+                      setOrderInfo({ ...orderInfo, count: newQty });
+                    }
+                  }}
                 >
                   -
                 </div>
@@ -310,7 +332,7 @@ function Product() {
                   +
                 </div>
               </div>
-              <button onClick={() => clickOnOrderBtn()}>Заказать</button>
+              <button onClick={() => clickOnOrderBtn()}>{t("blocks.catalogBlock.buy")}</button>
             </div>
           </div>
         </section>
@@ -322,7 +344,7 @@ function Product() {
                 data-aos='fade-right'
                 data-aos-duration='700'
               >
-                <h3>Состав:</h3>
+                <h3>{t("blocks.catalogBlock.compaund")}:</h3>
                 <p>{productObj.compound}</p>
               </div>
               <div
@@ -330,7 +352,7 @@ function Product() {
                 data-aos='fade-right'
                 data-aos-duration='700'
               >
-                <h3>Действие препарата: </h3>
+                <h3> {t("blocks.catalogBlock.testimony")}: </h3>
                 <p>{productObj.action}</p>
               </div>
             </div>
@@ -340,22 +362,26 @@ function Product() {
                 data-aos='fade-left'
                 data-aos-duration='700'
               >
-                <h3>Показания:</h3>
+                <h3> {t("blocks.catalogBlock.testimony")}:</h3>
                 <p>{productObj.testimony}</p>
               </div>
               <div
                 className='rule'
                 data-aos='fade-left'
                 data-aos-duration='700'
+                style={{ marginBottom: "0" }}
               >
-                <h3>Противопоказания: </h3>
+                <h3>{t("blocks.catalogBlock.contraction")}:</h3>
                 <p>{productObj.contraction}</p>
               </div>
             </div>
           </div>
         </section>
         {productObj?.extra?.info1[0] && (
-          <section className='imgWithTxt rightTxt'>
+          <section
+            className='imgWithTxt rightTxt'
+            style={{ padding: "0" }}
+          >
             <div className='imgWithTxtHeading'>
               <h2
                 data-aos='fade-left'
@@ -372,13 +398,21 @@ function Product() {
             </div>
             <div
               className='imgWithTxtImg'
-              style={{ backgroundImage: `url(${productDesc12})` }}
-            ></div>
+              // style={{ backgroundImage: `url(${productDesc12})` }}
+            >
+              <img
+                src={productDesc12}
+                alt='productDesc12'
+              />
+            </div>
           </section>
         )}
         {productObj?.extra?.info2[0] && (
-          <section className='imgWithTxt leftTxt logisticBlock'>
-            <div className='imgWithTxtHeading'>
+          <section
+            className='imgWithTxt leftTxt logisticBlock'
+            style={{ padding: "0" }}
+          >
+            <div className='imgWithTxtHeading logisticHeading'>
               <h2
                 data-aos='fade-right'
                 data-aos-duration='700'
@@ -394,17 +428,23 @@ function Product() {
             </div>
             <div
               className='imgWithTxtImg'
-              style={{ backgroundImage: `url(${productDesc2})` }}
-            ></div>
+              // style={{ backgroundImage: `url(${productDesc2})` }}
+            >
+              <img
+                src={productDesc2}
+                alt='productDesc2'
+              />
+            </div>
           </section>
         )}
 
-        <section className='centeredProduct'>
+        {/* <section className='centeredProduct'>
           <h3
             data-aos='fade-up'
             data-aos-duration='1000'
+            style={{ padding: "15px" }}
           >
-            Дополнительные сведения
+            {t("blocks.catalogBlock.addMaterial")}
           </h3>
           <div className='container'>
             <div className='centeredProductContainer'>
@@ -454,10 +494,47 @@ function Product() {
               </div>
             </div>
           </div>
+        </section> */}
+        <section className='sectionTabs'>
+          <h3
+            data-aos='fade-up'
+            data-aos-duration='1000'
+            style={{ padding: "15px", textAlign: "center", padding: "20px" }}
+          >
+            {t("blocks.catalogBlock.addMaterial")}
+          </h3>
+          <div className='container'>
+            <div className='productTabContainer'>
+              <div
+                className='centeredProductImage'
+                style={{ width: "500px" }}
+              >
+                <img
+                  src={productObj?.image?.images[0]}
+                  alt='centered product'
+                  data-aos='zoom-in'
+                  data-aos-duration='1000'
+                />
+              </div>
+              <Tabs
+                tab1={t("blocks.catalogBlock.compaund")}
+                subtitle1={productObj.compound}
+                tab2={t("blocks.catalogBlock.action")}
+                subtitle2={productObj.action}
+                tab3={t("blocks.catalogBlock.testimony")}
+                subtitle3={productObj.testimony}
+                tab4={t("blocks.catalogBlock.contraction")}
+                subtitle4={productObj.contraction}
+              />
+            </div>
+          </div>
         </section>
 
         {productObj?.extra?.info3[0] && (
-          <section className='imgWithTxt rightTxt'>
+          <section
+            className='imgWithTxt rightTxt'
+            style={{ padding: "0" }}
+          >
             <div className='imgWithTxtHeading'>
               <h2
                 data-aos='fade-left'
@@ -471,19 +548,24 @@ function Product() {
               >
                 {productObj?.extra?.info3[1]}
               </p>
-              <div className='btnLink'>
+              {/* <div className='btnLink'>
                 <button
                   className='sendOrder'
                   onClick={() => sendOrder()}
                 >
-                  Заказать
+                  {t("blocks.catalogBlock.buy")}
                 </button>
-              </div>
+              </div> */}
             </div>
             <div
               className='imgWithTxtImg'
-              style={{ backgroundImage: `url(${productDesc3})` }}
-            ></div>
+              // style={{ backgroundImage: `url(${productDesc3})` }}
+            >
+              <img
+                src={productDesc3}
+                alt='productDesc3'
+              />
+            </div>
           </section>
         )}
       </main>

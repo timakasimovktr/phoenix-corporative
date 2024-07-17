@@ -22,7 +22,7 @@ const ParallaxText = ({ children, baseVelocity = 100 }) => {
   const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
     clamp: false,
   });
-  const x = useTransform(baseX, (v) => `${wrap(-20, -45, v)}%`);
+  const x = useTransform(baseX, (v) => `${wrap(-20, -200, v)}%`);
 
   const directionFactor = useRef(1);
   useAnimationFrame((t, delta) => {
@@ -45,6 +45,14 @@ const ParallaxText = ({ children, baseVelocity = 100 }) => {
         className='scroller'
         style={{ x }}
       >
+        <span>{children} </span>
+        <span>{children} </span>
+        <span>{children} </span>
+        <span>{children} </span>
+        <span>{children} </span>
+        <span>{children} </span>
+        <span>{children} </span>
+        <span>{children} </span>
         <span>{children} </span>
         <span>{children} </span>
         <span>{children} </span>

@@ -75,7 +75,7 @@ function CategorySection({ category, getProducts }) {
               {t("blocks.catalogBlock.price")}: {product.price?.toLocaleString()} сум
             </div>
             <h3>{product.title}</h3>
-            <p>
+            <p className='productDescription'>
               {product.description.slice(0, 60)}
               {product.description.length > 60 && "..."}
             </p>

@@ -22,7 +22,7 @@ export const resources = {
                 main: 'Главная',
                 products: 'Продукция',
                 logistic: 'Логистика',
-                contacts: 'Контакты',
+                contacts: 'О нас',
             },
             mainBlock: {
                 subtitle: 'Только природные компоненты. Все средства безопасны для здоровья',
@@ -114,7 +114,15 @@ export const resources = {
                     lastName: 'Фамилия',
                     phone: 'Номер телефона',
                     buttonText: 'Отправить',
-                    massage: 'Ваше сообщение'
+                    massage: 'Ваше сообщение',
+                    city: 'Город',
+                    price: 'Общая стоимость',
+                    accepted: 'Заявка принята',
+                    orderText: ' Ваш заказ',
+                    quantityAlert: 'Выберите количество товара!',
+                    fillInputs: 'Заполните все поля!',
+                      contactYou: 'Наш сотрудник свяжется с вами',
+                 soon: 'в ближайшее время!'
                 }
             },
             catalogBlock: {
@@ -124,10 +132,25 @@ export const resources = {
                 newsBtn: 'Новинки',
                 viewAll: ' Посмотреть все',
                 price: 'Цена',
-                    btnBuy: 'Купить'
+                btnBuy: 'Купить',
+                buy: 'Заказать',
+                quantity: 'Количество',
+                shop: 'Магазин',
+                addMaterial: 'Дополнительные сведения',
+                contraction: 'Противопоказания',
+                testimony: 'Показания',
+                action: 'Действие препарата',
+                 compaund: 'Состав',
+                 order: 'Оформить заказ',
             }
         },
         tests:{
+            textAlert:{
+                alert1: 'Выберите категорию заболевания!',
+                alert2: 'Выберите один из вариантов ответа!',
+                alert3: 'Рекомендованный продукт откроется через 3 секунды!'
+            },
+            
             btnText:{
                 next: 'Следущий',
                 theEnd: 'Сдать'
@@ -256,7 +279,7 @@ export const resources = {
                 whyWe: 'Нега биз?',
                 doYouNeedHelp: 'Сизга ёрдам керакми?',
 
-                marketing: 'Marketing',
+                marketing: 'Маркентинг',
                 logistic: 'Логистика',
                 callCenter: 'Cалл Center' ,
                 contacts: 'Бизнес екотизими'
@@ -266,7 +289,7 @@ export const resources = {
                     main: 'Асосий',
                     products: 'Маҳсулотлар',
                     logistic: 'Логистика',
-                    contacts: 'Алоқалар',
+                    contacts: 'Биз ҳақимизда',
                 },
                 mainBlock: {
                     subtitle: 'Фақат табиий ингредиентлар. Барча маҳсулотлар соғлиқ учун хавфсиздир',
@@ -359,6 +382,14 @@ export const resources = {
                         phone: 'Telefon рақами',
                         buttonText: 'Юбориш',
                         massage: 'Сизнинг хабарингиз',
+                        city: 'Шаҳар',
+                        price: 'Умумий қиймати',
+                        accepted: 'Ариза қабул қилинди',
+                        orderText: 'Сизнинг буюртмангиз',
+                        contactYou: 'Бизнинг ходимимиз сиз билан боғланади',
+                        soon: 'Келмоқда!',
+                        quantityAlert: 'Маҳсулот миқдорини танланг!',
+                        fillInputs: 'Барча майдонларни тўлдиринг!'
                     }
                 },
                 catalogBlock: {
@@ -368,10 +399,25 @@ export const resources = {
                     newsBtn: 'Янги маҳсулотлар',
                     viewAll: 'Ҳаммасини кўриш',
                     price: 'Нархи',
-                    btnBuy: 'сотиб олиш'
+                    btnBuy: 'Сотиб олиш',
+                    buy: 'Буюртма бериш',
+                    quantity: 'Миқдори',
+                    shop: 'Дўкон',
+                    addMaterial: 'Қўшимча маълумот',
+                    contraction: 'Контрендикациялар',
+                    testimony: 'Кўрсаткичлар',
+                    action: 'Препаратнинг таъсири',
+                    compaund: 'Таркиби',
+                    order: 'Буюртма беринг'
+                    
                 }
             },
             tests:{
+                textAlert:{
+                    alert1: 'Касаллик тоифасини танланг!',
+                    alert2: 'Жавоб вариантларидан бирини танланг!',
+                    alert3: 'Тавсия етилган маҳсулот 3 сонияда очилади!'
+                },
                 btnText:{
                     next: 'Кейинги',
                     theEnd: 'Ўтиш'

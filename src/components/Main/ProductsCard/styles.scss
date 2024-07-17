@@ -2,7 +2,7 @@
 .benefitsCardMobile{
     background-color: transparent;
     width: 300px;
-    height: 400px;
+    height: 420px;
     perspective: 1000px;
     border-radius: 20px;
     background: transparent;
@@ -50,6 +50,9 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
+        }
+        .cardLink{
+            color: #fff500;
         }
             
     }}

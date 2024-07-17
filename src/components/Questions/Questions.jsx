@@ -195,7 +195,7 @@ function Questions(props) {
             <button
               onClick={() => {
                 if (choosenCategory === 0) {
-                  toast.error("Касаллик тоифасини танланг!");
+                  toast.error(`${t("tests.textAlert.form.alert1")}`);
                 } else {
                   setSurveyStep(2);
                   setFilteredSurvey(surveyObj.filter((item) => +item.surveyCategory.id === +choosenCategory));
@@ -235,13 +235,13 @@ function Questions(props) {
               <button
                 onClick={() => {
                   if (choosenCategory === 0) {
-                    toast.error("Жавоб вариантларидан бирини танланг!");
+                    toast.error(`${t("tests.textAlert.form.alert2")}`);
                   } else {
                     if (index !== filteredSurvey[0]?.surveyCategory?.surveyQuestions.length - 1) {
                       setSurveyStep(surveyStep + 1);
                     }
                     if (index === filteredSurvey[0]?.surveyCategory?.surveyQuestions.length - 1) {
-                      toast.success("Тавсия етилган маҳсулот 3 сонияда очилади!");
+                      toast.success(`${t("tests.textAlert.form.alert3")}`);
                       setTimeout(() => {
                         window.location.href = `/${filteredSurvey[0]?.surveyCategory?.product}`;
                       }, 3000);

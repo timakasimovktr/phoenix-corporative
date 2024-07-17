@@ -2,11 +2,11 @@ import React, { useEffect } from "react";
 import { APP_ROUTES } from "../../router/Route";
 import { Outlet, Link } from "react-router-dom";
 
-import footerLogo from "../../images/Footer-Logo.png";
+import footerLogo from "../../images/PhoenixLogo.svg";
 import instaIcon from "../../images/Instagram-Icon.svg";
 import tgIcon from "../../images/Telegram-Icon.svg";
 import fbIcon from "../../images/Facebook-Icon.svg";
-import euphoriaLogo from "../../images/Euphoria-Logo.svg";
+import euphoriaLogo from "../../images/euphoria 1.png";
 import { FaFacebookF } from "react-icons/fa";
 import { FaTelegramPlane } from "react-icons/fa";
 
@@ -77,15 +77,15 @@ const Footer = () => {
                   {t("blocks.footer.text4")}
                 </Link>
                 <Link
-                  to={`${APP_ROUTES.WELCOME}#aboutUs`}
+                  to={`${APP_ROUTES.CONTACTS}`}
                   onClick={() => scrollTo()}
                 >
-                  {t("blocks.footer.text5")}
+                  {t("timeline.title")}
                 </Link>
               </div>
               <div className='footer-col'>
                 <Link
-                  to={`${APP_ROUTES.WELCOME}#commentsSection`}
+                  to={`${APP_ROUTES.WELCOME}#partners`}
                   onClick={() => scrollTo()}
                 >
                   {t("blocks.footer.text6")}
@@ -148,11 +148,14 @@ const Footer = () => {
           <div className='phoenix-prod'>
             <div></div>
             <div>
-              <p>powered by: Phoenix</p>
-              <img
-                src={footerLogo}
-                alt=''
-              />
+              <p>powered by: </p>
+              <div className='prodImage'>
+                <img
+                  src={footerLogo}
+                  alt=''
+                  style={{ width: "100%" }}
+                />
+              </div>
             </div>
             <p>© 2024 - Phoenix</p>
           </div>

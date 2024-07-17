@@ -1,433 +1,112 @@
-.sectionTimeline{
-    .timelineTitle{
-        text-align: center;
-        margin-bottom: 10px;
-        .title{
-            font-size: 40px;
-            color: #FFF500;
-        }
-    }
-    .contactsLink{
-        .link{
-            font-size: 24px;
-        }
-    }
-}
-.timeline {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    overflow: hidden;
-  
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      transform: skewY(342deg);
-      transform-origin: bottom left;
-      border-bottom: 2px solid #000;
-      background-color: #c9c9c9;
-      z-index: 1;
-    }
-  }
-  
-  .timeline-dot {
-    position: absolute;
-    z-index: 2;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #FFF500;
-    cursor: pointer;
-    transition: all 0.5s ease;
-  
-    .year {
-      position: absolute;
-      bottom: 30px;
-      left: -10px;
-      font-size: 20px;
-      color: #FFF500;
-    }
-  
-    &:hover {
-      .timeline-dot-text {
-        display: block;
-      }
-    }
-  
-    &.dot-2018 {
-      left: 20%;
-      top: 78%;
-    }
-  
-    &.dot-2019 {
-      left: 40%;
-      bottom: 38%;
-    }
-  
-    &.dot-2020 {
-      left: 60%;
-      bottom: 58%;
-    }
-  
-    &.dot-2021 {
-      left: 80%;
-      top: 18%;
-    }
-  }
-  
-  .timeline-dot-text {
-    width: 300px;
-    display: none;
-    position: absolute;
-    bottom: -80px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    z-index: 3;
-  }
 
-  @media screen and (max-width: 2000px){
-    .timeline{
-        height: 600px;
+.timeline{
+    padding: 50px 0;
+    .sectionTitleBlack{
+        margin-bottom: 50px;
     }
-    .timeline-dot{
-        &.dot-2018 {
-            left: 20%;
-            top: 78%;
-          }
-          &.dot-2019 {
-            left: 30%;
-            bottom: 38%;
-          }
-          &.dot-2020 {
-            left: 50%;
-            bottom: 64%;
-          }
-          &.dot-2021 {
-            left: 70%;
-            top: 7%;
-          }
-    }
-    .timeline-dot-text{
-        transform: translateX(0);
-    }
-}
-@media screen and (max-width: 1920px){
-    .timeline{
-        height: 500px;
-    }
-    .timeline-dot{
-        &.dot-2018 {
-            left: 20%;
-            top: 72%;
-          }
-          &.dot-2019 {
-            left: 30%;
-            bottom: 36%;
-          }
-          &.dot-2020 {
-            left: 50%;
-            bottom: 61%;
-          }
-          &.dot-2021 {
-            left: 70%;
-            top: 10%;
-          }
-    }
-    .timeline-dot-text{
-        transform: translateX(0);
-    }   
-}
-
-@media screen and (max-width: 1750px){
-    .timeline-dot{
-        &.dot-2018 {
-            left: 20%;
-            top: 75%;
-          }
-          &.dot-2019 {
-            left: 30%;
-            bottom: 32%;
-          }
-          &.dot-2020 {
-            left: 50%;
-            bottom: 56%;
-          }
-          &.dot-2021 {
-            left: 70%;
-            top: 18%;
-          }
-    }
-}
-
-@media screen and (max-width: 1600px){
-    .timeline-dot{
-        &.dot-2018 {
-            left: 30%;
-            top: 67%;
-          }
-          &.dot-2019 {
-            left: 45%;
-            bottom: 44%;
-          }
-          &.dot-2020 {
-            left: 60%;
-            bottom: 59%;
-          }
-          &.dot-2021 {
-            left: 80%;
-            top: 18%;
-          }
-    }
-}
-
-@media screen and (max-width: 1450px){
-    .timeline-dot{
-        &.dot-2018 {
-            left: 30%;
-            top: 70%;
-          }
-          &.dot-2019 {
-            left: 45%;
-            bottom: 40%;
-          }
-          &.dot-2020 {
-            left: 60%;
-            bottom: 53%;
-          }
-          &.dot-2021 {
-            left: 80%;
-            top: 24%;
-          }
-    }
-}
-
-@media screen and (max-width: 1350px){
-    .timeline{
-        height: 700px;
+    .timelineItems{
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        position: relative;
+        width: 100%;
         &:before{
-            transform: skewY(334deg);
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            border: 1px dashed #fff500;
+            // background-color: #fff;
+            @media screen and (max-width: 991px){
+                width: 2px;
+                height: 100%;
+                left: calc(50% - 1px);
+            }
+            @media screen and (max-width: 614px){
+                left: 7px
+            }
         }
-    }
-    .timeline-dot{
-        &.dot-2018 {
-            left: 30%;
-            top: 70%;
-          }
-          &.dot-2019 {
-            left: 45%;
-            bottom: 40%;
-          }
-          &.dot-2020 {
-            left: 60%;
-            bottom: 53%;
-          }
-          &.dot-2021 {
-            left: 80%;
-            top: 26%;
-          }
-    }
-}
+        .timelineItem{
+            width: 20%;
+            position: relative;
+            transition: all 0.5s ease;
+            cursor: pointer;
+            @media screen and (max-width: 991px){
 
-@media screen and (max-width: 1250px){
-    .timeline{
-        height: 700px;
-    }
-    .timeline-dot{
-        &.dot-2018 {
-            left: 30%;
-            top: 73%;
-          }
-          &.dot-2019 {
-            left: 45%;
-            bottom: 36%;
-          }
-          &.dot-2020 {
-            left: 60%;
-            bottom: 48%;
-          }
-          &.dot-2021 {
-            left: 80%;
-            top: 32%;
-          }
-    }
-}
-@media screen and (max-width: 1150px){
-    .timeline{
-        height: 700px;
-    }
-    .timeline-dot{
-        &.dot-2018 {
-            left: 30%;
-            top: 75%;
-          }
-          &.dot-2019 {
-            left: 45%;
-            bottom: 33%;
-          }
-          &.dot-2020 {
-            left: 60%;
-            bottom: 44%;
-          }
-          &.dot-2021 {
-            left: 80%;
-            top: 38%;
-          }
-    }
-}
-@media screen and (max-width: 991px){
-    .timeline{
-        height: 700px;
-    }
-    .timeline-dot{
-        &.dot-2018 {
-            left: 30%;
-            top: 79%;
-          }
-          &.dot-2019 {
-            left: 45%;
-            bottom: 28%;
-          }
-          &.dot-2020 {
-            left: 60%;
-            bottom: 37%;
-          }
-          &.dot-2021 {
-            left: 80%;
-            top: 47%;
-          }
-    }
-}
-  @media screen and (max-width: 850px){
-    .timeline{
-        &:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 100%;
-            height: 100%;
-            // transform: skewY(342deg);
-            transform-origin: bottom left;
-            border-left: 2px solid #000;
-            border-bottom: none;
-            background-color: #c9c9c9;
-            z-index: 1;
-        }
-        .timeline-dot{
-            &.dot-2018 {
-                left: 49%;
-                top: 20%;
-              }
-              &.dot-2019 {
-                left: 49%;
-                top: 40%;
-              }
-              &.dot-2020 {
-                left: 49%;
-                top: 60%;
-              }
-              &.dot-2021 {
-                left: 49%;
-                top: 80%;
-              }
+                margin-bottom: 40px;
+                width: 100%;
+            }
+            &:hover{
+                .timelineDot{
+                    height: 20px;
+                    width: 20px;
+                }
+                .timelineTitle{
+                    .title{
+                        color: #fff500;
+                    }
+                }
+            }
+            @media screen and (max-width: 991px){
+                &:nth-child(odd){
+                    padding-right: calc(50% + 30px);
+                    text-align: right;
+                }
+                &:nth-child(even){
+                    padding-left: calc(50% + 30px);
+                }
+            }
+            @media screen and (max-width: 614px){
+                &:nth-child(odd){
+                    padding-right: 0;
+                    text-align: left;
+                }
+                &:nth-child(odd),
+                &:nth-child(even){
+                    padding-left: 37px;
+                }
+            }
+            .timelineDot{
+                height: 16px;
+                width: 16px;
+                background-color: #fff500;
+                position: absolute;
+                left: -2px;
+                top: -8px;
+                border-radius: 50%;
+                transition: all 0.5s ease;
+                @media screen and (max-width: 991px){
+                    left: calc(50% - 8px);
+                    top: 10px;
+                }
+                @media screen and (max-width: 614px){
+                    left: 0;
+                }
+            }
+            .timelineTitle{
+                .title{
+                    font-size: 24px;
+                    font-weight: 500;
+                    color: #fff500;
+                    margin: 30px 0 9px;
+                    transition: all 0.5s ease;
+                    @media screen and (max-width: 1150px){
+                        font-size: 18px;
+                    }
+                }
+            }
+            .timelineText{
+                border-radius: 5px;
+                .text{
+                    margin: 0;
+                    font-size: 16px;
+                    font-weight: 400;
+                    @media screen and (max-width: 1150px){
+                        font-size: 12px;
+                    }
+                }
+            }
         }
     }
-  }
-  @media (max-width: 768px) {
-    .timeline-dot {
-      .year {
-        font-size: 16px;
-        bottom: 25px;
-      }
-  
-      &.dot-2018 {
-        left: 10%;
-        top: 70%;
-      }
-  
-      &.dot-2019 {
-        left: 30%;
-        bottom: 30%;
-      }
-  
-      &.dot-2020 {
-        left: 50%;
-        bottom: 50%;
-      }
-  
-      &.dot-2021 {
-        left: 70%;
-        top: 10%;
-      }
-    }
-  
-    .timeline-dot-text {
-      width: 200px;
-      bottom: -70px;
-      padding: 3px 7px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .timeline{
-        &:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 8%;
-            width: 100%;
-            height: 100%;
-            // transform: skewY(342deg);
-            transform-origin: bottom left;
-            border-left: 2px solid #000;
-            border-bottom: none;
-            background-color: #c9c9c9;
-            z-index: 1;
-        }
-        .timeline-dot {
-            width: 15px;
-            height: 15px;
-            .timeline-dot-text {
-                width: 300px;
-                bottom: -60px;
-                padding: 2px 5px;
-              }
-        
-            .year {
-              font-size: 14px;
-              bottom: 20px;
-            }
-        
-            &.dot-2018 {
-              left: 7%;
-              top: 20%;
-            }
-        
-            &.dot-2019 {
-              left: 7%;
-              bottom: 40%;
-            }
-        
-            &.dot-2020 {
-              left: 7%;
-              bottom: 60%;
-            }
-        
-            &.dot-2021 {
-              left: 7%;
-              top: 80%;
-            }
-          }
-    }
-   
-  
-    
-  }
+}

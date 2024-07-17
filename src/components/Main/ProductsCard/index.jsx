@@ -1,8 +1,10 @@
 import React from "react";
 import "./styles.scss";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const ProductsCard = ({ cardImage, imageAlt, title, description, link }) => {
+  const { t } = useTranslation();
   return (
     <div className='benefitsCardMobile'>
       <div className='productsCardInner'>
@@ -27,7 +29,7 @@ const ProductsCard = ({ cardImage, imageAlt, title, description, link }) => {
               className='cardLink'
               to={link}
             >
-              Подробнее
+              {t("blocks.referalBlock.buttonText")}
             </Link>
           </div>
         </Link>

@@ -1,41 +1,53 @@
 import React from "react";
-import "./styles.scss";
-import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import "./styles.scss";
 
 const Timeline = () => {
   const { t } = useTranslation();
   return (
-    <section className='sectionTimeline'>
+    <section
+      className='timeline'
+      id='learning'
+    >
       <div className='container'>
-        <div className='timelineTitle'>
-          <h2 className='title'>{t("timeline.title")}</h2>
-        </div>
-        <div className='contactsLink'>
-          <Link
-            to='/contacts'
-            className='link'
-          >
-            {t("timeline.link")}
-          </Link>
-        </div>
-      </div>
-      <div className='timeline'>
-        <div className='timeline-dot dot-2018'>
-          <p className='year'>2018</p>
-          <div className='timeline-dot-text'>{t("timeline.year1")}</div>
-        </div>
-        <div className='timeline-dot dot-2019'>
-          <p className='year'>2019</p>
-          <div className='timeline-dot-text'>{t("timeline.year2")}</div>
-        </div>
-        <div className='timeline-dot dot-2020'>
-          <p className='year'>2020</p>
-          <div className='timeline-dot-text'>{t("timeline.year3")}</div>
-        </div>
-        <div className='timeline-dot dot-2021'>
-          <p className='year'>2021</p>
-          <div className='timeline-dot-text'>{t("timeline.year4")}</div>
+        <div className='timelineItems'>
+          <div className='timelineItem'>
+            <div className='timelineDot'></div>
+            <div className='timelineTitle'>
+              <h4 className='title'>2017</h4>
+            </div>
+            <div className='timelineText'>
+              <p className='text'>{t("timeline.year1")}</p>
+            </div>
+          </div>
+          <div className='timelineItem'>
+            <div className='timelineDot'></div>
+            <div className='timelineTitle'>
+              <h4 className='title'>2020</h4>
+            </div>
+            <div className='timelineText'>
+              <p className='text'>{t("timeline.year2")}</p>
+            </div>
+          </div>
+
+          <div className='timelineItem'>
+            <div className='timelineDot'></div>
+            <div className='timelineTitle'>
+              <h4 className='title'>2022</h4>
+            </div>
+            <div className='timelineText'>
+              <p className='text'> {t("timeline.year3")}</p>
+            </div>
+          </div>
+          <div className='timelineItem'>
+            <div className='timelineDot'></div>
+            <div className='timelineTitle'>
+              <h4 className='title'>2024</h4>
+            </div>
+            <div className='timelineText'>
+              <p className='text'>{t("timeline.year4")}</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

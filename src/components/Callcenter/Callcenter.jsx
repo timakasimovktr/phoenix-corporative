@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { APP_ROUTES } from "../../router/Route";
 import { Outlet, Link } from "react-router-dom";
 import Header from "../Header/Header";
@@ -9,10 +9,17 @@ import { useTranslation } from "react-i18next";
 
 const Callcenter = () => {
   const { t, i18n } = useTranslation();
+  const [changeLanguage, setChangeLanguage] = useState(false);
   return (
     <>
-      <Header />
-      <section className='imgWithTxt logisticBlock'>
+      <Header
+        changeLanguage={changeLanguage}
+        setChangeLanguage={setChangeLanguage}
+      />
+      <section
+        className='imgWithTxt logisticBlock'
+        onClick={() => setChangeLanguage(false)}
+      >
         <div className='imgWithTxtHeading'>
           <h2>{t("headings.callCenter")}</h2>
           <p>{t("blocks.callCenterBlock.subtitle")}</p>
