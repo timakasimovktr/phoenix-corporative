@@ -281,7 +281,7 @@ export const resources = {
 
                 marketing: 'Маркентинг',
                 logistic: 'Логистика',
-                callCenter: 'Cалл Center' ,
+                callCenter: 'Колл сентер' ,
                 contacts: 'Бизнес екотизими'
             },
             blocks: {

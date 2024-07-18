@@ -30,7 +30,6 @@ import person from "../../images/person.png";
 import logistics from "../../images/logistics.jpg";
 import callcenter from "../../images/callcenter.jpg";
 import marketing from "../../images/marketing.png";
-import urion from "../../images/Frame 22.png";
 
 import Anfa from "../../images/Anfa.png";
 import Visu from "../../images/Visu.png";
@@ -40,6 +39,22 @@ import mens from "../../images/mens.png";
 import ParazitOFF from "../../images/ParazitOFF.png";
 import slimft from "../../images/slimft.png";
 import Power from "../../images/Power.png";
+import urionBefore from "../../images/urionBefore.png";
+import urionAfter from "../../images/urionAfter.png";
+import VisuBefore from "../../images/VisuCapsBefore.png";
+import VisuAfter from "../../images/VisecapsAfter.png";
+import hypertBefore from "../../images/hyperBefore.png";
+import hypertAfter from "../../images/hyperAfter.png";
+import diabeticBefore from "../../images/diabeticBefore.png";
+import diabeticAfter from "../../images/diabeticAfter.png";
+import mensAfter from "../../images/mensBefore.png";
+import mensBefore from "../../images/mensAfter.png";
+import ParazitOFFBefore from "../../images/ParazitOFFBefore.png";
+import ParazitOFFAfter from "../../images/ParazitOFFAfter.png";
+import slimftBefore from "../../images/slimftBefore.png";
+import slimftAfter from "../../images/slimftAfter.png";
+import growBefore from "../../images/geowBefore.png";
+import growAfter from "../../images/growAfter.png";
 
 import mensWithoutBg from "../../images/mensWithoutBg.png";
 import diabeticWithoutBg from "../../images/diabeticWithoutBg.png";
@@ -75,6 +90,8 @@ import IndexSecond from "../floatingShape/secondFloating";
 
 import { useTranslation } from "react-i18next";
 import TimelineComponent from "./timeline";
+import BioAddsBlock from "./bioAdds";
+import CircularText from "./bioAdds";
 
 export const Title = styled(motion.h1)`
   font-family: var(--font-primary);
@@ -122,61 +139,61 @@ function Main() {
   const x = useTransform(scrollYProgress, [0, 1], [0, 1000]);
 
   const ProductSliderItems = [
+    // {
+    //   id: 1,
+    //   title: "Anfa Oku Vital",
+    //   description: `${t("blocks.productsBlock.description1")}`,
+    //   cardImage: Anfa,
+    //   imageAlt: "Anfa",
+    // },
     {
       id: 1,
-      title: "Anfa Oku Vital",
-      description: `${t("blocks.productsBlock.description1")}`,
-      cardImage: Anfa,
-      imageAlt: "Anfa",
-    },
-    {
-      id: 2,
       title: "Visu Caps",
       description: `${t("blocks.productsBlock.description2")}`,
-      cardImage: Visu,
+      cardImage: VisuBefore,
       imageAlt: "Visu",
     },
     {
-      id: 3,
+      id: 2,
       title: "Гипертофорт",
       description: `${t("blocks.productsBlock.description3")}`,
-      cardImage: hypert,
+      cardImage: hypertBefore,
       imageAlt: "hypert",
     },
     {
-      id: 4,
+      id: 3,
       title: "Диабетик Форте",
       description: `${t("blocks.productsBlock.description4")}`,
-      cardImage: diabetic,
+      cardImage: diabeticBefore,
       imageAlt: "diabetic",
     },
     {
-      id: 5,
+      id: 4,
       title: "Men's Power",
       description: `${t("blocks.productsBlock.description5")}`,
-      cardImage: mens,
+      cardImage: mensBefore,
       imageAlt: "mens",
     },
     {
-      id: 6,
+      id: 5,
       title: "ParazitOFF",
       description: `${t("blocks.productsBlock.description6")}`,
-      cardImage: ParazitOFF,
+      cardImage: ParazitOFFBefore,
       imageAlt: "ParazitOFF",
     },
 
     {
-      id: 7,
+      id: 6,
       title: "SLIMFIT",
       description: `${t("blocks.productsBlock.description7")}`,
-      cardImage: slimft,
+      cardImage: slimftBefore,
       imageAlt: "slimft",
     },
     {
-      id: 8,
+      id: 7,
       title: "Power KETO",
       description: `${t("blocks.productsBlock.description8")}`,
-      cardImage: Power,
+      cardImage: growBefore,
       imageAlt: "Power",
     },
   ];
@@ -184,65 +201,58 @@ function Main() {
   const mainBannerCardsItems = [
     {
       id: 1,
-      imgBefore: urion,
-      imgAfter: urion,
-      sideTitle: "urion",
+      imgBefore: urionBefore,
+      imgAfter: urionAfter,
+      sideTitle: "Urion",
       sideSubtitle: `${t("blocks.mainBlock.sale")}`,
     },
     {
       id: 2,
-      imgBefore: AnfaWihoutBg,
-      imgAfter: AnfaWihoutBg,
-      sideTitle: "Anfa Oku Vital",
-      sideSubtitle: `${t("blocks.mainBlock.sale")}`,
-    },
-    {
-      id: 3,
-      imgBefore: VisuWithoutBg,
-      imgAfter: VisuWithoutBg,
+      imgBefore: VisuBefore,
+      imgAfter: VisuAfter,
       sideTitle: "Visu Caps",
       sideSubtitle: `${t("blocks.mainBlock.sale")}`,
     },
     {
-      id: 4,
-      imgBefore: hypertWithoutBg,
-      imgAfter: hypertWithoutBg,
+      id: 3,
+      imgBefore: hypertBefore,
+      imgAfter: hypertAfter,
       sideTitle: "Гипертофорт",
       sideSubtitle: `${t("blocks.mainBlock.sale")}`,
     },
     {
-      id: 5,
-      imgBefore: diabeticWithoutBg,
-      imgAfter: diabeticWithoutBg,
+      id: 4,
+      imgBefore: diabeticBefore,
+      imgAfter: diabeticAfter,
       sideTitle: "Диабетик Форте",
       sideSubtitle: `${t("blocks.mainBlock.sale")}`,
     },
     {
-      id: 6,
-      imgBefore: mensWithoutBg,
-      imgAfter: mensWithoutBg,
+      id: 5,
+      imgBefore: mensBefore,
+      imgAfter: mensAfter,
       sideTitle: "Men's Power",
       sideSubtitle: `${t("blocks.mainBlock.sale")}`,
     },
     {
-      id: 7,
-      imgBefore: ParazitOFFWithoutBg,
-      imgAfter: ParazitOFFWithoutBg,
+      id: 6,
+      imgBefore: ParazitOFFBefore,
+      imgAfter: ParazitOFFAfter,
       sideTitle: "ParazitOFF",
       sideSubtitle: `${t("blocks.mainBlock.sale")}`,
     },
     {
-      id: 8,
-      imgBefore: slimftWithoutBg,
-      imgAfter: slimftWithoutBg,
+      id: 7,
+      imgBefore: slimftBefore,
+      imgAfter: slimftAfter,
       sideTitle: "SLIMFIT",
       sideSubtitle: `${t("blocks.mainBlock.sale")}`,
     },
     {
-      id: 9,
-      imgBefore: PowerWihoutBg,
-      imgAfter: PowerWihoutBg,
-      sideTitle: "Power KETO",
+      id: 8,
+      imgBefore: growBefore,
+      imgAfter: growAfter,
+      sideTitle: "GrowX",
       sideSubtitle: `${t("blocks.mainBlock.sale")}`,
     },
   ];
@@ -295,11 +305,12 @@ function Main() {
                   data-aos-duration='700'
                   data-aos-delay='600'
                 >
-                  <img
+                  Marketing
+                  {/* <img
                     src={marketing}
                     alt={marketing}
                   />
-                  {/* <p>marketing</p> */}
+                  <p>marketing</p> */}
                 </Link>
 
                 <Link
@@ -310,10 +321,11 @@ function Main() {
                   data-aos-duration='700'
                   data-aos-delay='600'
                 >
-                  <img
+                  Колл-центр
+                  {/* <img
                     src={callcenter}
                     alt={callcenter}
-                  />
+                  /> */}
                 </Link>
                 <Link
                   // reloadDocument
@@ -323,10 +335,11 @@ function Main() {
                   data-aos-duration='700'
                   data-aos-delay='600'
                 >
-                  <img
+                  {/* <img
                     src={logistics}
                     alt={logistics}
-                  />
+                  /> */}
+                  Логистика
                 </Link>
               </div>
             </div>
@@ -509,71 +522,7 @@ function Main() {
             </Swiper>
           </div>
         </section>
-
-        <section
-          className='marketing'
-          id='marketingSection'
-        >
-          <div className='marketingHeading'>
-            <h2
-              data-aos='fade-right'
-              data-aos-duration='700'
-              data-aos-offset='20'
-            >
-              {t("headings.bioAdds")}
-            </h2>
-            <p
-              data-aos='fade-right'
-              data-aos-duration='700'
-              data-aos-offset='20'
-            >
-              {t("blocks.bioAdds.subtitle")}
-            </p>
-            <img
-              src={marketingLine}
-              alt={marketingLine}
-              data-aos='fade-right'
-              data-aos-duration='700'
-              data-aos-offset='20'
-            />
-            {/* <p
-              data-aos='fade-right'
-              data-aos-duration='700'
-              data-aos-offset='20'
-            >
-              Далеко-далеко за, словесными горами в стране гласных и согласных живут рыбные тексты. Рот, использовало.
-              Рекламных семь маленькая он сих агентство своего. Необходимыми диких алфавит встретил строчка имеет они
-              запятых дорогу, до то большой, сбить даль.
-            </p> */}
-            {/* <Link
-              reloadDocument
-              to={APP_ROUTES.PRODUCTS}
-              className='br10'
-              data-aos='fade-right'
-              data-aos-duration='700'
-              data-aos-offset='20'
-            >
-              Подробнее
-              <img
-                src={sliderArrow}
-                alt={sliderArrow}
-              />
-            </Link> */}
-            <Link
-              onClick={() => setIsQuestions(true)}
-              className='br10'
-            >
-              {t("blocks.bioAdds.buttonText")}
-            </Link>
-          </div>
-          <div className='marketingImg'>
-            <img
-              src={marketingImgBlock}
-              alt={marketingImgBlock}
-            />
-          </div>
-        </section>
-
+        <CircularText setIsQuestions={setIsQuestions} />
         <section
           className='comments'
           id='commentsSection'

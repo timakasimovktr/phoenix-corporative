@@ -1,0 +1,31 @@
+.circle
+    position: relative
+    width: 300px
+    height: 300px
+    border-radius: 50%
+    /* background: #ccc; */
+    display: flex
+    justify-content: center
+    align-items: center
+    .logo
+        position: absolute
+        width: 200px
+        height: 200px
+        background: url('../../../images/marketingImgBlock1.Png')
+        background-size: cover
+        border-radius: 50%
+    .text
+        position: absolute
+        width: 100%
+        height: 100%
+        animation: rotateText 10s linear infinite
+        color: #fff500
+        span
+            position: absolute
+            left: 50%
+            font-size: 24px
+            transform-origin: 0 150px
+
+@keyframes rotateText
+    0%
+        transform: rotate(360deg)

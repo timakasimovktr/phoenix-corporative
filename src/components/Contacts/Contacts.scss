@@ -20,15 +20,27 @@ main {
 .imgWithTxtContacts {
     background: #00000000;
     padding: 30px 0 0 0;
-
+    position: relative;
+    svg{visibility:hidden; position: absolute; z-index: 0;}
+    text{
+    font-family: sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    fill:#fff7008d;
+    }
     .container {
         display: flex;
     }
 
     h3 {
         background: #000;
+        position: relative;
+        z-index: 1;
     }
-
+    p{
+        position: relative;
+        z-index: 1;
+    }
     .imgWithTxtImg {
         background-size: cover;
         background-position: center;
@@ -89,11 +101,11 @@ main {
         .dot1 {
             top: 39%;
             left: 31%;
-            background: #fff700b9;
+            background: #2e2e2ea8;
 
             .dotChild {
-                background: #FFF500;
-                color: #2e2e2e;
+                background: #2e2e2e;
+                color: #FFF500;
             }
         }
 
@@ -125,7 +137,7 @@ main {
         margin-right: 30px;
 
         h2 {
-            color: white;
+            color: #fff500;
         }
     }
 }
@@ -134,6 +146,8 @@ main {
     width: 100%;
     padding: 30px 0;
     margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
 
     .container {
         display: flex;

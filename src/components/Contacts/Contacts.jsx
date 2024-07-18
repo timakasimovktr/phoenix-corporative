@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, EffectCards, FreeMode } from "swiper/modules";
 import "swiper/css/bundle";
@@ -21,10 +21,26 @@ import asiaMap from "../../images/asiamap.png";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import { useTranslation } from "react-i18next";
+import gsap from "gsap";
 
 function Contacts() {
   const { t, i18n } = useTranslation();
   const [changeLanguage, setChangeLanguage] = useState(false);
+  const textRef = useRef(null);
+
+  useEffect(() => {
+    gsap.set("svg", { autoAlpha: 1 });
+
+    gsap
+      .timeline({ repeat: -1 })
+      .from(".text", {
+        attr: { startOffset: "110%" },
+        duration: 5,
+        ease: "none",
+        stagger: 5,
+      })
+      .to(".text", { autoAlpha: 0, duration: 0.5, stagger: 5 }, 5);
+  }, []);
   return (
     <>
       <Header
@@ -33,6 +49,23 @@ function Contacts() {
       />
       <main onClick={() => setChangeLanguage(false)}>
         <section className='imgWithTxt imgWithTxtContacts'>
+          <svg viewBox='0 50 800 600'>
+            <defs>
+              <path
+                id='path-1'
+                fill='none'
+                d='M 50 300 Q 100 50 250 200 Q 350 350 450 200 Q 600 50 700 350'
+              ></path>
+            </defs>
+            <text>
+              <textPath
+                className='text'
+                href='#path-1'
+              >
+                Euohoria Group Euohoria Group
+              </textPath>
+            </text>
+          </svg>
           <div className='container'>
             <div className='imgWithTxtHeading'>
               <h2>{t("headings.contacts")}</h2>

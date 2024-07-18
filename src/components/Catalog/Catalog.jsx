@@ -7,9 +7,9 @@ import { APP_ROUTES } from "../../router/Route";
 import axios from "axios";
 
 //images
-import beautifulMan from "../../images/beautiful_man.jpg";
-import bottlesOfWater from "../../images/bottles_of_water.jpg";
-import bottleOfWater from "../../images/bottle_of_water.jpg";
+import beautifulMan from "../../images/azim.JPG";
+import bottlesOfWater from "../../images/productsAll.JPG";
+import bottleOfWater from "../../images/german2.JPG";
 
 //sections
 import Header from "../Header/Header";
