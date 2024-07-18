@@ -190,7 +190,7 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    row-gap: 50px;
+    // row-gap: 50px;
     .referalInfo{
       display: flex;
       flex-direction: column;
@@ -198,7 +198,7 @@ main {
       .referalSubtitle{
         text-align: center;
         .subtitle{
-          font-size: 16px;
+          font-size: 25px;
           font-weight: 500;
         }
       }
@@ -212,12 +212,13 @@ main {
       .referalLink{
         text-align: center;
         background: #fff500;
-        padding: 5px 10px;
+        padding: 10px 50px;
         border-radius: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
         max-width: 150px;
+        margin: 25px 0;
         a{
           color: #1e1e1e;
         }

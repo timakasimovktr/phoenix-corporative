@@ -753,11 +753,11 @@ function Main() {
           <div className='container'>
             <div className='referalContainer'>
               <div className='referalInfo'>
-                <div className='referalSubtitle'>
-                  <p className='subtitle'>{t("blocks.referalBlock.subtitle")}</p>
-                </div>
                 <div className='referalTitle'>
                   <h3 className='title'>{t("headings.referal")}</h3>
+                </div>
+                <div className='referalSubtitle'>
+                  <p className='subtitle'>{t("blocks.referalBlock.subtitle")}</p>
                 </div>
                 <div className='referalLink'>
                   <Link to={APP_ROUTES.REFERRAL}>{t("blocks.referalBlock.buttonText")}</Link>
