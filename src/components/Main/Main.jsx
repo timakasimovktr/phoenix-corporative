@@ -627,11 +627,11 @@ function Main() {
                   <span>{t("blocks.contactsBlock.form.phone")}</span>
                 </div>
                 <div className='inputBox'>
-                  <textarea
+                  <input
                     name='sms'
                     required
-                  ></textarea>
-                  <span style={{ bottom: "2px" }}>{t("blocks.contactsBlock.form.message")}</span>
+                  />
+                  <span>{t("blocks.contactsBlock.form.message")}</span>
                 </div>
                 <div className='formBtn'>
                   <button type='submit'>{t("blocks.contactsBlock.form.buttonText")}</button>

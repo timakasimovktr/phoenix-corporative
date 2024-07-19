@@ -47,7 +47,10 @@ function Contacts() {
         changeLanguage={changeLanguage}
         setChangeLanguage={setChangeLanguage}
       />
-      <main onClick={() => setChangeLanguage(false)}>
+      <main
+        onClick={() => setChangeLanguage(false)}
+        style={{ overflow: "hidden" }}
+      >
         <section className='imgWithTxt imgWithTxtContacts'>
           <svg viewBox='0 50 800 600'>
             <defs>
