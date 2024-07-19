@@ -130,7 +130,7 @@ function Main() {
       id: 5,
       imgBefore: mensBefore,
       imgAfter: mensAfter,
-      sideTitle: "Men's Power",
+      sideTitle: "Mens Power",
       sideSubtitle: `${t("blocks.mainBlock.sale")}`,
     },
     {

@@ -29,6 +29,9 @@
         row-gap: 20px;
         justify-content: center;
         padding: 20px;
+        &:hover{
+            filter: brightness(1);
+        }
         .cardTitle{
             text-align: start;
             .title{

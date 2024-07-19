@@ -19,7 +19,7 @@ const Callcenter = () => {
     gsap
       .timeline({ repeat: -1 })
       .from(".text", {
-        attr: { startOffset: "110%" },
+        attr: { startOffset: "120%" },
         duration: 5,
         ease: "none",
         stagger: 5,

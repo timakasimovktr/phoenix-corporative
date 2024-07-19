@@ -9,7 +9,7 @@ import axios from "axios";
 //images
 import beautifulMan from "../../images/azim2.png";
 import bottlesOfWater from "../../images/productsAll.JPG";
-import bottleOfWater from "../../images/german3.JPG";
+import bottleOfWater from "../../images/german4.JPG";
 
 //sections
 import Header from "../Header/Header";
