@@ -204,12 +204,17 @@ function Questions(props) {
                 >
                   {t("tests.optionTitle.title4")}
                 </option>
-                <option value=''>{item?.q1}</option>
-                <option value=''>{item?.q2}</option>
+                {item?.q1 ? <option value=''>{item?.q1}</option> : null}
+                {item?.q2 ? <option value=''>{item?.q2}</option> : null}
+                {item?.q3 ? <option value=''>{item?.q3}</option> : null}
+                {item?.q4 ? <option value=''>{item?.q4}</option> : null}
+                {item?.q5 ? <option value=''>{item?.q5}</option> : null}
+                {item?.q6 ? <option value=''>{item?.q6}</option> : null}
+                {/* <option value=''>{item?.q2}</option>
                 <option value=''>{item?.q3}</option>
                 <option value=''>{item?.q4}</option>
                 <option value=''>{item?.q5}</option>
-                <option value=''>{item?.q6}</option>
+                <option value=''>{item?.q6}</option> */}
               </select>
               <button
                 onClick={() => {
