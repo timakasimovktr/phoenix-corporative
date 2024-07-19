@@ -166,11 +166,17 @@ function Contacts() {
               </div>
             </div>
             <div className='mapWrapper'>
-              <iframe
+              {/* <iframe
                 src='https://yandex.ru/map-widget/v1/?um=constructor%3A23fb4fdaca0fcfd3a905559952ff30f9f8afcdee76ea43d1860097db18754e30&amp;source=constructor'
                 width='100%'
                 height='100%'
                 frameBorder='0'
+              ></iframe> */}
+              <iframe
+                src='https://yandex.com/map-widget/v1/?um=constructor%3Ac2490b93a48effe888bd86ad92a98d13bfa0559b69ee2cc102036398ac26035e&amp;source=constructor'
+                width='100%'
+                height='100%'
+                frameborder='0'
               ></iframe>
             </div>
           </div>

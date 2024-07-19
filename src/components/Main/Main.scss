@@ -207,6 +207,7 @@ main {
         margin: 10px 0;
         .title{
           font-size: 32px;
+          color: #fff500;
         }
       }
       .referalLink{
@@ -1039,6 +1040,14 @@ main {
   width: 100%;
   padding: 30px 0;
   background: #000000;
+  .swiper-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .swiper-slide{
+    width: auto !important
+  }
     .imgContainer{
       height: 150px;
       max-width: 200px;

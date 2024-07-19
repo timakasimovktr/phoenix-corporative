@@ -1,23 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { IMaskInput } from "react-imask";
-import { Autoplay, Navigation, EffectCards, FreeMode } from "swiper/modules";
+import { Autoplay, Navigation, EffectCards } from "swiper/modules";
 import "swiper/css/bundle";
+import "swiper/css";
 
 import { APP_ROUTES } from "../../router/Route";
-import axios from "axios";
 import "./Main.scss";
-import { useNavigate } from "react-router-dom";
 import { Outlet, Link } from "react-router-dom";
 
 //images
-import complexSupport from "../../images/Complex-Sup-Woman.png";
-import marketingLine from "../../images/Marketing-Line.svg";
-import marketingImgBlock from "../../images/marketingImgBlock1.Png";
-import productItem from "../../images/productItem.png";
-import productItemAfter from "../../images/productItemAfter.png";
 import euphoriaRefferal from "../../images/Euphoria-refferal.png";
-import sliderArrow from "../../images/sliderArrow.png";
 import quotationMark from "../../images/“.svg";
 import girl1 from "../../images/girl1.jpg";
 import girl2 from "../../images/girl2.jpg";
@@ -27,18 +20,7 @@ import boy3 from "../../images/boy3.jpg";
 import commentsRight from "../../images/commentsRight.png";
 import commentsLeft from "../../images/commnetsLeft.png";
 import person from "../../images/person.png";
-import logistics from "../../images/logistics.jpg";
-import callcenter from "../../images/callcenter.jpg";
-import marketing from "../../images/marketing.png";
 
-import Anfa from "../../images/Anfa.png";
-import Visu from "../../images/Visu.png";
-import hypert from "../../images/hypert.png";
-import diabetic from "../../images/diabetic.png";
-import mens from "../../images/mens.png";
-import ParazitOFF from "../../images/ParazitOFF.png";
-import slimft from "../../images/slimft.png";
-import Power from "../../images/Power.png";
 import urionBefore from "../../images/urionBefore.png";
 import urionAfter from "../../images/urionAfter.png";
 import VisuBefore from "../../images/VisuCapsBefore.png";
@@ -56,23 +38,6 @@ import slimftAfter from "../../images/slimftAfter.png";
 import growBefore from "../../images/geowBefore.png";
 import growAfter from "../../images/growAfter.png";
 
-import mensWithoutBg from "../../images/mensWithoutBg.png";
-import diabeticWithoutBg from "../../images/diabeticWithoutBg.png";
-import VisuWithoutBg from "../../images/VisuWithoutBg.png";
-import ParazitOFFWithoutBg from "../../images/ParazitOFFWithoutBg.png";
-import hypertWithoutBg from "../../images/hypertWithoutBg.png";
-import slimftWithoutBg from "../../images/slimftWithoutBg.png";
-import PowerWihoutBg from "../../images/PowerWihoutBg.png";
-import AnfaWihoutBg from "../../images/AnfaWihoutBg.png";
-
-import euphoria from "../../images/euphoria 1.png";
-import arbit from "../../images/arbit 1.png";
-import phoenix from "../../images/PhoenixLogo.svg";
-import rcd from "../../images/rcd 1 1.png";
-import ofb from "../../images/OFB-01.png";
-import anor from "../../images/Anorbank-01.png";
-import nbu from "../../images/NBU-01_bdybU3Y.png";
-
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -83,15 +48,13 @@ import Questions from "../Questions/Questions";
 import { motion, useScroll, useTransform } from "framer-motion";
 import styled from "styled-components";
 import Tabs from "./Tabs";
-import ProductsCard from "./ProductsCard";
 import ParallaxText from "./FramerText";
-import Index from "../floatingShape";
-import IndexSecond from "../floatingShape/secondFloating";
 
 import { useTranslation } from "react-i18next";
 import TimelineComponent from "./timeline";
-import BioAddsBlock from "./bioAdds";
 import CircularText from "./bioAdds";
+import PartnersSlider from "./partners";
+import ProductSlider from "./productSlider";
 
 export const Title = styled(motion.h1)`
   font-family: var(--font-primary);
@@ -116,10 +79,6 @@ function Main() {
     },
   ];
 
-  const handleClick = (index) => {
-    setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
-  };
-
   useEffect(() => {
     AOS.init();
     setIsLoader(false);
@@ -137,66 +96,6 @@ function Main() {
 
   const { scrollYProgress } = useScroll();
   const x = useTransform(scrollYProgress, [0, 1], [0, 1000]);
-
-  const ProductSliderItems = [
-    // {
-    //   id: 1,
-    //   title: "Anfa Oku Vital",
-    //   description: `${t("blocks.productsBlock.description1")}`,
-    //   cardImage: Anfa,
-    //   imageAlt: "Anfa",
-    // },
-    {
-      id: 1,
-      title: "Visu Caps",
-      description: `${t("blocks.productsBlock.description2")}`,
-      cardImage: VisuBefore,
-      imageAlt: "Visu",
-    },
-    {
-      id: 2,
-      title: "Гипертофорт",
-      description: `${t("blocks.productsBlock.description3")}`,
-      cardImage: hypertBefore,
-      imageAlt: "hypert",
-    },
-    {
-      id: 3,
-      title: "Диабетик Форте",
-      description: `${t("blocks.productsBlock.description4")}`,
-      cardImage: diabeticBefore,
-      imageAlt: "diabetic",
-    },
-    {
-      id: 4,
-      title: "Men's Power",
-      description: `${t("blocks.productsBlock.description5")}`,
-      cardImage: mensBefore,
-      imageAlt: "mens",
-    },
-    {
-      id: 5,
-      title: "ParazitOFF",
-      description: `${t("blocks.productsBlock.description6")}`,
-      cardImage: ParazitOFFBefore,
-      imageAlt: "ParazitOFF",
-    },
-
-    {
-      id: 6,
-      title: "SLIMFIT",
-      description: `${t("blocks.productsBlock.description7")}`,
-      cardImage: slimftBefore,
-      imageAlt: "slimft",
-    },
-    {
-      id: 7,
-      title: "Power KETO",
-      description: `${t("blocks.productsBlock.description8")}`,
-      cardImage: growBefore,
-      imageAlt: "Power",
-    },
-  ];
 
   const mainBannerCardsItems = [
     {
@@ -257,15 +156,6 @@ function Main() {
     },
   ];
 
-  const partnersLogos = [
-    { id: 1, logo: euphoria },
-    { id: 2, logo: arbit },
-    { id: 3, logo: phoenix },
-    { id: 4, logo: rcd },
-    { id: 5, logo: ofb },
-    { id: 6, logo: anor },
-    { id: 7, logo: nbu },
-  ];
   const [changeLanguage, setChangeLanguage] = useState(false);
   return (
     <>
@@ -305,41 +195,26 @@ function Main() {
                   data-aos-duration='700'
                   data-aos-delay='600'
                 >
-                  Marketing
-                  {/* <img
-                    src={marketing}
-                    alt={marketing}
-                  />
-                  <p>marketing</p> */}
+                  {t("headings.marketing")}
                 </Link>
 
                 <Link
-                  // reloadDocument
                   to={APP_ROUTES.CALLCENTER}
                   className='partner bigPartner'
                   data-aos='fade-up'
                   data-aos-duration='700'
                   data-aos-delay='600'
                 >
-                  Колл-центр
-                  {/* <img
-                    src={callcenter}
-                    alt={callcenter}
-                  /> */}
+                  {t("headings.callCenter")}
                 </Link>
                 <Link
-                  // reloadDocument
                   to={APP_ROUTES.LOGISTICS}
                   className='partner'
                   data-aos='fade-right'
                   data-aos-duration='700'
                   data-aos-delay='600'
                 >
-                  {/* <img
-                    src={logistics}
-                    alt={logistics}
-                  /> */}
-                  Логистика
+                  {t("headings.logistic")}
                 </Link>
               </div>
             </div>
@@ -372,7 +247,6 @@ function Main() {
                         alt={item.imgAfter}
                       />
                       <div className='sideTitle'>
-                        {/* <div className='offer'>{item.sideSubtitle}</div> */}
                         <div>{item.sideTitle}</div>
                       </div>
                     </div>
@@ -383,62 +257,7 @@ function Main() {
           </div>
         </section>
 
-        <section
-          className='partnersSwiper'
-          id='partners'
-        >
-          <Swiper
-            modules={[Autoplay, Navigation, FreeMode]}
-            speed={2000}
-            loop={true}
-            autoplay={{
-              delay: 3000,
-            }}
-            slidesPerView={5}
-            spaceBetween={30}
-            centeredSlides
-            breakpoints={{
-              0: {
-                slidesPerView: 1,
-                spaceBetween: 20,
-              },
-              420: {
-                slidesPerView: 3,
-              },
-              620: {
-                slidesPerView: 4,
-                spaceBetween: 20,
-              },
-              911: {
-                slidesPerView: 4,
-                spaceBetween: 30,
-              },
-              992: {
-                slidesPerView: 5,
-                spaceBetween: 30,
-              },
-              1440: {
-                slidesPerView: 5,
-                spaceBetween: 30,
-              },
-            }}
-          >
-            {partnersLogos.map((item, index) => (
-              <SwiperSlide
-                className='slideWrapper'
-                key={index}
-              >
-                <div className='imgContainer'>
-                  <img
-                    src={item.logo}
-                    alt={item.logo}
-                  />
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </section>
-
+        <PartnersSlider />
         <section
           className='imgWithTxt'
           id='aboutUs'
@@ -450,77 +269,8 @@ function Main() {
             >
               {t("headings.bodySupport")}
             </h2>
-            {/* <p
-              data-aos='fade-right'
-              data-aos-duration='700'
-              data-aos-offset='20'
-            >
-              "Euphoria group"нинг дунёсига хуш келибсиз! Биз битта умумий миссия: одамларга соғлом турмуш тарзини олиб
-              боришга ёрдам бериш учун бирлаштирилган учта динамик компаниялармиз. Битта бренд остида тўпланган
-              колл-марказлар жамоалари, маркетинг ва логистика мутахассислари саккиз йилдан ортиқ вақт давомида сизнинг
-              фаровонлигингизга ҳисса қўшадиган юқори сифатли маҳсулотлар ва хизматларни тақдим этиш учун биргаликда
-              ишламоқда.
-            </p> */}
-            {/* <Link
-              reloadDocument
-              to={APP_ROUTES.CATALOG}
-              className='br10'
-              data-aos='fade-right'
-              data-aos-duration='700'
-            >
-              Каталог
-            </Link> */}
           </div>
-          <div className='imgWithTxtImg'>
-            <Swiper
-              modules={[Autoplay, Navigation, FreeMode]}
-              speed={2000}
-              loop={true}
-              autoplay={{
-                delay: 3000,
-              }}
-              slidesPerView={5}
-              spaceBetween={30}
-              centeredSlides
-              breakpoints={{
-                0: {
-                  slidesPerView: 1,
-                  spaceBetween: 20,
-                },
-                620: {
-                  slidesPerView: 1,
-                  spaceBetween: 20,
-                },
-                911: {
-                  slidesPerView: 2,
-                  spaceBetween: 30,
-                },
-                992: {
-                  slidesPerView: 3,
-                  spaceBetween: 30,
-                },
-                1440: {
-                  slidesPerView: 4,
-                  spaceBetween: 30,
-                },
-              }}
-            >
-              {ProductSliderItems.map((item, index) => (
-                <SwiperSlide
-                  className='slideWrapper'
-                  key={index}
-                >
-                  <ProductsCard
-                    cardImage={item.cardImage}
-                    imageAlt={item.imageAlt}
-                    title={item.title}
-                    description={item.description}
-                    link='/catalog'
-                  />
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
+          <ProductSlider />
         </section>
         <CircularText setIsQuestions={setIsQuestions} />
         <section
@@ -772,53 +522,11 @@ function Main() {
             </div>
           </div>
         </section>
-        {/* <section className='referral'>
-          <div className='container'>
-            <div className='referralTxt'>
-              <h2
-                data-aos='fade-right'
-                data-aos-duration='700'
-                data-aos-offset='20'
-              >
-                {t("headings.referal")}
-              </h2>
-              <h3
-                data-aos='fade-right'
-                data-aos-duration='700'
-                data-aos-offset='20'
-              >
-                {t("blocks.referalBlock.subtitle")}
-              </h3>
-              <Link
-                // reloadDocument
-                to={APP_ROUTES.REFERRAL}
-                className='br10'
-                data-aos='fade-right'
-                data-aos-duration='700'
-                data-aos-offset='20'
-              >
-                {t("blocks.referalBlock.buttonText")}
-              </Link>
-            </div>
-            <div className='referralImg'>
-              <img
-                data-aos='fade-left'
-                data-aos-duration='700'
-                data-aos-offset='20'
-                src={euphoriaRefferal}
-                alt={euphoriaRefferal}
-              />
-            </div>
-          </div>
-        </section> */}
 
         <section className='sectionTimeline'>
           <div className='container'>
             <div className='sectionTimelineInfo'>
               <div className='timelineInfo'>
-                {/* <div className='tag'>
-                  <p>Коротко</p>
-                </div> */}
                 <div className='sectionTitle'>
                   <h3 className='title'>{t("blocks.header.contacts")}</h3>
                 </div>
@@ -856,13 +564,6 @@ function Main() {
               title4={t("blocks.tabsBlock.subtitle4")}
               subtitle4={t("blocks.tabsBlock.text4")}
             />
-
-            {/* <Link
-              onClick={() => setIsQuestions(true)}
-              className='br10'
-            >
-              Пройти опрос
-            </Link> */}
           </div>
           <div className='surveyText'>
             <ParallaxText baseVelocity={-5}>Euphoria</ParallaxText>
@@ -898,12 +599,6 @@ function Main() {
                 <div className='formTitle'>
                   <h2 className='title'>{t("blocks.contactsBlock.form.title")}</h2>
                 </div>
-                {/* <div className='formSubtitle'>
-                  <p className='subTitle'>
-                    Если у вас остались вопросы, или хотите больше узнать о Proskill Academy , оставьте заявку — и мы
-                    вам перезвоним.
-                  </p>
-                </div> */}
                 <div className='inputBox'>
                   <input
                     type='text'
@@ -921,13 +616,6 @@ function Main() {
                   <span>{t("blocks.contactsBlock.form.lastName")}</span>
                 </div>
                 <div className='inputBox'>
-                  {/* <input
-                    type='tel'
-                    name='phone'
-                    pattern='[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}'
-                    required
-                    maxLength={13}
-                  /> */}
                   <IMaskInput
                     type='tel'
                     name='phone'
@@ -943,7 +631,7 @@ function Main() {
                     name='sms'
                     required
                   ></textarea>
-                  <span>{t("blocks.contactsBlock.form.message")}</span>
+                  <span style={{ bottom: "2px" }}>{t("blocks.contactsBlock.form.message")}</span>
                 </div>
                 <div className='formBtn'>
                   <button type='submit'>{t("blocks.contactsBlock.form.buttonText")}</button>

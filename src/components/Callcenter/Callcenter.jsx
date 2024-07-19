@@ -36,7 +36,10 @@ const Callcenter = () => {
         className='imgWithTxt logisticBlock'
         onClick={() => setChangeLanguage(false)}
       >
-        <svg viewBox='0 50 800 600'>
+        <svg
+          viewBox='0 50 800 600'
+          style={{ height: "100%" }}
+        >
           <defs>
             <path
               id='path-1'
@@ -49,7 +52,7 @@ const Callcenter = () => {
               className='text'
               href='#path-1'
             >
-              {t("headings.callCenter")} {t("headings.callCenter")}
+              EUPHORIA GROUP EUPHORIA GROUP
             </textPath>
           </text>
         </svg>

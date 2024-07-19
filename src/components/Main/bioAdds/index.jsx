@@ -34,7 +34,9 @@ const CircularText = (props) => {
           data-aos-duration='700'
           data-aos-offset='20'
         >
-          {t("blocks.bioAdds.subtitle")}
+          {t("blocks.bioAdds.subtitle1")}
+          <br />
+          {t("blocks.bioAdds.subtitle2")}
         </p>
         <Link
           onClick={() => props.setIsQuestions(true)}

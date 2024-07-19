@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 
 function Questions(props) {
   const { t } = useTranslation();
-  const [choosenCategory, setChoosenCategory] = useState(0);
+  const [choosenCategory, setChoosenCategory] = useState(1);
   const [filteredSurvey, setFilteredSurvey] = useState([]);
   const [surveyStep, setSurveyStep] = useState(1);
 
@@ -170,36 +170,15 @@ function Questions(props) {
               <option value=''>{t("tests.valueAge.value3")}</option>
               <option value=''>{t("tests.valueAge.value4")}</option>
             </select>
-            <select
-              name=''
-              id=''
-              value={choosenCategory}
-              onChange={(e) => setChoosenCategory(e.target.value)}
-            >
-              <option
-                value=''
-                hidden
-              >
-                {t("tests.optionTitle.title1")}
-              </option>
-              {surveyObj.map((item) => (
-                <option
-                  key={item.surveyCategory.id}
-                  value={item.surveyCategory.id}
-                >
-                  {item.surveyCategory.name}
-                </option>
-              ))}
-            </select>
 
             <button
               onClick={() => {
                 if (choosenCategory === 0) {
-                  toast.error(`${t("tests.textAlert.form.alert1")}`);
+                  toast.error(`${t("tests.textAlert.alert1")}`);
                 } else {
                   setSurveyStep(2);
                   setFilteredSurvey(surveyObj.filter((item) => +item.surveyCategory.id === +choosenCategory));
-                  setChoosenCategory(0);
+                  setChoosenCategory(1);
                 }
               }}
             >
@@ -235,18 +214,18 @@ function Questions(props) {
               <button
                 onClick={() => {
                   if (choosenCategory === 0) {
-                    toast.error(`${t("tests.textAlert.form.alert2")}`);
+                    toast.error(`${t("tests.textAlert.alert2")}`);
                   } else {
                     if (index !== filteredSurvey[0]?.surveyCategory?.surveyQuestions.length - 1) {
                       setSurveyStep(surveyStep + 1);
                     }
                     if (index === filteredSurvey[0]?.surveyCategory?.surveyQuestions.length - 1) {
-                      toast.success(`${t("tests.textAlert.form.alert3")}`);
+                      toast.success(`${t("tests.textAlert.alert3")}`);
                       setTimeout(() => {
                         window.location.href = `/${filteredSurvey[0]?.surveyCategory?.product}`;
                       }, 3000);
                     }
-                    setChoosenCategory(0);
+                    setChoosenCategory(1);
                   }
                 }}
               >
