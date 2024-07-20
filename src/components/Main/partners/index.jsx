@@ -2,10 +2,10 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 
-import arbit from "../../../images/arbit 1.png";
-import phoenix from "../../../images/PhoenixLogo.svg";
+import arbit from "../../../images/3 (3).png";
+import phoenix from "../../../images/PhoenixLogo 1.png";
 import rcd from "../../../images/rcd 1 1.png";
-import ofb from "../../../images/OFB-01.png";
+import ofb from "../../../images/OFB-01 (2).png";
 import anor from "../../../images/Anorbank-01.png";
 import nbu from "../../../images/NBU-01_bdybU3Y.png";
 
@@ -22,7 +22,7 @@ const PartnersSlider = () => {
     { id: 6, logo: nbu },
   ];
   return (
-    <div>
+    <div id='partners'>
       <Swiper
         spaceBetween={50}
         slidesPerView={6}
@@ -34,16 +34,16 @@ const PartnersSlider = () => {
         className='partnersSlider'
         breakpoints={{
           0: {
-            slidesPerView: 2,
+            slidesPerView: 1,
           },
           420: {
-            slidesPerView: 3,
+            slidesPerView: 2,
           },
           577: {
-            slidesPerView: 4,
+            slidesPerView: 3,
           },
           911: {
-            slidesPerView: 5,
+            slidesPerView: 3,
           },
           1100: {
             slidesPerView: 5,

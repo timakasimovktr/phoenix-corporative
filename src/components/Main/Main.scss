@@ -143,7 +143,13 @@ main {
           transition: 0.5s;
           margin-bottom: 60px;
         }
-
+        .imgBefore {
+          opacity: 1;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, calc(-50% + -40px));
+        }
         .imgAfter {
           opacity: 0;
           position: absolute;
@@ -505,6 +511,8 @@ main {
     align-items: flex-start;
     justify-content: center;
     padding: 30px;
+    position: relative;
+    z-index: 1;
 
     h2 {
       color: #fff500;

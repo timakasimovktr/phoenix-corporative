@@ -548,6 +548,38 @@ function Product() {
               >
                 {productObj?.extra?.info3[1]}
               </p>
+              <div
+                className='orderWrapper'
+                data-aos='zoom-in'
+                data-aos-duration='700'
+                data-aos-offset='0'
+                style={{ marginTop: "50px" }}
+              >
+                <div className='qtyInput'>
+                  <p>{t("blocks.catalogBlock.quantity")}:</p>
+                  <div
+                    className='minus'
+                    // onClick={() => setQty(qty > 0 ? [qty - 1, setOrderInfo({ ...orderInfo, count: qty - 1 })] : 0)}
+                    onClick={() => {
+                      if (qty > 0) {
+                        const newQty = qty - 1;
+                        setQty(newQty);
+                        setOrderInfo({ ...orderInfo, count: newQty });
+                      }
+                    }}
+                  >
+                    -
+                  </div>
+                  <div className='number'>{qty}</div>
+                  <div
+                    className='plus'
+                    onClick={() => [setQty(qty + 1), setOrderInfo({ ...orderInfo, count: qty + 1 })]}
+                  >
+                    +
+                  </div>
+                </div>
+                <button onClick={() => clickOnOrderBtn()}>{t("blocks.catalogBlock.buy")}</button>
+              </div>
               {/* <div className='btnLink'>
                 <button
                   className='sendOrder'

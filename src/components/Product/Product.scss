@@ -813,7 +813,7 @@ main {
                     padding: 10px 10px;
                     border-radius: 4px;
                     font-size: 12px;
-                    background: #07d800;
+                    background: #047c00;
                     color: white;
                 }
             }
@@ -845,85 +845,85 @@ main {
             margin-top: auto;
         }
 
-        .orderWrapper {
-            display: flex;
-            column-gap: 20px;
-            row-gap: 20px;
-            button {
-                background: #fff500;
-                font-family: "Gilroy-Regular", sans-serif;
-                padding: 12px 42px;
-                font-size: 22px;
-                color: rgb(0, 0, 0);
-                border: 1px solid #fff500;
-                border-radius: 10px;
-                transition: 0.5s;
-                cursor: pointer;
-                margin-right: 15px;
-                max-height: 51px;
-                @media screen and (max-width: 1280px){
-                    font-size: 16px;
-                }
-
-                &:hover {
-                    background: rgba(0, 0, 0, 0);
-                    color: #fff500;
-                    filter: brightness(1);
-                    border: 1px solid #fff500;
-                }
-            }
-
-            .qtyInput {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border-radius: 10px;
-
-                p {
-                    font-size: 22px;
-                    color: white;
-                    font-family: "Gilroy-Regular", sans-serif;
-                    margin-bottom: 0;
-                    margin-right: 15px;
-                }
-
-                div {
-                    border-radius: 10px;
-                    height: 51px;
-                    width: 51px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                .number {
-                    font-size: 25px;
-                }
-
-                .minus,
-                .plus {
-                    user-select: none;
-                    background: #ffffff;
-                    color: #000;
-                    font-size: 35px;
-                    transition: 0.5s;
-                    border: 1px solid rgb(255, 255, 255);
-                    cursor: pointer;
-
-                    &:hover {
-                        background: #00000000;
-                        color: #ffffff;
-                    }
-                }
-
-                .minus {
-                    padding-bottom: 5px;
-                }
-            }
-        }
     }
 }
 
+.orderWrapper {
+    display: flex;
+    column-gap: 20px;
+    row-gap: 20px;
+    button {
+        background: #fff500;
+        font-family: "Gilroy-Regular", sans-serif;
+        padding: 12px 42px;
+        font-size: 22px;
+        color: rgb(0, 0, 0);
+        border: 1px solid #fff500;
+        border-radius: 10px;
+        transition: 0.5s;
+        cursor: pointer;
+        margin-right: 15px;
+        max-height: 51px;
+        @media screen and (max-width: 1280px){
+            font-size: 16px;
+        }
+
+        &:hover {
+            background: rgba(0, 0, 0, 0);
+            color: #fff500;
+            filter: brightness(1);
+            border: 1px solid #fff500;
+        }
+    }
+
+    .qtyInput {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+
+        p {
+            font-size: 22px;
+            color: white;
+            font-family: "Gilroy-Regular", sans-serif;
+            margin-bottom: 0;
+            margin-right: 15px;
+        }
+
+        div {
+            border-radius: 10px;
+            height: 51px;
+            width: 51px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .number {
+            font-size: 25px;
+        }
+
+        .minus,
+        .plus {
+            user-select: none;
+            background: #ffffff;
+            color: #000;
+            font-size: 35px;
+            transition: 0.5s;
+            border: 1px solid rgb(255, 255, 255);
+            cursor: pointer;
+
+            &:hover {
+                background: #00000000;
+                color: #ffffff;
+            }
+        }
+
+        .minus {
+            padding-bottom: 5px;
+        }
+    }
+}
 .centeredProduct {
     display: flex;
     justify-content: center;
