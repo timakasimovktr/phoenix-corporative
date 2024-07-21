@@ -109,9 +109,12 @@ function Contacts() {
                       alt={phoneIcon}
                     />
                   </div>
-                  <div className='contactsItemInfo'>
-                    <p>+99899 345 69 89</p>
-                  </div>
+                  <Link
+                    to='tel:+998555036996'
+                    className='contactsItemInfo'
+                  >
+                    <p> +998555036996</p>
+                  </Link>
                 </div>
                 <div className='contactsItem'>
                   <div className='contactsIcon'>
@@ -120,9 +123,12 @@ function Contacts() {
                       alt={mailIcon}
                     />
                   </div>
-                  <div className='contactsItemInfo'>
-                    <p>dkkggglllllll@gmail.com</p>
-                  </div>
+                  <Link
+                    to='mailto:info@euphoriagroup.uz'
+                    className='contactsItemInfo'
+                  >
+                    <p>info@euphoriagroup.uz</p>
+                  </Link>
                 </div>
                 <div className='contactsItem'>
                   <div className='contactsIcon'>

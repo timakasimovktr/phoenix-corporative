@@ -55,6 +55,9 @@ import TimelineComponent from "./timeline";
 import CircularText from "./bioAdds";
 import PartnersSlider from "./partners";
 import ProductSlider from "./productSlider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
 
 export const Title = styled(motion.h1)`
   font-family: var(--font-primary);
@@ -155,10 +158,44 @@ function Main() {
       sideSubtitle: `${t("blocks.mainBlock.sale")}`,
     },
   ];
+  const [formData, setFormData] = useState({
+    name: "",
+    surname: "",
+    phone: "",
+    message: "",
+  });
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const sanitizedPhone = formData.phone.replace(/[^\d+]/g, "");
+    const sanitizedData = { ...formData, phone: sanitizedPhone };
+    try {
+      const response = await axios.post("https://euphoria-group.uz/api/bid", sanitizedData);
+      console.log("Form submitted successfully:", response.data);
+      toast.success(`${t("tests.textAlert.alert4")}`);
+      setFormData({
+        name: "",
+        surname: "",
+        phone: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Error submitting the form:", error);
+      toast.error(`${t("tests.textAlert.alert5")}`);
+    }
+  };
   const [changeLanguage, setChangeLanguage] = useState(false);
   return (
     <>
+      <ToastContainer />
       <Header
         hiddenLoader={isLoader}
         changeLanguage={changeLanguage}
@@ -594,7 +631,7 @@ function Main() {
             <div className='contactForm'>
               <form
                 className='form'
-                action='POST'
+                onSubmit={handleSubmit}
               >
                 <div className='formTitle'>
                   <h2 className='title'>{t("blocks.contactsBlock.form.title")}</h2>
@@ -603,6 +640,8 @@ function Main() {
                   <input
                     type='text'
                     name='name'
+                    value={formData.name}
+                    onChange={handleChange}
                     required
                   />
                   <span>{t("blocks.contactsBlock.form.name")}</span>
@@ -612,6 +651,8 @@ function Main() {
                     type='text'
                     name='surname'
                     required
+                    value={formData.surname}
+                    onChange={handleChange}
                   />
                   <span>{t("blocks.contactsBlock.form.lastName")}</span>
                 </div>
@@ -619,6 +660,8 @@ function Main() {
                   <IMaskInput
                     type='tel'
                     name='phone'
+                    value={formData.phone}
+                    onChange={handleChange}
                     mask={Mask}
                     pattern='[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}'
                     maxLength={19}
@@ -628,7 +671,9 @@ function Main() {
                 </div>
                 <div className='inputBox'>
                   <input
-                    name='sms'
+                    name='message'
+                    value={formData.message}
+                    onChange={handleChange}
                     required
                   />
                   <span>{t("blocks.contactsBlock.form.message")}</span>

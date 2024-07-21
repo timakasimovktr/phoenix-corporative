@@ -114,10 +114,10 @@ const Footer = () => {
                 </Link>
                 <Link
                   // reloadDocument
-                  to={`${APP_ROUTES.CONTACTS}`}
-                  onClick={() => scrollTo()}
+                  to='tel:+998555036996'
+                  // onClick={() => scrollTo()}
                 >
-                  +998 (55) 517-01-12
+                  +998555036996
                 </Link>
                 <div className='social_media'>
                   <Link to={`${APP_ROUTES.WELCOME}#commentsSection`}>
