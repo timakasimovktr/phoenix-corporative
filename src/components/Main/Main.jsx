@@ -7,6 +7,8 @@ import "swiper/css";
 
 import { APP_ROUTES } from "../../router/Route";
 import "./Main.scss";
+
+import "react-toastify/dist/ReactToastify.css";
 import { Outlet, Link } from "react-router-dom";
 
 //images
@@ -55,8 +57,7 @@ import TimelineComponent from "./timeline";
 import CircularText from "./bioAdds";
 import PartnersSlider from "./partners";
 import ProductSlider from "./productSlider";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast, ToastContainer } from "react-toastify";
 import axios from "axios";
 
 export const Title = styled(motion.h1)`

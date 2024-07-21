@@ -2,8 +2,7 @@
 import React, { useState } from "react";
 import "./Questions.scss";
 
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
 
 function Questions(props) {
@@ -120,19 +119,6 @@ function Questions(props) {
         product: "product/5",
       },
     },
-    // {
-    //   surveyCategory: {
-    //     id: 3,
-    //     name: "Диабет",
-    //     surveyQuestions: [
-    //       "Қандли диабет билан касалланган қариндошларингиз борми?",
-    //       "Қондаги глюкоза миқдорини қанчалик тез-тез текширасиз?",
-    //       "Қандли диабет учун тавсия етилган парҳезга риоя қиласизми?",
-    //       "Қондаги глюкоза миқдорини назорат қилиш учун insulin ёки бошқа дори-дармонларни қабул қиласизми?",
-    //     ],
-    //     product: "product/5",
-    //   },
-    // },
   ];
 
   return (
@@ -141,7 +127,6 @@ function Questions(props) {
         className={props.visible ? "questionsWrapper" : "hidden"}
         onClick={() => closePopup()}
       >
-        <ToastContainer />
         <div
           className='questionsCard'
           onClick={(e) => e.stopPropagation()}

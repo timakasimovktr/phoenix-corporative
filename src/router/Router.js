@@ -9,10 +9,13 @@ import Collection from "../components/Collection/Collection";
 import Marketing from "../components/Marketing/Marketing";
 import Logistics from "../components/Logistics/Logistics";
 import CallCenter from "../components/Callcenter/Callcenter";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Router() {
   return (
     <BrowserRouter>
+     <ToastContainer/>
       <Routes>
         <Route path={APP_ROUTES.WELCOME} element={<Main />} />
         <Route path={APP_ROUTES.CATALOG} element={<Catalog />} />
