@@ -18,13 +18,26 @@ const Logistics = () => {
 
     gsap
       .timeline({ repeat: -1 })
-      .from(".text", {
-        attr: { startOffset: "110%" },
-        duration: 5,
-        ease: "none",
-        stagger: 5,
-      })
-      .to(".text", { autoAlpha: 0, duration: 0.5, stagger: 5 }, 5);
+      .fromTo(
+        ".text",
+        { attr: { startOffset: "120%" }, autoAlpha: 0 },
+        {
+          attr: { startOffset: "0%" },
+          autoAlpha: 1,
+          duration: 5,
+          ease: "none",
+        },
+      )
+      .to(
+        ".text",
+        {
+          attr: { startOffset: "-120%" },
+          autoAlpha: 0,
+          duration: 5,
+          ease: "none",
+        },
+        5,
+      );
   }, []);
   return (
     <>
@@ -37,20 +50,25 @@ const Logistics = () => {
         onClick={() => setChangeLanguage(false)}
       >
         <svg
-          viewBox='0 50 800 600'
-          style={{ height: "100%" }}
+          viewBox='0 50 1000 400' // Increased viewBox dimensions for larger area
+          width='100%'
+          height='100%'
+          preserveAspectRatio='xMidYMid meet' // Ensures the SVG is centered
         >
           <defs>
             <path
-              id='path-1'
+              id='infinity-path'
               fill='none'
-              d='M 50 300 Q 100 50 250 200 Q 350 350 450 200 Q 600 50 700 350'
+              // d='M 50 300 Q 100 50 250 200 Q 350 350 450 200 Q 600 50 700 350'
+              d='M 400 300
+               C 200 100, 200 500, 400 300
+               C 600 100, 600 500, 400 300'
             ></path>
           </defs>
           <text>
             <textPath
               className='text'
-              href='#path-1'
+              href='#infinity-path'
             >
               EUPHORIA GROUP EUPHORIA GROUP
             </textPath>
